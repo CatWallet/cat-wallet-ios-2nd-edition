@@ -1,0 +1,79 @@
+PODS:
+  - BigInt (3.1.0):
+    - SipHash (~> 1.2)
+  - CryptoSwift (0.11.0)
+  - MBProgressHUD (1.1.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - Realm (3.7.6):
+    - Realm/Headers (= 3.7.6)
+  - Realm/Headers (3.7.6)
+  - RealmSwift (3.7.6):
+    - Realm (= 3.7.6)
+  - SipHash (1.2.2)
+  - SwiftProtobuf (1.1.1)
+  - TrezorCrypto (0.0.8)
+  - TrustCore (0.2.2):
+    - BigInt
+    - SwiftProtobuf (~> 1.0)
+    - TrezorCrypto (~> 0.0.8)
+  - TrustKeystore (0.5.1):
+    - BigInt
+    - CryptoSwift
+    - TrezorCrypto
+    - TrustCore (~> 0.2.2)
+
+DEPENDENCIES:
+  - MBProgressHUD
+  - R.swift
+  - RealmSwift
+  - TrustCore (from `https://github.com/TrustWallet/trust-core`, branch `master`)
+  - TrustKeystore (from `https://github.com/TrustWallet/trust-keystore`, branch `master`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BigInt
+    - CryptoSwift
+    - MBProgressHUD
+    - R.swift
+    - R.swift.Library
+    - Realm
+    - RealmSwift
+    - SipHash
+    - SwiftProtobuf
+    - TrezorCrypto
+
+EXTERNAL SOURCES:
+  TrustCore:
+    :branch: master
+    :git: https://github.com/TrustWallet/trust-core
+  TrustKeystore:
+    :branch: master
+    :git: https://github.com/TrustWallet/trust-keystore
+
+CHECKOUT OPTIONS:
+  TrustCore:
+    :commit: dd766daf2ea8d411f559940eb4577e66dc0e5ac2
+    :git: https://github.com/TrustWallet/trust-core
+  TrustKeystore:
+    :commit: 0db1af61cc5e80c090a6ec2224b267cb8386a54f
+    :git: https://github.com/TrustWallet/trust-keystore
+
+SPEC CHECKSUMS:
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
+  CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
+  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
+  SwiftProtobuf: 4298b0b814dd49031c3218fdfb8d42f7107c8a6d
+  TrezorCrypto: 938c4b715fff7824a9c891a105e65ee0e4e81662
+  TrustCore: a09efa0d46e598f349df39710b35ba12fcd2d166
+  TrustKeystore: 02dbee52610eb631df44be0fddd33e212b8ab6e6
+
+PODFILE CHECKSUM: 20223b3190366f083703b1afdaba88c78c260e65
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,6 @@
+framework module Pods_cat_wallet_ios_2nd {
+  umbrella header "Pods-cat-wallet-ios-2nd-umbrella.h"
+
+  export *
+  module * { export * }
+}
