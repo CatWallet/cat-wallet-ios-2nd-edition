@@ -6,10 +6,6 @@ target 'cat-wallet-ios-2nd' do
   use_frameworks!
   pod 'R.swift'
   pod 'MBProgressHUD'
-  pod 'RealmSwift'
-  pod 'TrustCore', :git=>'https://github.com/TrustWallet/trust-core', :branch=>'master'
-  pod 'TrustKeystore', :git=>'https://github.com/TrustWallet/trust-keystore', :branch=>'master'
-
   # Pods for cat-wallet-ios-2nd
 
 end
