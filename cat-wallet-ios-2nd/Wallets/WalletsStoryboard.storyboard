@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e1i-FV-Z8g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e1i-FV-Z8g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,9 +59,8 @@
                                     <action selector="createNewWallet:" destination="OBE-EJ-rpP" eventType="touchUpInside" id="Ffq-gP-7n5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-Ul-geG">
-                                <rect key="frame" x="142" y="416" width="91" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-Ul-geG">
+                                <rect key="frame" x="140" y="537" width="95" height="30"/>
                                 <state key="normal" title="Import wallet"/>
                                 <connections>
                                     <segue destination="m17-7a-ikc" kind="show" id="dVR-Gq-jSB"/>
@@ -70,7 +69,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6kj-b8-PgE" firstAttribute="bottom" secondItem="f1M-Ul-geG" secondAttribute="bottom" constant="100" id="aGi-s9-V4o"/>
                             <constraint firstItem="cBt-wU-dXy" firstAttribute="centerY" secondItem="I3h-JL-PRh" secondAttribute="centerY" id="eRP-z9-g1b"/>
+                            <constraint firstItem="6kj-b8-PgE" firstAttribute="trailing" secondItem="f1M-Ul-geG" secondAttribute="trailing" constant="140" id="ez3-YY-vA7"/>
+                            <constraint firstItem="f1M-Ul-geG" firstAttribute="leading" secondItem="6kj-b8-PgE" secondAttribute="leading" constant="140" id="fWg-hj-g18"/>
                             <constraint firstItem="cBt-wU-dXy" firstAttribute="centerX" secondItem="I3h-JL-PRh" secondAttribute="centerX" id="rPq-z8-rZp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6kj-b8-PgE"/>

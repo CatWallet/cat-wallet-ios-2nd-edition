@@ -9,6 +9,19 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>cat-wallet-ios-2nd.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>ADC99BF6217BA247008740BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

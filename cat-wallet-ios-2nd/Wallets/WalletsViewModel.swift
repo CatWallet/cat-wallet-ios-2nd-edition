@@ -7,31 +7,31 @@
 //
 
 import Foundation
-import web3swift
+//import web3swift
 
-func createWalletWithPrivateKey(withName: String?,
-                                password: String,
-                                completion: @escaping (WalletModel?, Error?) -> Void)
-{
-    guard let newWallet = try? EthereumKeystoreV3(password: password) else {
-        completion(nil, Errors.couldNotCreateKeystore)
-        return
-    }
-    guard let wallet = newWallet, wallet.addresses?.count == 1 else {
-        completion(nil, Errors.couldNotCreateWalletWithAddress)
-        return
-    }
-    guard let keyData = try? JSONEncoder().encode(wallet.keystoreParams) else {
-        completion(nil, Errors.couldNotGetKeyData)
-        return
-    }
-    guard let address = wallet.addresses?.first?.address else {
-        completion(nil, Errors.couldNotCreateAddress)
-        return
-    }
-    let walletModel = WalletModel(address: address,
-                                     data: keyData,
-                                     name: withName ?? "",
-                                     isHD: false)
-    completion(walletModel, nil)
-}
+//func createWalletWithPrivateKey(withName: String?,
+//                                password: String,
+//                                completion: @escaping (WalletModel?, Error?) -> Void)
+//{
+//    guard let newWallet = try? EthereumKeystoreV3(password: password) else {
+//        completion(nil, Errors.couldNotCreateKeystore)
+//        return
+//    }
+//    guard let wallet = newWallet, wallet.addresses?.count == 1 else {
+//        completion(nil, Errors.couldNotCreateWalletWithAddress)
+//        return
+//    }
+//    guard let keyData = try? JSONEncoder().encode(wallet.keystoreParams) else {
+//        completion(nil, Errors.couldNotGetKeyData)
+//        return
+//    }
+//    guard let address = wallet.addresses?.first?.address else {
+//        completion(nil, Errors.couldNotCreateAddress)
+//        return
+//    }
+//    let walletModel = WalletModel(address: address,
+//                                     data: keyData,
+//                                     name: withName ?? "",
+//                                     isHD: false)
+//    completion(walletModel, nil)
+//}
