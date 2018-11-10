@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="2096" y="1454"/>
         </scene>
-        <!--Send Receive View Controller-->
+        <!--History View Controller-->
         <scene sceneID="a9l-3y-tBC">
             <objects>
-                <viewController storyboardIdentifier="secondVC" id="5W7-Kd-XDE" customClass="SendReceiveViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" id="5W7-Kd-XDE" customClass="HistoryViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9iv-ib-bAS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

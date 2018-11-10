@@ -36,16 +36,15 @@ class SendNavigationTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? SendReceiveViewController else {
-            print("abc")
-            return  }
-        vc.height = 800
-        vc.topCornerRadius = 35
-        vc.presentDuration = 0.4
-        vc.dismissDuration = 0.3
-        vc.shouldDismissInteractivelty = true
-        print("get")
-        present(vc, animated: true, completion: nil)
+        //guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "popup") as? SendPopUpViewController else { return }
+        let popupVC = SendPopUpViewController()
+        popupVC.height = 300
+        popupVC.topCornerRadius = 35
+        popupVC.presentDuration = 0.4
+        popupVC.dismissDuration = 0.3
+        popupVC.shouldDismissInteractivelty = true
+        popupVC.popupDelegate = self
+        present(popupVC, animated: true, completion: nil)
     }
     @objc private func dismissKeyboard() {
         view.endEditing(true)
