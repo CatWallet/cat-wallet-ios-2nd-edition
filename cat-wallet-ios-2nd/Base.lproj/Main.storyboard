@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Send View Controller-->
+        <!--Wallets View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SendViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WalletsViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,40 +165,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZc-Z9-B2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2096" y="767"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="FVJ-Lm-Lbh">
-            <objects>
-                <viewController id="d57-em-j86" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0rX-Lt-oK5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="ulh-tU-PL0"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="0QY-B3-aMs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aXk-Pf-EBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4133.3333333333339" y="768.75"/>
-        </scene>
-        <!--Example Navigation Controller-->
-        <scene sceneID="cZP-Mf-1V6">
-            <objects>
-                <navigationController storyboardIdentifier="customNavController" automaticallyAdjustsScrollViewInsets="NO" id="l5N-Ln-h6V" customClass="ExampleNavigationController" customModule="cat_wallet_ios_2nd" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vvo-rQ-ZP5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="d57-em-j86" kind="relationship" relationship="rootViewController" id="JWt-y3-n7D"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UZz-Bg-42p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3223.1884057971015" y="768.75"/>
         </scene>
     </scenes>
     <resources>

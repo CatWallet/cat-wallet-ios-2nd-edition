@@ -31,6 +31,13 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func sendButtonAction(_ sender: Any) {
+        guard let popupNavController = UIStoryboard(name: "SendStoryboard", bundle: nil).instantiateViewController(withIdentifier: "customNavController") as? SendNavigationViewController else {
+            return }
+        present(popupNavController, animated: true, completion: nil)
+    }
+    
     @IBAction func historyButtonAction(_ sender: Any) {
         let popupVC = HistoryViewController()
         popupVC.popupDelegate = self

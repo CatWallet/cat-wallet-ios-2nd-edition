@@ -36,6 +36,10 @@
 		AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */; };
 		AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */; };
 		AD1CFF392197B33300843B91 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */; };
+		AD1CFF442197C03A00843B91 /* SendNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF432197C03A00843B91 /* SendNavigationViewController.swift */; };
+		AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF452197C05800843B91 /* SendViewController.swift */; };
+		AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF472197C6D200843B91 /* SendStoryboard.storyboard */; };
+		AD1CFF4A2197CFFA00843B91 /* SetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF492197CFFA00843B91 /* SetButton.swift */; };
 		AD543354218253AF00F58C06 /* WalletsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */; };
 		AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543355218253C700F58C06 /* WalletsTableViewController.swift */; };
 		AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433572182548A00F58C06 /* NewWalletViewController.swift */; };
@@ -44,7 +48,7 @@
 		AD54335E2182616900F58C06 /* WalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335D2182616900F58C06 /* WalletError.swift */; };
 		AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */; };
 		AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */; };
-		ADB04B3F2194FE4600790A3D /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B3E2194FE4600790A3D /* SendViewController.swift */; };
+		ADB04B3F2194FE4600790A3D /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B3E2194FE4600790A3D /* WalletsViewController.swift */; };
 		ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B442195234000790A3D /* SGPageContentScrollView.swift */; };
 		ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */; };
 		ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B462195234000790A3D /* SGPageContentCollectionView.swift */; };
@@ -90,6 +94,10 @@
 		AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		AD1CFF432197C03A00843B91 /* SendNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationViewController.swift; sourceTree = "<group>"; };
+		AD1CFF452197C05800843B91 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		AD1CFF472197C6D200843B91 /* SendStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendStoryboard.storyboard; sourceTree = "<group>"; };
+		AD1CFF492197CFFA00843B91 /* SetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetButton.swift; sourceTree = "<group>"; };
 		AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalletsStoryboard.storyboard; sourceTree = "<group>"; };
 		AD543355218253C700F58C06 /* WalletsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewController.swift; sourceTree = "<group>"; };
 		AD5433572182548A00F58C06 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +106,7 @@
 		AD54335D2182616900F58C06 /* WalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletError.swift; sourceTree = "<group>"; };
 		AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletResultViewController.swift; sourceTree = "<group>"; };
 		AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateWalletResultViewController.xib; sourceTree = "<group>"; };
-		ADB04B3E2194FE4600790A3D /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		ADB04B3E2194FE4600790A3D /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
 		ADB04B442195234000790A3D /* SGPageContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentScrollView.swift; sourceTree = "<group>"; };
 		ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageViewPopGestureVC.swift; sourceTree = "<group>"; };
 		ADB04B462195234000790A3D /* SGPageContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentCollectionView.swift; sourceTree = "<group>"; };
@@ -177,6 +185,16 @@
 			path = BottomPopupController;
 			sourceTree = "<group>";
 		};
+		AD1CFF422197BFDD00843B91 /* Send */ = {
+			isa = PBXGroup;
+			children = (
+				AD1CFF432197C03A00843B91 /* SendNavigationViewController.swift */,
+				AD1CFF452197C05800843B91 /* SendViewController.swift */,
+				AD1CFF472197C6D200843B91 /* SendStoryboard.storyboard */,
+			);
+			path = Send;
+			sourceTree = "<group>";
+		};
 		AD5433522182539A00F58C06 /* Wallets */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +252,7 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
+				AD1CFF422197BFDD00843B91 /* Send */,
 				AD1CFF1321966A7C00843B91 /* BottomPopupController */,
 				AD1CFEFC21965A9F00843B91 /* Investment */,
 				ADB04B4E2195257C00790A3D /* CentralizedWallet */,
@@ -245,7 +264,7 @@
 				ADC99C01217BA249008740BD /* Assets.xcassets */,
 				ADC99C03217BA249008740BD /* LaunchScreen.storyboard */,
 				ADC99C06217BA249008740BD /* Info.plist */,
-				ADB04B3E2194FE4600790A3D /* SendViewController.swift */,
+				ADB04B3E2194FE4600790A3D /* WalletsViewController.swift */,
 				AD11D5B12196516200B6BE65 /* SendNavigationTableViewController.swift */,
 				AD11D5B22196516200B6BE65 /* SendNavigationTableViewController.xib */,
 				AD11D5B5219651DE00B6BE65 /* SendTableViewCell.swift */,
@@ -256,6 +275,7 @@
 				AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */,
 				AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */,
 				AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */,
+				AD1CFF492197CFFA00843B91 /* SetButton.swift */,
 			);
 			path = "cat-wallet-ios-2nd";
 			sourceTree = "<group>";
@@ -331,6 +351,7 @@
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
 				AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
+				AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */,
 				AD1CFF392197B33300843B91 /* HistoryTableViewCell.xib in Resources */,
 				ADC99C00217BA247008740BD /* Main.storyboard in Resources */,
 			);
@@ -372,7 +393,7 @@
 				AD11D5B7219651DE00B6BE65 /* SendTableViewCell.swift in Sources */,
 				AD1CFF1C21966A9F00843B91 /* BottomPopupDismissAnimator.swift in Sources */,
 				AD11D5B32196516200B6BE65 /* SendNavigationTableViewController.swift in Sources */,
-				ADB04B3F2194FE4600790A3D /* SendViewController.swift in Sources */,
+				ADB04B3F2194FE4600790A3D /* WalletsViewController.swift in Sources */,
 				AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */,
 				ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */,
 				AD1CFF1D21966A9F00843B91 /* BottomPopupUtils.swift in Sources */,
@@ -384,16 +405,19 @@
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
 				AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */,
 				AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */,
+				AD1CFF4A2197CFFA00843B91 /* SetButton.swift in Sources */,
 				AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */,
 				AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */,
 				AD1CFF2021966A9F00843B91 /* BottomPopupNavigationController.swift in Sources */,
 				ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */,
 				AD1CFF2121966A9F00843B91 /* BottomPopupTransitionHandler.swift in Sources */,
+				AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */,
 				ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */,
 				AD1CFF0F21965B8A00843B91 /* CoinMarketTableViewCell.swift in Sources */,
 				ADB04B51219525EA00790A3D /* CentralizedWalletViewController.swift in Sources */,
 				AD1CFF1121965B8A00843B91 /* TableViewCell.swift in Sources */,
 				AD1CFF0D21965B8A00843B91 /* CoinMarketTableViewController.swift in Sources */,
+				AD1CFF442197C03A00843B91 /* SendNavigationViewController.swift in Sources */,
 				AD1CFF2C21979A8100843B91 /* SendPopUpViewController.swift in Sources */,
 				AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */,
 				AD1CFF1021965B8A00843B91 /* CoinMarketContant.swift in Sources */,

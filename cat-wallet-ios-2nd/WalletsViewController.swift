@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SendViewController: UIViewController {
+class WalletsViewController: UIViewController {
     private var pageTitleView: SGPageTitleView? = nil
     private var pageContentCollectionView: SGPageContentCollectionView? = nil
 
@@ -54,7 +54,7 @@ class SendViewController: UIViewController {
     }
 }
 
-extension SendViewController: SGPageTitleViewDelegate, SGPageContentCollectionViewDelegate {
+extension WalletsViewController: SGPageTitleViewDelegate, SGPageContentCollectionViewDelegate {
     func pageTitleView(pageTitleView: SGPageTitleView, index: Int) {
         pageContentCollectionView?.setPageContentCollectionView(index: index)
     }
