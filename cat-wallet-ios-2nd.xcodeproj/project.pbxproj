@@ -40,6 +40,10 @@
 		AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF452197C05800843B91 /* SendViewController.swift */; };
 		AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF472197C6D200843B91 /* SendStoryboard.storyboard */; };
 		AD1CFF4A2197CFFA00843B91 /* SetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF492197CFFA00843B91 /* SetButton.swift */; };
+		AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF4D2197D3AB00843B91 /* ContactsViewController.swift */; };
+		AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF4E2197D3AB00843B91 /* ContactsViewController.xib */; };
+		AD1CFF532197D98100843B91 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF512197D98100843B91 /* ContactsTableViewCell.swift */; };
+		AD1CFF542197D98100843B91 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF522197D98100843B91 /* ContactsTableViewCell.xib */; };
 		AD543354218253AF00F58C06 /* WalletsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */; };
 		AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543355218253C700F58C06 /* WalletsTableViewController.swift */; };
 		AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433572182548A00F58C06 /* NewWalletViewController.swift */; };
@@ -98,6 +102,10 @@
 		AD1CFF452197C05800843B91 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		AD1CFF472197C6D200843B91 /* SendStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendStoryboard.storyboard; sourceTree = "<group>"; };
 		AD1CFF492197CFFA00843B91 /* SetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetButton.swift; sourceTree = "<group>"; };
+		AD1CFF4D2197D3AB00843B91 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		AD1CFF4E2197D3AB00843B91 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		AD1CFF512197D98100843B91 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		AD1CFF522197D98100843B91 /* ContactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsTableViewCell.xib; sourceTree = "<group>"; };
 		AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalletsStoryboard.storyboard; sourceTree = "<group>"; };
 		AD543355218253C700F58C06 /* WalletsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewController.swift; sourceTree = "<group>"; };
 		AD5433572182548A00F58C06 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +199,10 @@
 				AD1CFF432197C03A00843B91 /* SendNavigationViewController.swift */,
 				AD1CFF452197C05800843B91 /* SendViewController.swift */,
 				AD1CFF472197C6D200843B91 /* SendStoryboard.storyboard */,
+				AD1CFF4D2197D3AB00843B91 /* ContactsViewController.swift */,
+				AD1CFF4E2197D3AB00843B91 /* ContactsViewController.xib */,
+				AD1CFF512197D98100843B91 /* ContactsTableViewCell.swift */,
+				AD1CFF522197D98100843B91 /* ContactsTableViewCell.xib */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -344,10 +356,12 @@
 				ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */,
 				ADC99C02217BA249008740BD /* Assets.xcassets in Resources */,
 				AD11D5B8219651DE00B6BE65 /* SendTableViewCell.xib in Resources */,
+				AD1CFF542197D98100843B91 /* ContactsTableViewCell.xib in Resources */,
 				AD1CFF0C21965B8A00843B91 /* CoinMarketDetialViewController.xib in Resources */,
 				ADB04B52219525EA00790A3D /* CentralizedWalletViewController.xib in Resources */,
 				AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */,
 				AD11D5B42196516200B6BE65 /* SendNavigationTableViewController.xib in Resources */,
+				AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */,
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
 				AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
@@ -399,6 +413,7 @@
 				AD1CFF1D21966A9F00843B91 /* BottomPopupUtils.swift in Sources */,
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
+				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,
 				ADC99BFD217BA247008740BD /* ViewController.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
 				AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */,
@@ -416,6 +431,7 @@
 				AD1CFF0F21965B8A00843B91 /* CoinMarketTableViewCell.swift in Sources */,
 				ADB04B51219525EA00790A3D /* CentralizedWalletViewController.swift in Sources */,
 				AD1CFF1121965B8A00843B91 /* TableViewCell.swift in Sources */,
+				AD1CFF532197D98100843B91 /* ContactsTableViewCell.swift in Sources */,
 				AD1CFF0D21965B8A00843B91 /* CoinMarketTableViewController.swift in Sources */,
 				AD1CFF442197C03A00843B91 /* SendNavigationViewController.swift in Sources */,
 				AD1CFF2C21979A8100843B91 /* SendPopUpViewController.swift in Sources */,

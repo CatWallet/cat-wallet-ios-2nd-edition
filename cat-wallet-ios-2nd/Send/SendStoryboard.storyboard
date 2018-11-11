@@ -52,6 +52,11 @@
                         <viewLayoutGuide key="safeArea" id="lV1-PC-17D"/>
                     </view>
                     <navigationItem key="navigationItem" id="azz-yc-HnH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pxU-TD-K6u">
+                            <connections>
+                                <action selector="cancelAction:" destination="scv-zT-25X" id="Dfa-pb-bTD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="iNB-Dl-XMg"/>
                     </navigationItem>
                     <connections>

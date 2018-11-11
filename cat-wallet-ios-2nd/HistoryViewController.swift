@@ -16,6 +16,8 @@ class HistoryViewController: BottomPopupViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "historyCell")
         // Do any additional setup after loading the view.
     }
@@ -27,7 +29,6 @@ class HistoryViewController: BottomPopupViewController, UITableViewDataSource, U
         let navItem = UINavigationItem(title: "History");
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(historyDismiss));
         navItem.rightBarButtonItem = doneItem;
-        
         navBar.setItems([navItem], animated: false);
     }
     
@@ -41,7 +42,7 @@ class HistoryViewController: BottomPopupViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
-        cell?.nameLabel.text = a[indexPath.row]
+        cell?.textLabel?.text = a[indexPath.row]
         return cell!
     }
     

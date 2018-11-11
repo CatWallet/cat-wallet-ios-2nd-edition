@@ -16,11 +16,6 @@ class SendNavigationViewController: BottomPopupNavigationController {
 
         // Do any additional setup after loading the view.
     }
-    private func getStatusBarHeight() {
-        let stHeight = UIApplication.shared.statusBarFrame.size.height
-        let scHeight = UIScreen.main.bounds.size.height
-        height = Int(scHeight) - Int(stHeight)
-    }
     
     override func getPopupHeight() -> CGFloat {
         let stHeight = UIApplication.shared.statusBarFrame.size.height

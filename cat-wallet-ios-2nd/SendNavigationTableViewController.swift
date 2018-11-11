@@ -36,7 +36,6 @@ class SendNavigationTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "popup") as? SendPopUpViewController else { return }
         let popupVC = SendPopUpViewController()
         popupVC.height = height
         popupVC.topCornerRadius = 35
