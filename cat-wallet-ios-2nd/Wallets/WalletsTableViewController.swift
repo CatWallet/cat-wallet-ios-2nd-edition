@@ -21,7 +21,10 @@ class WalletsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
+    @IBAction func popViewController(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0

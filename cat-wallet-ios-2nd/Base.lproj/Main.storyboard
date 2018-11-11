@@ -23,6 +23,7 @@
                         <barButtonItem key="rightBarButtonItem" image="money_bag" id="gQp-On-k6m">
                             <connections>
                                 <action selector="button:" destination="BYZ-38-t0r" id="mu9-49-xam"/>
+                                <segue destination="ANB-Nv-VKA" kind="show" id="Quh-6u-yA6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -30,6 +31,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-171" y="1454"/>
+        </scene>
+        <!--WalletsStoryboard-->
+        <scene sceneID="aWf-Qr-Imh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WalletsStoryboard" id="ANB-Nv-VKA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4W-0m-yeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="1212"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jZx-a4-Lg7">

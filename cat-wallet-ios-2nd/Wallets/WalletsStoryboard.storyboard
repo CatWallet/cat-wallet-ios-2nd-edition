@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab-->
+        <!--Wallets Table View Controller-->
         <scene sceneID="eTK-9u-N3a">
             <objects>
-                <tableViewController id="re9-aO-OoK" customClass="tab" sceneMemberID="viewController">
+                <tableViewController id="re9-aO-OoK" customClass="WalletsTableViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iTp-ch-fRM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mQ0-re-RTd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="moC-g6-JKs">
+                            <connections>
+                                <action selector="popViewController:" destination="re9-aO-OoK" id="SQR-xy-VuP"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fIe-BU-zQk">
                             <connections>
                                 <segue destination="OBE-EJ-rpP" kind="show" id="4Cz-B3-Loi"/>
