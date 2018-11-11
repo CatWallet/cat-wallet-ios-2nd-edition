@@ -1,72 +1,68 @@
 //
-//  SendReceiveViewController.swift
+//  HistoryViewController.swift
 //  cat-wallet-ios-2nd
 //
-//  Created by kaidong pei on 11/9/18.
+//  Created by kaidong pei on 11/10/18.
 //  Copyright © 2018 CatWallet. All rights reserved.
 //
 
 import UIKit
 
-class HistoryViewController: BottomPopupViewController {
-
-    @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var receiveButton: UIButton!
-    @IBOutlet weak var purchaseButton: UIButton!
-    @IBOutlet weak var historyButton: UIButton!
+class HistoryViewController: BottomPopupViewController, UITableViewDataSource, UITableViewDelegate {
+    let a = ["01/11/2018", "11/11/2018"]
     
-    var height: CGFloat?
-    var topCornerRadius: CGFloat?
-    var presentDuration: Double?
-    var dismissDuration: Double?
-    var shouldDismissInteractivelty: Bool?
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        definButton(sendButton)
-//        definButton(receiveButton)
-//        definButton(purchaseButton)
-//        definButton(historyButton)
-
+        setNavigationBar()
+        tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "historyCell")
         // Do any additional setup after loading the view.
     }
+    func setNavigationBar() {
+        let width = UIScreen.main.bounds.size.width
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
+        self.view.addSubview(navBar);
+        
+        let navItem = UINavigationItem(title: "History");
+        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(historyDismiss));
+        navItem.rightBarButtonItem = doneItem;
+        
+        navBar.setItems([navItem], animated: false);
+    }
     
-    func definButton(_ button: UIButton){
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        button.layer.masksToBounds = false
-        button.layer.cornerRadius = button.frame.width / 2
-        button.layer.borderWidth = 1
+    @objc func historyDismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return a.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
+        cell?.nameLabel.text = a[indexPath.row]
+        return cell!
     }
     
     override func getPopupHeight() -> CGFloat {
-        return height ?? CGFloat(300)
+        return CGFloat(820)
     }
     
     override func getPopupTopCornerRadius() -> CGFloat {
-        return topCornerRadius ?? CGFloat(10)
+        return CGFloat(35)
     }
     
     override func getPopupPresentDuration() -> Double {
-        return presentDuration ?? 1.0
+        return 0.3
     }
     
     override func getPopupDismissDuration() -> Double {
-        return dismissDuration ?? 1.0
+        return 0.4
     }
     
     override func shouldPopupDismissInteractivelty() -> Bool {
-        return shouldDismissInteractivelty ?? true
+        return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

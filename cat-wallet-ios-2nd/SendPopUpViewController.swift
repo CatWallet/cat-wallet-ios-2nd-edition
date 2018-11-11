@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SendPopUpViewController: BottomPopupViewController {
+class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var receiveButton: UIButton!
@@ -24,12 +24,17 @@ class SendPopUpViewController: BottomPopupViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton(sendButton, 14)
+        setButton(sendButton, 18)
         setButton(receiveButton, 2)
         setButton(historyButton, 2)
         setButton(purchaseButton, 2)
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func historyButtonAction(_ sender: Any) {
+        let popupVC = HistoryViewController()
+        popupVC.popupDelegate = self
+        present(popupVC, animated: true, completion: nil)
     }
     private func setButton(_ button: UIButton, _ num: Int) {
         button.layer.shadowColor = UIColor.black.cgColor
@@ -40,33 +45,22 @@ class SendPopUpViewController: BottomPopupViewController {
     }
     
     override func getPopupHeight() -> CGFloat {
-        return height ?? CGFloat(300)
+        return CGFloat(300)
     }
     
     override func getPopupTopCornerRadius() -> CGFloat {
-        return topCornerRadius ?? CGFloat(10)
+        return CGFloat(35)
     }
     
     override func getPopupPresentDuration() -> Double {
-        return presentDuration ?? 1.0
+        return 0.3
     }
     
     override func getPopupDismissDuration() -> Double {
-        return dismissDuration ?? 1.0
+        return 0.4
     }
     
     override func shouldPopupDismissInteractivelty() -> Bool {
-        return shouldDismissInteractivelty ?? true
+        return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

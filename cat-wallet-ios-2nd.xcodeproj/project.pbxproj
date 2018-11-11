@@ -14,7 +14,6 @@
 		AD11D5B8219651DE00B6BE65 /* SendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD11D5B6219651DE00B6BE65 /* SendTableViewCell.xib */; };
 		AD1CFF0821965B8A00843B91 /* WebServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFEFD21965B8800843B91 /* WebServiceHandler.swift */; };
 		AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFEFE21965B8800843B91 /* CoinMarket.swift */; };
-		AD1CFF0A21965B8A00843B91 /* CoinMarketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFEFF21965B8900843B91 /* CoinMarketCoordinator.swift */; };
 		AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF0021965B8900843B91 /* CoinMarketTableViewCell.xib */; };
 		AD1CFF0C21965B8A00843B91 /* CoinMarketDetialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF0121965B8900843B91 /* CoinMarketDetialViewController.xib */; };
 		AD1CFF0D21965B8A00843B91 /* CoinMarketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF0221965B8900843B91 /* CoinMarketTableViewController.swift */; };
@@ -31,9 +30,12 @@
 		AD1CFF2121966A9F00843B91 /* BottomPopupTransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF1921966A9E00843B91 /* BottomPopupTransitionHandler.swift */; };
 		AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF1A21966A9E00843B91 /* BottomPopupDismissInteractionController.swift */; };
 		AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF1B21966A9F00843B91 /* BottomPopupViewController.swift */; };
-		AD1CFF2521966CC300843B91 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF2421966CC300843B91 /* HistoryViewController.swift */; };
 		AD1CFF2C21979A8100843B91 /* SendPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF2A21979A8100843B91 /* SendPopUpViewController.swift */; };
 		AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF2B21979A8100843B91 /* SendPopUpViewController.xib */; };
+		AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF322197B0DA00843B91 /* HistoryViewController.swift */; };
+		AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */; };
+		AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */; };
+		AD1CFF392197B33300843B91 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */; };
 		AD543354218253AF00F58C06 /* WalletsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */; };
 		AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543355218253C700F58C06 /* WalletsTableViewController.swift */; };
 		AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433572182548A00F58C06 /* NewWalletViewController.swift */; };
@@ -66,7 +68,6 @@
 		AD11D5B6219651DE00B6BE65 /* SendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendTableViewCell.xib; sourceTree = "<group>"; };
 		AD1CFEFD21965B8800843B91 /* WebServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceHandler.swift; sourceTree = "<group>"; };
 		AD1CFEFE21965B8800843B91 /* CoinMarket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarket.swift; sourceTree = "<group>"; };
-		AD1CFEFF21965B8900843B91 /* CoinMarketCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarketCoordinator.swift; sourceTree = "<group>"; };
 		AD1CFF0021965B8900843B91 /* CoinMarketTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinMarketTableViewCell.xib; sourceTree = "<group>"; };
 		AD1CFF0121965B8900843B91 /* CoinMarketDetialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinMarketDetialViewController.xib; sourceTree = "<group>"; };
 		AD1CFF0221965B8900843B91 /* CoinMarketTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarketTableViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +84,12 @@
 		AD1CFF1921966A9E00843B91 /* BottomPopupTransitionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupTransitionHandler.swift; sourceTree = "<group>"; };
 		AD1CFF1A21966A9E00843B91 /* BottomPopupDismissInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupDismissInteractionController.swift; sourceTree = "<group>"; };
 		AD1CFF1B21966A9F00843B91 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
-		AD1CFF2421966CC300843B91 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AD1CFF2A21979A8100843B91 /* SendPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPopUpViewController.swift; sourceTree = "<group>"; };
 		AD1CFF2B21979A8100843B91 /* SendPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendPopUpViewController.xib; sourceTree = "<group>"; };
+		AD1CFF322197B0DA00843B91 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalletsStoryboard.storyboard; sourceTree = "<group>"; };
 		AD543355218253C700F58C06 /* WalletsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewController.swift; sourceTree = "<group>"; };
 		AD5433572182548A00F58C06 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +150,6 @@
 			children = (
 				AD1CFEFE21965B8800843B91 /* CoinMarket.swift */,
 				AD1CFF0521965B8A00843B91 /* CoinMarketContant.swift */,
-				AD1CFEFF21965B8900843B91 /* CoinMarketCoordinator.swift */,
 				AD1CFF0321965B8900843B91 /* CoinMarketDetialViewController.swift */,
 				AD1CFF0121965B8900843B91 /* CoinMarketDetialViewController.xib */,
 				AD1CFF0421965B8A00843B91 /* CoinMarketTableViewCell.swift */,
@@ -247,9 +250,12 @@
 				AD11D5B22196516200B6BE65 /* SendNavigationTableViewController.xib */,
 				AD11D5B5219651DE00B6BE65 /* SendTableViewCell.swift */,
 				AD11D5B6219651DE00B6BE65 /* SendTableViewCell.xib */,
-				AD1CFF2421966CC300843B91 /* HistoryViewController.swift */,
 				AD1CFF2A21979A8100843B91 /* SendPopUpViewController.swift */,
 				AD1CFF2B21979A8100843B91 /* SendPopUpViewController.xib */,
+				AD1CFF322197B0DA00843B91 /* HistoryViewController.swift */,
+				AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */,
+				AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */,
+				AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */,
 			);
 			path = "cat-wallet-ios-2nd";
 			sourceTree = "<group>";
@@ -322,8 +328,10 @@
 				ADB04B52219525EA00790A3D /* CentralizedWalletViewController.xib in Resources */,
 				AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */,
 				AD11D5B42196516200B6BE65 /* SendNavigationTableViewController.xib in Resources */,
+				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
 				AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
+				AD1CFF392197B33300843B91 /* HistoryTableViewCell.xib in Resources */,
 				ADC99C00217BA247008740BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,18 +373,18 @@
 				AD1CFF1C21966A9F00843B91 /* BottomPopupDismissAnimator.swift in Sources */,
 				AD11D5B32196516200B6BE65 /* SendNavigationTableViewController.swift in Sources */,
 				ADB04B3F2194FE4600790A3D /* SendViewController.swift in Sources */,
+				AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */,
 				ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */,
 				AD1CFF1D21966A9F00843B91 /* BottomPopupUtils.swift in Sources */,
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
 				ADC99BFD217BA247008740BD /* ViewController.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
+				AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */,
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
-				AD1CFF0A21965B8A00843B91 /* CoinMarketCoordinator.swift in Sources */,
 				AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */,
 				AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */,
 				AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */,
-				AD1CFF2521966CC300843B91 /* HistoryViewController.swift in Sources */,
 				AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */,
 				AD1CFF2021966A9F00843B91 /* BottomPopupNavigationController.swift in Sources */,
 				ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */,

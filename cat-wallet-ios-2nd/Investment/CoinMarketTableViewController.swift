@@ -3,7 +3,7 @@
 import UIKit
 
 class CoinMarketTableViewController: UITableViewController {
-    //var coordinators: [Coordinator] = []
+
     var coinData = [CoinData]()
     
     override func viewDidLoad() {

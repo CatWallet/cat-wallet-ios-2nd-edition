@@ -147,57 +147,6 @@
             </objects>
             <point key="canvasLocation" x="2096" y="1454"/>
         </scene>
-        <!--History View Controller-->
-        <scene sceneID="a9l-3y-tBC">
-            <objects>
-                <viewController storyboardIdentifier="secondVC" id="5W7-Kd-XDE" customClass="HistoryViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9iv-ib-bAS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3Q-wc-fLg">
-                                <rect key="frame" x="20" y="83" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.30555099248886108" green="0.64415627717971802" blue="0.89807158708572388" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Send"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPZ-xj-wDP">
-                                <rect key="frame" x="111" y="83" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.30555099250000001" green="0.64415627720000002" blue="0.89807158710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Receive"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15F-nD-rmX">
-                                <rect key="frame" x="211" y="82" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.30555099250000001" green="0.64415627720000002" blue="0.89807158710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Purchase"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEa-2a-jYQ">
-                                <rect key="frame" x="314" y="82" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.30555099250000001" green="0.64415627720000002" blue="0.89807158710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="History"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.92245864870000005" green="0.68425226210000001" blue="0.25475943089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="3vs-LS-DuK"/>
-                    </view>
-                    <connections>
-                        <outlet property="historyButton" destination="SEa-2a-jYQ" id="pDF-hf-efl"/>
-                        <outlet property="purchaseButton" destination="15F-nD-rmX" id="nOD-PU-WYG"/>
-                        <outlet property="receiveButton" destination="hPZ-xj-wDP" id="Dbh-Y7-02K"/>
-                        <outlet property="sendButton" destination="p3Q-wc-fLg" id="PEJ-wA-ouH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Njf-gN-Ecf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3153.6231884057975" y="1435.7142857142856"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="yxS-bO-iTc">
             <objects>

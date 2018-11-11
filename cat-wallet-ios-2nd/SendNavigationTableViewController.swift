@@ -9,7 +9,7 @@
 import UIKit
 
 class SendNavigationTableViewController: UITableViewController{
-        
+    var height = CGFloat(300)
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
@@ -38,7 +38,7 @@ class SendNavigationTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "popup") as? SendPopUpViewController else { return }
         let popupVC = SendPopUpViewController()
-        popupVC.height = 300
+        popupVC.height = height
         popupVC.topCornerRadius = 35
         popupVC.presentDuration = 0.4
         popupVC.dismissDuration = 0.3
