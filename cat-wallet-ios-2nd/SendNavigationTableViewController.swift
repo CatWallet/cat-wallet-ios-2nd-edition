@@ -53,23 +53,18 @@ class SendNavigationTableViewController: UITableViewController{
 extension SendNavigationTableViewController: BottomPopupDelegate {
 
     func bottomPopupViewLoaded() {
-        print("bottomPopupViewLoaded")
     }
 
     func bottomPopupWillAppear() {
-        print("bottomPopupWillAppear")
     }
 
     func bottomPopupDidAppear() {
-        print("bottomPopupDidAppear")
     }
 
     func bottomPopupWillDismiss() {
-        print("bottomPopupWillDismiss")
     }
 
     func bottomPopupDidDismiss() {
-        print("bottomPopupDidDismiss")
     }
 
     func bottomPopupDismissInteractionPercentChanged(from oldValue: CGFloat, to newValue: CGFloat) {

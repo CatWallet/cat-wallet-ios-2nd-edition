@@ -28,8 +28,24 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         setButton(receiveButton, 2)
         setButton(historyButton, 2)
         setButton(purchaseButton, 2)
+        setNavigationBar()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setNavigationBar() {
+        let width = UIScreen.main.bounds.size.width
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
+        self.view.addSubview(navBar);
+        
+        let navItem = UINavigationItem(title: "=")
+//        let cancelItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(buttonAction))
+//        navItem.middleBarButtonItem = cancelItem
+        navBar.setItems([navItem], animated: false)
+    }
+    
+    @objc func buttonAction() {
+        
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
@@ -48,7 +64,7 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         button.layer.masksToBounds = false
         button.layer.cornerRadius = button.frame.width / CGFloat(num)
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 2
     }
     
     override func getPopupHeight() -> CGFloat {
