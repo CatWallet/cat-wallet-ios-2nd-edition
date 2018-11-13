@@ -9,7 +9,7 @@ target 'cat-wallet-ios-2nd' do
   #pod 'Charts'
   #pod 'R.swift'
   #pod 'MBProgressHUD'
-  #pod 'web3swift'
+  pod 'web3swift', '~> 2.0'
   #pod "SDSegmentController"
   # Pods for cat-wallet-ios-2nd
 

@@ -19,7 +19,7 @@ class SendNavigationTableViewController: UITableViewController{
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 20
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +68,6 @@ extension SendNavigationTableViewController: BottomPopupDelegate {
     }
 
     func bottomPopupDismissInteractionPercentChanged(from oldValue: CGFloat, to newValue: CGFloat) {
-        print("bottomPopupDismissInteractionPercentChanged fromValue: \(oldValue) to: \(newValue)")
+        //print("\(oldValue) to: \(newValue)")
     }
 }

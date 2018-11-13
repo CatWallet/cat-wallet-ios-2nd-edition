@@ -37,10 +37,7 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         let width = UIScreen.main.bounds.size.width
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
         self.view.addSubview(navBar);
-        
         let navItem = UINavigationItem(title: "=")
-//        let cancelItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(buttonAction))
-//        navItem.middleBarButtonItem = cancelItem
         navBar.setItems([navItem], animated: false)
     }
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import web3swift
+import Web3swift
 
 class NewWalletViewController: UIViewController {
 
@@ -16,22 +16,22 @@ class NewWalletViewController: UIViewController {
     }
     
     @IBAction func createNewWallet(_ sender: Any) {
-//        let alert = UIAlertController(title: "Enter Passphrase", message: nil, preferredStyle: .alert)
-//        alert.addTextField(configurationHandler: {
-//            (textfield) in
-//            textfield.placeholder = "Enter Password"
-//        })
-//        let genrate = UIAlertAction(title: "Genrate", style: .destructive, handler: {
-//            _ in
-//            let pass = alert.textFields![0].text
-//            if pass != ""{
-//                do{
+////        let alert = UIAlertController(title: "Enter Passphrase", message: nil, preferredStyle: .alert)
+////        alert.addTextField(configurationHandler: {
+////            (textfield) in
+////            textfield.placeholder = "Enter Password"
+////        })
+////        let genrate = UIAlertAction(title: "Genrate", style: .destructive, handler: {
+////            _ in
+////            let pass = alert.textFields![0].text
+////            if pass != ""{
+////                //do{
 //                    let userDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 //                    let keystoreManager = KeystoreManager.managerForPath(userDir + "/keystore")
 //                    var ks: BIP32Keystore?
 //                    if (keystoreManager?.addresses?.count == 0) {
 //                        let mnemonic = try! BIP39.generateMnemonics(bitsOfEntropy: 256)!
-//                        let keystore = try! BIP32Keystore(mnemonics: mnemonic, password: pass ?? "", mnemonicsPassword: String((pass ?? "").reversed()))
+//                        let keystore = try! BIP32Keystore(mnemonics: mnemonic, password: "somepassword", mnemonicsPassword: String((pass ?? "").reversed()))
 //                        ks = keystore
 //                        let keydata = try JSONEncoder().encode(ks?.keystoreParams)
 //                        FileManager.default.createFile(atPath: userDir + "/keystore"+"/key.json", contents: keydata, attributes: nil)
@@ -43,10 +43,8 @@ class NewWalletViewController: UIViewController {
 //
 ////                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController")
 ////                    self.present(controller!, animated: true, completion: nil)
-//                }catch{
-//                    print(error.localizedDescription)
-//                }
-//            }else{
+//
+//            //}else{
 //                print("cdsfdfdf")
 //                self.dismiss(animated: true, completion: nil)
 //                //self.present(alert, animated: true, completion: nil)
@@ -58,5 +56,4 @@ class NewWalletViewController: UIViewController {
 //        alert.addAction(cancel)
 //        self.present(alert, animated: true, completion: nil)
     }
-    
 }
