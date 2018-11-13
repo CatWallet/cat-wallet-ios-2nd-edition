@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Web3swift
 
 class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
@@ -24,7 +25,7 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton(sendButton, 18)
+        setButton(sendButton, 2)
         setButton(receiveButton, 2)
         setButton(historyButton, 2)
         setButton(purchaseButton, 2)
@@ -46,8 +47,7 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
-        guard let popupNavController = UIStoryboard(name: "SendStoryboard", bundle: nil).instantiateViewController(withIdentifier: "customNavController") as? SendNavigationViewController else {
-            return }
+        guard let popupNavController = UIStoryboard(name: "SendStoryboard", bundle: nil).instantiateViewController(withIdentifier: "customNavController") as? SendNavigationViewController else { return }
         present(popupNavController, animated: true, completion: nil)
     }
     

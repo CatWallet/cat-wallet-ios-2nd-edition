@@ -20,7 +20,6 @@ class HistoryViewController: BottomPopupViewController, UITableViewDataSource, U
         self.tableView.dataSource = self
         self.tableView.delegate = self
         tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "historyCell")
-        // Do any additional setup after loading the view.
     }
     func setNavigationBar() {
         let width = UIScreen.main.bounds.size.width

@@ -18,6 +18,9 @@ class WalletsViewController: UIViewController {
         title = "Wallet"
         setupSGPagingView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        //navigationController!.navigationBar.barTintColor = UIColor.
+    }
     @IBAction func button(_ sender: Any) {
         
     }
@@ -31,7 +34,7 @@ class WalletsViewController: UIViewController {
             pageTitleViewY = 88
         }
         
-        let titles = ["Cat wallet", "Cat wallet@"]
+        let titles = ["Wallet A", "Wallet B"]
         let configure = SGPageTitleViewConfigure()
         configure.showIndicator = false
         configure.titleTextZoom = true
@@ -40,7 +43,7 @@ class WalletsViewController: UIViewController {
         configure.titleGradientEffect = true
         
         self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: pageTitleViewY, width: view.frame.size.width, height: 44), delegate: self, titleNames: titles, configure: configure)
-        //pageTitleView?.backgroundColor = UIColor.lightGray
+        pageTitleView?.backgroundColor = UIColor.black
         view.addSubview(pageTitleView!)
         
         let vc = SendNavigationTableViewController()

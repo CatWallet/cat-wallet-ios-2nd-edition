@@ -40,9 +40,9 @@ class SGPageTitleViewConfigure: NSObject {
     /// 标题文字选中字号大小，默认 15 号字体。一旦设置此属性，titleTextZoom 属性将不起作用
     var titleSelectedFont: UIFont = UIFont.systemFont(ofSize: 15)
     /// 普通状态下标题文字的颜色，默认为黑色
-    var titleColor: UIColor = .black
+    var titleColor: UIColor = .white
     /// 选中状态下标题文字的颜色，默认为红色
-    var titleSelectedColor: UIColor = .blue
+    var titleSelectedColor: UIColor = .white
     /// 是否让标题文字具有渐变效果，默认为 false
     var titleGradientEffect: Bool = false
     /// 是否让标题文字具有缩放效果，默认为 false

@@ -15,7 +15,7 @@ class SendNavigationTableViewController: UITableViewController{
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
 //        let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
 //        view.addGestureRecognizer(viewTapGesture)
-
+        //navigationController!.navigationBar.backgroundColor = UIColor.orange
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
