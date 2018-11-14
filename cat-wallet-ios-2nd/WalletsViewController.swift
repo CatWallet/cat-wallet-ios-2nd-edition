@@ -34,7 +34,7 @@ class WalletsViewController: UIViewController {
             pageTitleViewY = 88
         }
         
-        let titles = ["Wallet A", "Wallet B"]
+        let titles = ["Wallet A", "Wallet B","DApp"]
         let configure = SGPageTitleViewConfigure()
         configure.showIndicator = false
         configure.titleTextZoom = true
@@ -43,12 +43,13 @@ class WalletsViewController: UIViewController {
         configure.titleGradientEffect = true
         
         self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: pageTitleViewY, width: view.frame.size.width, height: 44), delegate: self, titleNames: titles, configure: configure)
-        pageTitleView?.backgroundColor = UIColor.black
+        pageTitleView?.backgroundColor = UIColor.lightGray
         view.addSubview(pageTitleView!)
         
         let vc = SendNavigationTableViewController()
         let vc1 = CentralizedWalletViewController()
-        let childVCs = [vc,vc1]
+        let vc2 = DAppViewController()
+        let childVCs = [vc,vc1,vc2]
         let contentViewHeight = view.frame.size.height - self.pageTitleView!.frame.maxY
         let contentRect = CGRect(x: 0, y: (pageTitleView?.frame.maxY)!, width: view.frame.size.width, height: contentViewHeight)
         self.pageContentCollectionView = SGPageContentCollectionView(frame: contentRect, parentVC: self, childVCs: childVCs)

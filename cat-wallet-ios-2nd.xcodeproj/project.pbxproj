@@ -44,6 +44,8 @@
 		AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF4E2197D3AB00843B91 /* ContactsViewController.xib */; };
 		AD1CFF532197D98100843B91 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF512197D98100843B91 /* ContactsTableViewCell.swift */; };
 		AD1CFF542197D98100843B91 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF522197D98100843B91 /* ContactsTableViewCell.xib */; };
+		AD1CFF57219A711400843B91 /* DAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF55219A711400843B91 /* DAppViewController.swift */; };
+		AD1CFF58219A711400843B91 /* DAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF56219A711400843B91 /* DAppViewController.xib */; };
 		AD543354218253AF00F58C06 /* WalletsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */; };
 		AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543355218253C700F58C06 /* WalletsTableViewController.swift */; };
 		AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433572182548A00F58C06 /* NewWalletViewController.swift */; };
@@ -106,6 +108,8 @@
 		AD1CFF4E2197D3AB00843B91 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		AD1CFF512197D98100843B91 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		AD1CFF522197D98100843B91 /* ContactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsTableViewCell.xib; sourceTree = "<group>"; };
+		AD1CFF55219A711400843B91 /* DAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAppViewController.swift; sourceTree = "<group>"; };
+		AD1CFF56219A711400843B91 /* DAppViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DAppViewController.xib; sourceTree = "<group>"; };
 		AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalletsStoryboard.storyboard; sourceTree = "<group>"; };
 		AD543355218253C700F58C06 /* WalletsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewController.swift; sourceTree = "<group>"; };
 		AD5433572182548A00F58C06 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +211,15 @@
 			path = Send;
 			sourceTree = "<group>";
 		};
+		AD1CFF59219A711F00843B91 /* DApp */ = {
+			isa = PBXGroup;
+			children = (
+				AD1CFF55219A711400843B91 /* DAppViewController.swift */,
+				AD1CFF56219A711400843B91 /* DAppViewController.xib */,
+			);
+			path = DApp;
+			sourceTree = "<group>";
+		};
 		AD5433522182539A00F58C06 /* Wallets */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +277,7 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
+				AD1CFF59219A711F00843B91 /* DApp */,
 				AD1CFF422197BFDD00843B91 /* Send */,
 				AD1CFF1321966A7C00843B91 /* BottomPopupController */,
 				AD1CFEFC21965A9F00843B91 /* Investment */,
@@ -355,6 +369,7 @@
 				AD543354218253AF00F58C06 /* WalletsStoryboard.storyboard in Resources */,
 				AD1CFF1221965B8A00843B91 /* TableViewCell.xib in Resources */,
 				ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */,
+				AD1CFF58219A711400843B91 /* DAppViewController.xib in Resources */,
 				ADC99C02217BA249008740BD /* Assets.xcassets in Resources */,
 				AD11D5B8219651DE00B6BE65 /* SendTableViewCell.xib in Resources */,
 				AD1CFF542197D98100843B91 /* ContactsTableViewCell.xib in Resources */,
@@ -473,6 +488,7 @@
 				AD1CFF442197C03A00843B91 /* SendNavigationViewController.swift in Sources */,
 				AD1CFF2C21979A8100843B91 /* SendPopUpViewController.swift in Sources */,
 				AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */,
+				AD1CFF57219A711400843B91 /* DAppViewController.swift in Sources */,
 				AD1CFF1021965B8A00843B91 /* CoinMarketContant.swift in Sources */,
 				AD54335E2182616900F58C06 /* WalletError.swift in Sources */,
 				AD1CFF1E21966A9F00843B91 /* BottomPopupPresentationController.swift in Sources */,

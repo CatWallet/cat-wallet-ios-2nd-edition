@@ -18,18 +18,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="88.666666666666671"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BC_Logo_" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-MY-o5L">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LWpxKEv3_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-MY-o5L">
                         <rect key="frame" x="16" y="12" width="65" height="65"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BitCoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANP-di-5Gz">
-                        <rect key="frame" x="89" y="12" width="109" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ethereum (ETH)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANP-di-5Gz">
+                        <rect key="frame" x="89" y="12" width="130" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$6,330.94" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBy-Q7-3y0">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$207.94" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBy-Q7-3y0">
                         <rect key="frame" x="89" y="46" width="109" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -72,10 +72,10 @@
                 <outlet property="coinPrice" destination="LBy-Q7-3y0" id="wit-8e-GVd"/>
                 <outlet property="totalPrice" destination="L2Q-Vx-bqR" id="ETX-Qo-pFh"/>
             </connections>
-            <point key="canvasLocation" x="177" y="130"/>
+            <point key="canvasLocation" x="176.81159420289856" y="129.57589285714286"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="BC_Logo_" width="256" height="256"/>
+        <image name="LWpxKEv3_400x400" width="400" height="400"/>
     </resources>
 </document>

@@ -16,6 +16,18 @@ class NewWalletViewController: UIViewController {
     }
     
     @IBAction func createNewWallet(_ sender: Any) {
+        let userDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let keystoreManager = KeystoreManager.managerForPath(userDir + "/keystore")
+        var keyStore: EthereumKeystoreV3?
+        if (keystoreManager?.addresses?.count == 0) {
+            keyStore = try! EthereumKeystoreV3(password: "BANKEXFOUNDATION")
+            let keydata = try! JSONEncoder().encode(keyStore!.keystoreParams)
+            FileManager.default.createFile(atPath: userDir + "/keystore"+"/key.json", contents: keydata, attributes: nil)
+        } else {
+            keyStore = keystoreManager?.walletForAddress((keystoreManager?.addresses![0])!) as! EthereumKeystoreV3
+        }
+        guard let sender = keyStore?.addresses?.first else {return}
+        print(sender)
 ////        let alert = UIAlertController(title: "Enter Passphrase", message: nil, preferredStyle: .alert)
 ////        alert.addTextField(configurationHandler: {
 ////            (textfield) in

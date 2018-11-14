@@ -61,7 +61,7 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         button.layer.masksToBounds = false
         button.layer.cornerRadius = button.frame.width / CGFloat(num)
-        button.layer.borderWidth = 2
+        button.layer.borderWidth = 3.5
     }
     
     override func getPopupHeight() -> CGFloat {

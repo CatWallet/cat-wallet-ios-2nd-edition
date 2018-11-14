@@ -19,7 +19,7 @@ class SendNavigationTableViewController: UITableViewController{
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
