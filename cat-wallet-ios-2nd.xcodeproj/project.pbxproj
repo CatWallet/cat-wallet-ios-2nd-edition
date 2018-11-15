@@ -48,6 +48,7 @@
 		AD1CFF58219A711400843B91 /* DAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF56219A711400843B91 /* DAppViewController.xib */; };
 		AD1CFF5E219CF86D00843B91 /* SuccessCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF5C219CF86D00843B91 /* SuccessCreationViewController.swift */; };
 		AD1CFF5F219CF86D00843B91 /* SuccessCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF5D219CF86D00843B91 /* SuccessCreationViewController.xib */; };
+		AD1CFF61219CFDC900843B91 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF60219CFDC900843B91 /* MainTabBarController.swift */; };
 		AD543354218253AF00F58C06 /* WalletsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */; };
 		AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543355218253C700F58C06 /* WalletsTableViewController.swift */; };
 		AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433572182548A00F58C06 /* NewWalletViewController.swift */; };
@@ -114,6 +115,7 @@
 		AD1CFF56219A711400843B91 /* DAppViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DAppViewController.xib; sourceTree = "<group>"; };
 		AD1CFF5C219CF86D00843B91 /* SuccessCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCreationViewController.swift; sourceTree = "<group>"; };
 		AD1CFF5D219CF86D00843B91 /* SuccessCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessCreationViewController.xib; sourceTree = "<group>"; };
+		AD1CFF60219CFDC900843B91 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalletsStoryboard.storyboard; sourceTree = "<group>"; };
 		AD543355218253C700F58C06 /* WalletsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewController.swift; sourceTree = "<group>"; };
 		AD5433572182548A00F58C06 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				ADC99BFA217BA247008740BD /* AppDelegate.swift */,
 				ADC99BFC217BA247008740BD /* ViewController.swift */,
 				ADC99BFE217BA247008740BD /* Main.storyboard */,
+				AD1CFF60219CFDC900843B91 /* MainTabBarController.swift */,
 				ADC99C01217BA249008740BD /* Assets.xcassets */,
 				ADC99C03217BA249008740BD /* LaunchScreen.storyboard */,
 				ADC99C06217BA249008740BD /* Info.plist */,
@@ -476,6 +479,7 @@
 				ADC99BFD217BA247008740BD /* ViewController.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
 				AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */,
+				AD1CFF61219CFDC900843B91 /* MainTabBarController.swift in Sources */,
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
 				AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */,
 				AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */,

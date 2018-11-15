@@ -21,6 +21,7 @@ class WalletsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //navigationController!.navigationBar.barTintColor = UIColor.
     }
+    
     @IBAction func button(_ sender: Any) {
         
     }

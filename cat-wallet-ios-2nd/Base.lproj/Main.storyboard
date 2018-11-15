@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="390" y="1212"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="jZx-a4-Lg7">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tte-BS-OQS" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tte-BS-OQS" customClass="MainTabBarController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kf2-hH-fmM">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
