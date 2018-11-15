@@ -7,31 +7,49 @@
 //
 
 import Foundation
-//import web3swift
+import Web3swift
 
-//func createWalletWithPrivateKey(withName: String?,
-//                                password: String,
-//                                completion: @escaping (WalletModel?, Error?) -> Void)
-//{
-//    guard let newWallet = try? EthereumKeystoreV3(password: password) else {
-//        completion(nil, Errors.couldNotCreateKeystore)
-//        return
-//    }
-//    guard let wallet = newWallet, wallet.addresses?.count == 1 else {
-//        completion(nil, Errors.couldNotCreateWalletWithAddress)
-//        return
-//    }
-//    guard let keyData = try? JSONEncoder().encode(wallet.keystoreParams) else {
-//        completion(nil, Errors.couldNotGetKeyData)
-//        return
-//    }
-//    guard let address = wallet.addresses?.first?.address else {
-//        completion(nil, Errors.couldNotCreateAddress)
-//        return
-//    }
-//    let walletModel = WalletModel(address: address,
-//                                     data: keyData,
-//                                     name: withName ?? "",
-//                                     isHD: false)
-//    completion(walletModel, nil)
-//}
+func generateMnemonics(bitsOfEntropy: Int) -> String? {
+    guard let mnemonics = try? BIP39.generateMnemonics(bitsOfEntropy: bitsOfEntropy),
+        let unwrapped = mnemonics else {
+            return nil
+    }
+    return unwrapped
+}
+
+func createHDWallet(withName name: String?,
+                    password: String,
+                    completion: @escaping (KeyWalletModel?, Error?, String?) -> Void)
+{
+    
+    guard let mnemonics = generateMnemonics(bitsOfEntropy: 128) else {
+        completion(nil, Errors.couldNotGenerateMnemonics, nil)
+        return
+    }
+    
+    guard let keystore = try? BIP32Keystore(
+        mnemonics: mnemonics,
+        password: password,
+        mnemonicsPassword: "",
+        language: .english
+        ),
+        let wallet = keystore else {
+            completion(nil, Errors.couldNotCreateKeystore, nil)
+            return
+    }
+    guard let address = wallet.addresses?.first?.address else {
+        completion(nil, Errors.couldNotCreateAddress, nil)
+        return
+    }
+    guard let keyData = try? JSONEncoder().encode(wallet.keystoreParams) else {
+        completion(nil, Errors.couldNotGetKeyData, nil)
+        return
+    }
+    let walletModel = KeyWalletModel(address: address,
+                                     data: keyData,
+                                     name: name ?? "",
+                                     isHD: true)
+    
+    completion(walletModel, nil, mnemonics)
+}
+

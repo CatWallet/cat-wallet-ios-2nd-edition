@@ -13,6 +13,7 @@ enum Errors: LocalizedError {
     case couldNotCreateWalletWithAddress
     case couldNotGetKeyData
     case couldNotCreateAddress
+    case couldNotGenerateMnemonics
     
     var errorDescription: String? {
         switch self {
@@ -24,6 +25,8 @@ enum Errors: LocalizedError {
             return "Could Not Get Key Data"
         case .couldNotCreateAddress:
             return "Could Not Create Address"
+        case .couldNotGenerateMnemonics:
+            return "Could Not Generate Mnemonics"
         }
     }
 }
