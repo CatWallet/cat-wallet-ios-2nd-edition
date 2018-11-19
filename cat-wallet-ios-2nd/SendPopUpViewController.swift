@@ -30,8 +30,6 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         setButton(historyButton, 2)
         setButton(purchaseButton, 2)
         setNavigationBar()
-
-        // Do any additional setup after loading the view.
     }
     
     func setNavigationBar() {
@@ -44,6 +42,10 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
     @objc func buttonAction() {
         
+    }
+    
+    func dissmissViewController() {
+        self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {

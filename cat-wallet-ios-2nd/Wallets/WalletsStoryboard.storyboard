@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qt9-tp-WWr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="walletsCell" id="qt9-tp-WWr">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qt9-tp-WWr" id="9Re-Q3-FIA">
@@ -57,35 +57,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBt-wU-dXy">
-                                <rect key="frame" x="162" y="433" width="90" height="30"/>
-                                <state key="normal" title="Create wallet"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBt-wU-dXy">
+                                <rect key="frame" x="107" y="213" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create wallet">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="createNewWallet:" destination="OBE-EJ-rpP" eventType="touchUpInside" id="Ffq-gP-7n5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-Ul-geG">
-                                <rect key="frame" x="140" y="732" width="134" height="30"/>
-                                <state key="normal" title="Import wallet"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-Ul-geG">
+                                <rect key="frame" x="132" y="494" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Import wallet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="m17-7a-ikc" kind="show" id="dVR-Gq-jSB"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6kj-b8-PgE" firstAttribute="bottom" secondItem="f1M-Ul-geG" secondAttribute="bottom" constant="100" id="aGi-s9-V4o"/>
-                            <constraint firstItem="cBt-wU-dXy" firstAttribute="centerY" secondItem="I3h-JL-PRh" secondAttribute="centerY" id="eRP-z9-g1b"/>
-                            <constraint firstItem="6kj-b8-PgE" firstAttribute="trailing" secondItem="f1M-Ul-geG" secondAttribute="trailing" constant="140" id="ez3-YY-vA7"/>
-                            <constraint firstItem="f1M-Ul-geG" firstAttribute="leading" secondItem="6kj-b8-PgE" secondAttribute="leading" constant="140" id="fWg-hj-g18"/>
-                            <constraint firstItem="cBt-wU-dXy" firstAttribute="centerX" secondItem="I3h-JL-PRh" secondAttribute="centerX" id="rPq-z8-rZp"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6kj-b8-PgE"/>
                     </view>
+                    <connections>
+                        <outlet property="importWalletButton" destination="f1M-Ul-geG" id="Dsk-Pk-jLq"/>
+                        <outlet property="newWalletButton" destination="cBt-wU-dXy" id="KqT-fk-aoP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N5-S9-2eR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="-339.58020989505252"/>
+            <point key="canvasLocation" x="547.82608695652175" y="-340.17857142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bFK-0X-kEI">

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessCreationViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target">
             <connections>
+                <outlet property="doneButton" destination="wVW-l3-VzK" id="0qG-Gw-Y1q"/>
                 <outlet property="textLabel" destination="KMh-D0-o6j" id="8Ra-vJ-Kip"/>
                 <outlet property="textView" destination="DJM-WY-wmT" id="Qum-zA-lYP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,20 +33,29 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMh-D0-o6j">
                     <rect key="frame" x="20" y="243" width="374" height="58"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVW-l3-VzK">
-                    <rect key="frame" x="20" y="433" width="374" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Done"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVW-l3-VzK">
+                    <rect key="frame" x="132" y="373" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="06l-pN-RL9"/>
+                        <constraint firstAttribute="height" constant="150" id="OU3-mV-pgf"/>
+                    </constraints>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="14l-7A-X6B"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wVW-l3-VzK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3o7-o1-egm"/>
+                <constraint firstItem="wVW-l3-VzK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UJn-0l-N1r"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </view>

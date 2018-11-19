@@ -8,6 +8,7 @@
 
 import Foundation
 import Web3swift
+import RealmSwift
 
 func generateMnemonics(bitsOfEntropy: Int) -> String? {
     guard let mnemonics = try? BIP39.generateMnemonics(bitsOfEntropy: bitsOfEntropy),
@@ -49,7 +50,48 @@ func createHDWallet(withName name: String?,
                                      data: keyData,
                                      name: name ?? "",
                                      isHD: true)
-    
+    saveKeyStore(address: address, data: keyData, name: name ?? "")
     completion(walletModel, nil, mnemonics)
 }
 
+func saveKeyStore(address: String, data: Data, name: String) {
+    let realm = try! Realm()
+    let ksRealm = KeyStoreRealm()
+    ksRealm.address = address
+    ksRealm.data = data
+    ksRealm.name = name
+    try! realm.write{
+        realm.add(ksRealm)
+    }
+}
+
+func saveCurrentKeyStore(address: String, data: Data, name: String) {
+    let realm = try! Realm()
+    let cksRealm = CurrentKeyStoreRealm()
+    let ocksRealm = realm.objects(CurrentKeyStoreRealm.self)
+    try! realm.write{
+        realm.delete(ocksRealm)
+    }
+    cksRealm.address = address
+    cksRealm.data = data
+    cksRealm.name = name
+    try! realm.write{
+        realm.add(cksRealm)
+    }
+}
+
+func getKeyStoreCount() -> Int{
+    let realm = try! Realm()
+    let wallet = realm.objects(KeyStoreRealm.self)
+    return wallet.count
+}
+
+func fetchCurrenKeyStore() -> CurrentKeyStoreRealm{
+    let realm = try! Realm()
+    var cksRealm = CurrentKeyStoreRealm()
+    let walletRealm = realm.objects(CurrentKeyStoreRealm.self)
+    for i in walletRealm {
+        cksRealm = i
+    }
+    return cksRealm
+}

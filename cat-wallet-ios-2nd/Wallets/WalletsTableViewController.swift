@@ -7,87 +7,69 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WalletsTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
+    var wallets:[KeyStoreRealm] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        wallets = []
+        fetchWallet()
+        tableView.reloadData()
+        tableView.tableFooterView = UIView()
     }
-
-    // MARK: - Table view data source
+    
+    func fetchWallet() {
+        let realm = try! Realm()
+        let walletRealm = realm.objects(KeyStoreRealm.self)
+        for i in walletRealm {
+            wallets.append(i)
+        }
+    }
+    
+    func deleteWallet(_ address: String) {
+        let realm = try! Realm()
+        let walletRealm = realm.objects(KeyStoreRealm.self).filter("address == '\(address)'")
+        try! realm.write {
+            realm.delete(walletRealm)
+        }
+    }
     
     @IBAction func popViewController(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let num = getKeyStoreCount()
+        return num
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "walletsCell")
+        cell?.textLabel?.adjustsFontSizeToFitWidth = true
+        cell?.textLabel?.text = wallets[indexPath.row].address
+        return cell!
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        let keyStore = wallets[index]
+        saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name)
+        dismiss(animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            print(self.wallets[indexPath.row].address)
+            self.deleteWallet(self.wallets[indexPath.row].address)
+            self.wallets.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        
+        }
+        return [delete]
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

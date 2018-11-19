@@ -10,32 +10,46 @@ import UIKit
 
 class SendViewController: UIViewController {
   
+    @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var amountField: UITextField!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var contactButton: UIButton!
+    var cKeyStore = CurrentKeyStoreRealm()
+    let setButton = SetButton()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         title = "Send"
-        
-        // Do any additional setup after loading the view.
+        getKeyStore()
+        setButton.setButton(sendButton, 2)
+        setButton.setButton(clearButton, 2)
+        print(cKeyStore.address)
+    }
+    
+    func getKeyStore() {
+        cKeyStore = fetchCurrenKeyStore()
     }
     
     @IBAction func contactButtonAction(_ sender: Any) {
         let popupVC = ContactsViewController()
-        
         present(popupVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func clearAction(_ sender: Any) {
+        addressField.text = nil
+        amountField.text = nil
+    }
+    
+    @IBAction func sendAction(_ sender: Any) {
+        if addressField.text != "" || amountField.text != "" {
+            let vc = SendResultViewController()
+            vc.getFrom = cKeyStore.address
+            vc.getTo = addressField.text!
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

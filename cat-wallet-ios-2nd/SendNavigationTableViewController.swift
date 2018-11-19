@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Web3swift
+import EthereumAddress
 
 class SendNavigationTableViewController: UITableViewController{
     var height = CGFloat(300)
+    var keyStore = CurrentKeyStoreRealm()
+    var web3Rinkeby = Web3.InfuraRinkebyWeb3()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
-//        let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-//        view.addGestureRecognizer(viewTapGesture)
-        //navigationController!.navigationBar.backgroundColor = UIColor.orange
+        keyStore = fetchCurrenKeyStore()
     }
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -28,6 +31,7 @@ class SendNavigationTableViewController: UITableViewController{
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sendCoinCell", for: indexPath) as! SendTableViewCell
+        cell.coinNum.text = getBalance()
         return cell
     }
     
@@ -47,6 +51,19 @@ class SendNavigationTableViewController: UITableViewController{
     }
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func getBalance() -> String{
+        let ethAdd = EthereumAddress(keyStore.address)
+        var balance = ""
+         do {
+            let web3 = Web3.InfuraMainnetWeb3()
+            let balancebigint = try web3.eth.getBalance(address: ethAdd!)
+            balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
+        } catch let error {
+            print(error)
+        }
+        return balance
     }
 }
 

@@ -14,6 +14,13 @@ enum Errors: LocalizedError {
     case couldNotGetKeyData
     case couldNotCreateAddress
     case couldNotGenerateMnemonics
+    case wrongPassword
+    case invalidContractAddress
+    case invalidAmountFormat
+    case noAvailableKeys
+    case invalidKey
+    case invalidContract
+    case invalidDestinationAddress
     
     var errorDescription: String? {
         switch self {
@@ -27,6 +34,20 @@ enum Errors: LocalizedError {
             return "Could Not Create Address"
         case .couldNotGenerateMnemonics:
             return "Could Not Generate Mnemonics"
+        case .wrongPassword:
+            return "Wrong Password"
+        case .invalidContractAddress:
+            return "Invalid Contract Address"
+        case .invalidAmountFormat:
+            return "Invalid Amount Format"
+        case .noAvailableKeys:
+            return "No Available Keys"
+        case .invalidKey:
+            return "Invalid Key"
+        case .invalidContract:
+            return "Invalid Contract"
+        case .invalidDestinationAddress:
+            return "Invalid Destination Address"
         }
     }
 }

@@ -17,10 +17,16 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.5.2):
     - PromiseKit/CorePromise
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
   - scrypt (2.0):
     - CryptoSwift (~> 0.11)
   - secp256k1_swift (1.0.3)
   - SipHash (1.2.2)
+  - SkyFloatingLabelTextField (3.6.0)
   - SwiftRLP (1.2):
     - BigInt (~> 3.1)
   - web3swift (2.0.1):
@@ -34,6 +40,9 @@ PODS:
     - SwiftRLP (~> 1.1)
 
 DEPENDENCIES:
+  - BigInt (~> 3.1)
+  - RealmSwift (~> 3.11)
+  - SkyFloatingLabelTextField (~> 3.6)
   - web3swift (~> 2.0)
 
 SPEC REPOS:
@@ -43,9 +52,12 @@ SPEC REPOS:
     - EthereumABI
     - EthereumAddress
     - PromiseKit
+    - Realm
+    - RealmSwift
     - scrypt
     - secp256k1_swift
     - SipHash
+    - SkyFloatingLabelTextField
     - SwiftRLP
     - web3swift
 
@@ -55,12 +67,15 @@ SPEC CHECKSUMS:
   EthereumABI: f040f5429e5a4366d028c88b88d9441e137593af
   EthereumAddress: f476e1320dca3a0024431e713ede7a09c7eb7796
   PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   scrypt: 3fe5b1a3b0976f97cd87488673a8f7c65708cc84
   secp256k1_swift: 4fc5c4b2d2c6d21ee8ccb868cdc92da12f38bed9
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftRLP: 98a02b2210128353ca02e4c2f4d83e2a9796db4f
   web3swift: 33f30ca0e061e0f89117dfb46f5ee9f626eff6d6
 
-PODFILE CHECKSUM: de84c75fc5f7a7e072b933d336ca253fa5896044
+PODFILE CHECKSUM: 36d79bf7bbdce057d38c9123ce4a79d17e03f572
 
 COCOAPODS: 1.5.3

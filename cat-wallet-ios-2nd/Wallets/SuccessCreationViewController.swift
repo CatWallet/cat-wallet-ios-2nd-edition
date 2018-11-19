@@ -10,12 +10,15 @@ import UIKit
 
 class SuccessCreationViewController: UIViewController {
 
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    let setButton = SetButton()
     var getAddress = ""
     var getMnemonics = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButton.setButton(doneButton, 2)
         textLabel.text = getAddress
         textView.text = getMnemonics
     }

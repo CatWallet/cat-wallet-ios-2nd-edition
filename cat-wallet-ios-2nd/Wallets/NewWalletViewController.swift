@@ -10,9 +10,14 @@ import UIKit
 import Web3swift
 
 class NewWalletViewController: UIViewController {
-
+    @IBOutlet weak var newWalletButton: UIButton!
+    @IBOutlet weak var importWalletButton: UIButton!
+    let setButton = SetButton()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButton.setButton(newWalletButton, 2)
+        setButton.setButton(importWalletButton, 2)
+        
     }
     
     @IBAction func createNewWallet(_ sender: Any) {

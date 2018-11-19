@@ -15,6 +15,9 @@ class WalletsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let tap = UITapGestureRecognizer(target: self.view, action: "Selector(“endEditing:”)")
+//        tap.cancelsTouchesInView = false
+//        self.view.addGestureRecognizer(tap)
         title = "Wallet"
         setupSGPagingView()
     }
@@ -44,7 +47,7 @@ class WalletsViewController: UIViewController {
         configure.titleGradientEffect = true
         
         self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: pageTitleViewY, width: view.frame.size.width, height: 44), delegate: self, titleNames: titles, configure: configure)
-        pageTitleView?.backgroundColor = UIColor.lightGray
+        pageTitleView?.backgroundColor = UIColor.black
         view.addSubview(pageTitleView!)
         
         let vc = SendNavigationTableViewController()
