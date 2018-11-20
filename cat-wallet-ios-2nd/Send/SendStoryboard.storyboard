@@ -17,20 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2c-wB-WGb">
-                                <rect key="frame" x="16" y="104" width="378" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKF-Mb-K39">
-                                <rect key="frame" x="16" y="155" width="378" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-VZ-1zV">
                                 <rect key="frame" x="351" y="206" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,7 +55,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vCT-fA-7z4" firstAttribute="centerX" secondItem="KaL-rc-Ahi" secondAttribute="centerX" id="6PS-fI-RsF"/>
                             <constraint firstItem="vCT-fA-7z4" firstAttribute="leading" secondItem="gBL-Ue-k1v" secondAttribute="trailing" constant="43" id="PGO-ko-oCp"/>
@@ -87,8 +73,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="iNB-Dl-XMg"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="addressField" destination="T2c-wB-WGb" id="gQR-Fr-aFH"/>
-                        <outlet property="amountField" destination="dKF-Mb-K39" id="vJu-kC-Px4"/>
                         <outlet property="clearButton" destination="gBL-Ue-k1v" id="VPh-pS-ztT"/>
                         <outlet property="contactButton" destination="TOl-VZ-1zV" id="lf3-KE-5F4"/>
                         <outlet property="sendButton" destination="vCT-fA-7z4" id="V1T-Jf-GCY"/>

@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class SendViewController: UIViewController {
   
-    @IBOutlet weak var addressField: UITextField!
-    @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var contactButton: UIButton!
+    var addressField = SkyFloatingLabelTextField()
+    var amountField = SkyFloatingLabelTextField()
     var cKeyStore = CurrentKeyStoreRealm()
     let setButton = SetButton()
     
     override func viewWillAppear(_ animated: Bool) {
         title = "Send"
+        setFloatTextField()
         getKeyStore()
         setButton.setButton(sendButton, 2)
         setButton.setButton(clearButton, 2)
@@ -51,5 +53,21 @@ class SendViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func setFloatTextField() {
+        let width = UIScreen.main.bounds.size.width - 40
+        let AddressTextFieldFrame = CGRect(x: 20, y: 100, width: width, height: 60)
+        let amountTextFieldFrame = CGRect(x: 20, y: 180, width: width, height: 60)
+        
+        addressField = SkyFloatingLabelTextFieldWithIcon(frame: AddressTextFieldFrame)
+        addressField.placeholder = "ETH address"
+        addressField.title = "ETH address"
+        self.view.addSubview(addressField)
+        
+        amountField = SkyFloatingLabelTextFieldWithIcon(frame: amountTextFieldFrame)
+        amountField.placeholder = "ETH amount"
+        amountField.title = "ETH amount"
+        self.view.addSubview(amountField)
     }
 }

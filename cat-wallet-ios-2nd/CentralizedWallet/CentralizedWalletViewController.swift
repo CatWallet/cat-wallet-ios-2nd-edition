@@ -20,7 +20,6 @@ class CentralizedWalletViewController: UIViewController {
         let scrrenSize = UIScreen.main.bounds
         let screentWidth = scrrenSize.width
         let screenHeight = scrrenSize.height
-        //let tabBarHeight = UITabBar.f
         web.frame = CGRect(x: 0, y: 0, width: screentWidth, height: screenHeight - 140)
         self.view.addSubview(web)
         let url = URL(string: "http://mp.miaoliao.im/cat_wallet/index.html")

@@ -54,19 +54,21 @@ class SendNavigationTableViewController: UITableViewController{
     }
     
     func getBalance() -> String{
-        let ethAdd = EthereumAddress(keyStore.address)
-        var balance = ""
-         do {
-            let web3 = Web3.InfuraMainnetWeb3()
-            let balancebigint = try web3.eth.getBalance(address: ethAdd!)
-            balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
-        } catch let error {
-            print(error)
+        if let ethAdd = EthereumAddress(keyStore.address){
+            var balance = ""
+            do {
+                let web3 = Web3.InfuraMainnetWeb3()
+                let balancebigint = try web3.eth.getBalance(address: ethAdd)
+                balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
+            } catch let error {
+                print(error)
+            }
+            return balance
+            } else {
+            return ""
         }
-        return balance
     }
 }
-
 extension SendNavigationTableViewController: BottomPopupDelegate {
 
     func bottomPopupViewLoaded() {

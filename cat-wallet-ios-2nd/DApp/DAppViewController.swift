@@ -16,9 +16,6 @@ class DAppViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setWebView()
     }
-//    override func viewDidLoad() {
-//        setWebView()
-//    }
     
     func setWebView() {
         let scrrenSize = UIScreen.main.bounds
