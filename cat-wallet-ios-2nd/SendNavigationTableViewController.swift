@@ -14,15 +14,30 @@ class SendNavigationTableViewController: UITableViewController{
     var height = CGFloat(300)
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
+//        keyStore = fetchCurrenKeyStore()
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
         keyStore = fetchCurrenKeyStore()
     }
     
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if walletDetect() {
+            tableView.backgroundColor = UIColor.white
+            return 1
+        } else {
+//            let backgroundImage = UIImage(named: "address")
+//            let imageView = UIImageView(image: backgroundImage)
+//            tableView.backgroundView = imageView
+            tableView.backgroundColor = UIColor.black
+            return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,10 +80,21 @@ class SendNavigationTableViewController: UITableViewController{
             }
             return balance
             } else {
-            return ""
+                return ""
+        }
+    }
+    
+    func walletDetect() -> Bool {
+        let ethAdd = keyStore.address
+        if ethAdd != "" {
+            
+            return true
+        } else {
+            return false
         }
     }
 }
+
 extension SendNavigationTableViewController: BottomPopupDelegate {
 
     func bottomPopupViewLoaded() {
