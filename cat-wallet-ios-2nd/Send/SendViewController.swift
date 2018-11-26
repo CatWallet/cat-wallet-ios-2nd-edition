@@ -33,7 +33,7 @@ class SendViewController: UIViewController, PassContactData {
         sendButton.tintColor = .white
         self.view.addSubview(sendButton)
         sendButton.translatesAutoresizingMaskIntoConstraints = false
-        sendButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        sendButton.addTarget(self, action: #selector(buttonAction), for: .touchDown)
         sendButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         sendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         buttonConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
@@ -41,10 +41,10 @@ class SendViewController: UIViewController, PassContactData {
         sendButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.view.layoutIfNeeded()
         subscribeToShowKeyboardNotifications()
-        addressField.becomeFirstResponder()
+        //addressField.becomeFirstResponder()
         sendButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         sendButton.layer.masksToBounds = false
-        sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(20)
+        sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(28)
         sendButton.layer.borderWidth = 3.5
     }
     
@@ -62,7 +62,6 @@ class SendViewController: UIViewController, PassContactData {
     
     @objc func keyboardWillHide(_ notification: Notification) {
         buttonConstraint.constant = -10
-        
         let userInfo = notification.userInfo
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animationDuration) {
@@ -82,8 +81,6 @@ class SendViewController: UIViewController, PassContactData {
             vc.getTo = addressField.text!
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        addressField.resignFirstResponder()
-        amountField.resignFirstResponder()
     }
     
     func getKeyStore() {

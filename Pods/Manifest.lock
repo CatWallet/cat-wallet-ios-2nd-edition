@@ -57,7 +57,7 @@ DEPENDENCIES:
   - Parse
   - PhoneNumberKit
   - RealmSwift (~> 3.11)
-  - SkyFloatingLabelTextField (~> 3.6)
+  - SkyFloatingLabelTextField (~> 3.0)
   - web3swift (~> 2.0)
 
 SPEC REPOS:
@@ -99,6 +99,6 @@ SPEC CHECKSUMS:
   SwiftRLP: 98a02b2210128353ca02e4c2f4d83e2a9796db4f
   web3swift: 33f30ca0e061e0f89117dfb46f5ee9f626eff6d6
 
-PODFILE CHECKSUM: ab01fbb3d507afdbe01952f262670503b7c96cdd
+PODFILE CHECKSUM: 40d3d6d8880959b338fb81eeca177f8f01dfa3e2
 
 COCOAPODS: 1.5.3

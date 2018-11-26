@@ -38,7 +38,7 @@ class WalletsViewController: UIViewController {
             pageTitleViewY = 88
         }
         
-        let titles = ["Wallet A", "Wallet B","DApp"]
+        let titles = ["WA", "WB", "DApp"]
         let configure = SGPageTitleViewConfigure()
         configure.titleColor = UIColor.lightGray
         configure.titleSelectedColor = UIColor.black

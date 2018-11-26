@@ -15,12 +15,6 @@ class SendNavigationTableViewController: UITableViewController{
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
-//        keyStore = fetchCurrenKeyStore()
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
         keyStore = fetchCurrenKeyStore()

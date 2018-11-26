@@ -24,7 +24,7 @@ class SendResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton.setButton(confirmButton, 2)
+        setButton.setButton(confirmButton, 28)
         textView.isEditable = false
         textView.text = """
         From: \n
