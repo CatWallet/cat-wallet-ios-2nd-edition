@@ -11,21 +11,79 @@ import SkyFloatingLabelTextField
 
 class SendViewController: UIViewController, PassContactData {
 
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var contactButton: UIButton!
     var addressField = SkyFloatingLabelTextField()
     var amountField = SkyFloatingLabelTextField()
     var cKeyStore = CurrentKeyStoreRealm()
-    let setButton = SetButton()
+    var sendButton: UIButton!
+    var buttonConstraint: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
         title = "Send"
+        self.hideKeyboardWhenTappedAround()
         setFloatTextField()
         getKeyStore()
-        setButton.setButton(sendButton, 2)
-        setButton.setButton(clearButton, 2)
-        print(cKeyStore.address)
+        setFloatButton()
+    }
+    
+    func setFloatButton() {
+        sendButton = UIButton(type: .custom)
+        sendButton.backgroundColor = .black
+        sendButton.setTitle("Send", for: .normal)
+        sendButton.tintColor = .white
+        self.view.addSubview(sendButton)
+        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        sendButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        sendButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        sendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        buttonConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        buttonConstraint.isActive = true
+        sendButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.view.layoutIfNeeded()
+        subscribeToShowKeyboardNotifications()
+        addressField.becomeFirstResponder()
+        sendButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        sendButton.layer.masksToBounds = false
+        sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(20)
+        sendButton.layer.borderWidth = 3.5
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardHeight = keyboardSize.cgRectValue.height
+        buttonConstraint.constant = -10 - keyboardHeight
+        
+        let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        UIView.animate(withDuration: animationDuration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        buttonConstraint.constant = -10
+        
+        let userInfo = notification.userInfo
+        let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        UIView.animate(withDuration: animationDuration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func subscribeToShowKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func buttonAction() {
+        if addressField.text != "" || amountField.text != "" {
+            let vc = SendResultViewController()
+            vc.getFrom = cKeyStore.address
+            vc.getTo = addressField.text!
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        addressField.resignFirstResponder()
+        amountField.resignFirstResponder()
     }
     
     func getKeyStore() {
@@ -45,15 +103,6 @@ class SendViewController: UIViewController, PassContactData {
     @IBAction func clearAction(_ sender: Any) {
         addressField.text = nil
         amountField.text = nil
-    }
-    
-    @IBAction func sendAction(_ sender: Any) {
-        if addressField.text != "" || amountField.text != "" {
-            let vc = SendResultViewController()
-            vc.getFrom = cKeyStore.address
-            vc.getTo = addressField.text!
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -79,5 +128,17 @@ class SendViewController: UIViewController, PassContactData {
         amountField.title = "ETH amount"
         amountField.keyboardType = .numberPad
         self.view.addSubview(amountField)
+    }
+}
+
+extension SendViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SendViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
