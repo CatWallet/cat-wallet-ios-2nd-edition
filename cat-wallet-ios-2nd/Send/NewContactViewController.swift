@@ -7,28 +7,78 @@
 //
 
 import UIKit
+import Parse
+import PhoneNumberKit
 import SkyFloatingLabelTextField
 
 protocol PassNewContact: class{
     func passContact(_ contact: Contact)
 }
 
-class NewContactViewController: BottomPopupViewController{
+class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
     
     
-    @IBOutlet weak var serachBar: UISearchBar!
+    @IBOutlet weak var addressSerachBar: UISearchBar!
     var nameField = SkyFloatingLabelTextField()
     var addressField = SkyFloatingLabelTextField()
     var emailField = SkyFloatingLabelTextField()
     var phoneField = SkyFloatingLabelTextField()
     let contactService = ContactsService()
     var contact = Contact()
+    var isEmail: Bool?
     weak var delegate: PassNewContact?
+    let phoneNumberKit = PhoneNumberKit()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         setFloatTextField()
-
+        setSearvhBar()
+    }
+    
+    func setSearvhBar() {
+        addressSerachBar.delegate = self
+        addressSerachBar.keyboardType = .default
+        addressSerachBar.autocapitalizationType = .none
+        addressSerachBar.autocorrectionType = .no
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let message = searchBar.text {
+            getAddress(message)
+        }
+    }
+    
+    func getAddress(_ message: String) {
+        var params = [String: String]()
+        if message.isEmail {
+            isEmail = true
+            params["email"] = message
+        } else {
+            do {
+                let num = try phoneNumberKit.parse( message )
+                let phoneNum = phoneNumberKit.format(num, toType: .e164)
+                params["phone"] = phoneNum
+                isEmail = false
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        do {
+            let requestAddress = try PFCloud.callFunction("queryAddress", withParameters: params)
+            addressField.text = requestAddress as? String
+            if isEmail! {
+                emailField.text = message
+            } else {
+                phoneField.text = message
+            }
+        } catch {
+            let alert = UIAlertController(title: "", message: "No user found", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
+            print(error.localizedDescription)
+        }
     }
     
     
@@ -87,6 +137,7 @@ class NewContactViewController: BottomPopupViewController{
         addressField.keyboardType = .default
         addressField.autocapitalizationType = .none
         addressField.autocorrectionType = .no
+        addressField.adjustsFontSizeToFitWidth = true
         self.view.addSubview(addressField)
         
         emailField = SkyFloatingLabelTextFieldWithIcon(frame: EmailTextFieldFrame)

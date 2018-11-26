@@ -68,11 +68,16 @@ class SendViewController: UIViewController, PassContactData {
         addressField = SkyFloatingLabelTextFieldWithIcon(frame: AddressTextFieldFrame)
         addressField.placeholder = "ETH address"
         addressField.title = "ETH address"
+        addressField.keyboardType = .default
+        addressField.autocapitalizationType = .none
+        addressField.autocorrectionType = .no
+        addressField.adjustsFontSizeToFitWidth = true
         self.view.addSubview(addressField)
         
         amountField = SkyFloatingLabelTextFieldWithIcon(frame: amountTextFieldFrame)
         amountField.placeholder = "ETH amount"
         amountField.title = "ETH amount"
+        amountField.keyboardType = .numberPad
         self.view.addSubview(amountField)
     }
 }

@@ -23,7 +23,7 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchContacts()
-        tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: "contactCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         setNavigationBar()
@@ -50,7 +50,7 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: nil, action: #selector(addContact))
         let dismiss = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(dismissAction))
         navItem.rightBarButtonItem = doneItem
-        navItem.leftBarButtonItem = dismiss
+        navItem.leftBarButtonItem = self.editButtonItem
         navBar.setItems([navItem], animated: false)
     }
     
@@ -76,7 +76,7 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell") as? ContactsTableViewCell
+       let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell")
         cell?.textLabel?.text = people[indexPath.row].name
         cell?.detailTextLabel?.text = people[indexPath.row].address
         return cell!
@@ -97,6 +97,25 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
         self.dismiss(animated: true) {
             self.delegate?.passContact(index.address)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            self.contactService.deleteWallet(self.people[indexPath.row].name)
+            self.people.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     }
     
     override func getPopupHeight() -> CGFloat {

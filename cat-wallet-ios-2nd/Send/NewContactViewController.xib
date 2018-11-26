@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewContactViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target">
             <connections>
-                <outlet property="serachBar" destination="7Qh-ov-R1B" id="W71-4v-inw"/>
+                <outlet property="addressSerachBar" destination="7Qh-ov-R1B" id="7gX-KV-IX8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
