@@ -13,6 +13,7 @@ target 'cat-wallet-ios-2nd' do
   pod 'web3swift', '~> 2.0'
   pod 'SkyFloatingLabelTextField', '~> 3.6'
   pod 'BigInt', '~> 3.1'
+  pod 'Eureka', '~> 4.3'
   #pod "SDSegmentController"
   # Pods for cat-wallet-ios-2nd
 

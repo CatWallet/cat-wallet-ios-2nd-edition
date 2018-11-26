@@ -70,6 +70,11 @@
 		ADB9091821A0FAF100480883 /* SendResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9091621A0FAF100480883 /* SendResultViewController.xib */; };
 		ADB9091B21A102EB00480883 /* SendFinalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9091921A102EB00480883 /* SendFinalResultViewController.swift */; };
 		ADB9091C21A102EB00480883 /* SendFinalResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9091A21A102EB00480883 /* SendFinalResultViewController.xib */; };
+		ADB9092221A61E4D00480883 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9092121A61E4D00480883 /* SettingTableViewController.swift */; };
+		ADB9092421AB67EC00480883 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9092321AB67EC00480883 /* ContactsService.swift */; };
+		ADB9092921AB6D3800480883 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9092721AB6D3800480883 /* NewContactViewController.swift */; };
+		ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9092821AB6D3800480883 /* NewContactViewController.xib */; };
+		ADB9093121AB747100480883 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093021AB747100480883 /* ContactModel.swift */; };
 		ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFA217BA247008740BD /* AppDelegate.swift */; };
 		ADC99BFD217BA247008740BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFC217BA247008740BD /* ViewController.swift */; };
 		ADC99C00217BA247008740BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99BFE217BA247008740BD /* Main.storyboard */; };
@@ -142,6 +147,11 @@
 		ADB9091621A0FAF100480883 /* SendResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendResultViewController.xib; sourceTree = "<group>"; };
 		ADB9091921A102EB00480883 /* SendFinalResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFinalResultViewController.swift; sourceTree = "<group>"; };
 		ADB9091A21A102EB00480883 /* SendFinalResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendFinalResultViewController.xib; sourceTree = "<group>"; };
+		ADB9092121A61E4D00480883 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		ADB9092321AB67EC00480883 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
+		ADB9092721AB6D3800480883 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		ADB9092821AB6D3800480883 /* NewContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewContactViewController.xib; sourceTree = "<group>"; };
+		ADB9093021AB747100480883 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		ADC99BF7217BA247008740BD /* cat-wallet-ios-2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-wallet-ios-2nd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC99BFA217BA247008740BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC99BFC217BA247008740BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +237,10 @@
 				ADB9091621A0FAF100480883 /* SendResultViewController.xib */,
 				ADB9091921A102EB00480883 /* SendFinalResultViewController.swift */,
 				ADB9091A21A102EB00480883 /* SendFinalResultViewController.xib */,
+				ADB9092321AB67EC00480883 /* ContactsService.swift */,
+				ADB9092721AB6D3800480883 /* NewContactViewController.swift */,
+				ADB9092821AB6D3800480883 /* NewContactViewController.xib */,
+				ADB9093021AB747100480883 /* ContactModel.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -278,6 +292,14 @@
 			path = CentralizedWallet;
 			sourceTree = "<group>";
 		};
+		ADB9092021A61D6700480883 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				ADB9092121A61E4D00480883 /* SettingTableViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		ADC99BEE217BA247008740BD = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +321,7 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
+				ADB9092021A61D6700480883 /* Setting */,
 				AD1CFF59219A711F00843B91 /* DApp */,
 				AD1CFF422197BFDD00843B91 /* Send */,
 				AD1CFF1321966A7C00843B91 /* BottomPopupController */,
@@ -408,6 +431,7 @@
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
 				AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */,
 				ADB9091821A0FAF100480883 /* SendResultViewController.xib in Resources */,
+				ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */,
 				ADB9091C21A102EB00480883 /* SendFinalResultViewController.xib in Resources */,
 				AD1CFF392197B33300843B91 /* HistoryTableViewCell.xib in Resources */,
 				ADC99C00217BA247008740BD /* Main.storyboard in Resources */,
@@ -446,6 +470,7 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/EthereumABI/EthereumABI.framework",
 				"${BUILT_PRODUCTS_DIR}/EthereumAddress/EthereumAddress.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -462,6 +487,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumABI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumAddress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -502,7 +528,9 @@
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
 				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,
 				ADC99BFD217BA247008740BD /* ViewController.swift in Sources */,
+				ADB9093121AB747100480883 /* ContactModel.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
+				ADB9092221A61E4D00480883 /* SettingTableViewController.swift in Sources */,
 				AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */,
 				AD1CFF61219CFDC900843B91 /* MainTabBarController.swift in Sources */,
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
@@ -515,8 +543,10 @@
 				AD1CFF2021966A9F00843B91 /* BottomPopupNavigationController.swift in Sources */,
 				ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */,
 				AD1CFF2121966A9F00843B91 /* BottomPopupTransitionHandler.swift in Sources */,
+				ADB9092421AB67EC00480883 /* ContactsService.swift in Sources */,
 				AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */,
 				ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */,
+				ADB9092921AB6D3800480883 /* NewContactViewController.swift in Sources */,
 				AD1CFF0F21965B8A00843B91 /* CoinMarketTableViewCell.swift in Sources */,
 				ADB04B51219525EA00790A3D /* CentralizedWalletViewController.swift in Sources */,
 				AD1CFF5E219CF86D00843B91 /* SuccessCreationViewController.swift in Sources */,

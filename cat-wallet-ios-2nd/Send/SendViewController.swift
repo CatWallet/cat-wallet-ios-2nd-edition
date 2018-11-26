@@ -9,8 +9,8 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class SendViewController: UIViewController {
-  
+class SendViewController: UIViewController, PassContactData {
+
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var contactButton: UIButton!
@@ -32,8 +32,13 @@ class SendViewController: UIViewController {
         cKeyStore = fetchCurrenKeyStore()
     }
     
+    func passContact(_ address: String) {
+        addressField.text = address
+    }
+    
     @IBAction func contactButtonAction(_ sender: Any) {
         let popupVC = ContactsViewController()
+        popupVC.delegate = self
         present(popupVC, animated: true, completion: nil)
     }
     

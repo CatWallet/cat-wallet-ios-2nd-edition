@@ -64,7 +64,6 @@ class WalletsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            print(self.wallets[indexPath.row].address)
             self.deleteWallet(self.wallets[indexPath.row].address)
             self.wallets.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)

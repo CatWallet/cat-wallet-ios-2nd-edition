@@ -8,18 +8,38 @@
 
 import UIKit
 
-class ContactsViewController: BottomPopupViewController, UITableViewDataSource, UITableViewDelegate, BottomPopupDelegate {
-    
+protocol PassContactData: class {
+    func passContact( _ address: String)
+}
+
+class ContactsViewController: BottomPopupViewController, UITableViewDataSource, UITableViewDelegate, BottomPopupDelegate, PassNewContact {
     
     @IBOutlet weak var tableView: UITableView!
-    var name = ["Lucy"]
+    let contactService = ContactsService()
+    var people: [Contact] = []
     var height = 0
+    weak var delegate: PassContactData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchContacts()
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: "contactCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         setNavigationBar()
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(false)
+        //fetchContacts()
+        tableView.reloadData()
+        tableView.tableFooterView = UIView()
+    }
+    
+    func fetchContacts() {
+        people = []
+        people = contactService.fetchContacts()
     }
     
     func setNavigationBar() {
@@ -35,43 +55,48 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     }
     
     @objc func addContact() {
-        let alertController = UIAlertController(title: "Add contact", message: "", preferredStyle: .alert)
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter contact Name"
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            
-        }
-        alertController.addAction(cancelAction)
-        
-        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            let contactName = alertController.textFields![0]
-            if let getName = contactName.text{
-                self.name.append(getName)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        }
-        alertController.addAction(OKAction)
-        
-        present(alertController, animated: true)
+        let popupVC = NewContactViewController()
+        popupVC.delegate = self
+        present(popupVC, animated: true, completion: nil)
     }
     
     @objc func dismissAction() {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func passContact(_ contact: Contact) {
+        people.append(contact)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+        return people.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell") as? ContactsTableViewCell
-        cell?.textLabel?.text = name[indexPath.row]
+        cell?.textLabel?.text = people[indexPath.row].name
+        cell?.detailTextLabel?.text = people[indexPath.row].address
         return cell!
+    }
     
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            self.contactService.deleteWallet(self.people[indexPath.row].name)
+            self.people.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        return [delete]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = people[indexPath.row]
+        self.dismiss(animated: true) {
+            self.delegate?.passContact(index.address)
+        }
     }
     
     override func getPopupHeight() -> CGFloat {
@@ -96,15 +121,4 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     override func shouldPopupDismissInteractivelty() -> Bool {
         return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
