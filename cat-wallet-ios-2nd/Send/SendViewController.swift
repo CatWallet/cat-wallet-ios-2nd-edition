@@ -18,12 +18,20 @@ class SendViewController: UIViewController, PassContactData {
     var sendButton: UIButton!
     var buttonConstraint: NSLayoutConstraint!
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidLoad() {
         title = "Send"
         self.hideKeyboardWhenTappedAround()
         setFloatTextField()
         getKeyStore()
         setFloatButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //title = "Send"
+        //self.hideKeyboardWhenTappedAround()
+        //setFloatTextField()
+        getKeyStore()
+        //setFloatButton()
     }
     
     func setFloatButton() {
