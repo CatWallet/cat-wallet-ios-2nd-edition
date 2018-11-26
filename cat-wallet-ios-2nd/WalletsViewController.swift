@@ -40,14 +40,14 @@ class WalletsViewController: UIViewController {
         
         let titles = ["Wallet A", "Wallet B","DApp"]
         let configure = SGPageTitleViewConfigure()
-        configure.showIndicator = false
-        configure.titleTextZoom = true
-        configure.titleTextZoomRatio = 0.5
-        configure.titleAdditionalWidth = 30
+        configure.titleColor = UIColor.lightGray
+        configure.titleSelectedColor = UIColor.black
+        configure.indicatorColor = UIColor.black
+        configure.indicatorAdditionalWidth = 80
         configure.titleGradientEffect = true
         
         self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: pageTitleViewY, width: view.frame.size.width, height: 44), delegate: self, titleNames: titles, configure: configure)
-        pageTitleView?.backgroundColor = UIColor.black
+        //pageTitleView?.backgroundColor = UIColor.black
         view.addSubview(pageTitleView!)
         
         let vc = SendNavigationTableViewController()
