@@ -31,7 +31,6 @@ class SendViewController: UIViewController, PassContactData {
         //self.hideKeyboardWhenTappedAround()
         //setFloatTextField()
         getKeyStore()
-        //setFloatButton()
     }
     
     func setFloatButton() {
@@ -61,7 +60,6 @@ class SendViewController: UIViewController, PassContactData {
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         let keyboardHeight = keyboardSize.cgRectValue.height
         buttonConstraint.constant = -10 - keyboardHeight
-        
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animationDuration) {
             self.view.layoutIfNeeded()
@@ -103,11 +101,6 @@ class SendViewController: UIViewController, PassContactData {
         let popupVC = ContactsViewController()
         popupVC.delegate = self
         present(popupVC, animated: true, completion: nil)
-    }
-    
-    @IBAction func clearAction(_ sender: Any) {
-        addressField.text = nil
-        amountField.text = nil
     }
     
     @IBAction func cancelAction(_ sender: Any) {
