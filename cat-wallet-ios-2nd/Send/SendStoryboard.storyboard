@@ -31,6 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="azz-yc-HnH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pxU-TD-K6u">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancelAction:" destination="scv-zT-25X" id="Dfa-pb-bTD"/>
                             </connections>

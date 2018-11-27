@@ -14,17 +14,17 @@ import EthereumAddress
 class SendResultViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var confirmButton: UIButton!
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
+    var buttonConstraint: NSLayoutConstraint!
+    var confirmButton: UIButton!
     //let gasLimit = Web3.Utils.formatToEthereumUnits(transaction.transaction.gasLimit, toUnits: .eth, decimals: 16, decimalSeparator: ".")!
-    let setButton = SetButton()
     var getFrom = ""
     var getTo = ""
     var totalPrice = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton.setButton(confirmButton, 28)
+        setConfirmButton()
         textView.isEditable = false
         textView.text = """
         From: \n
@@ -37,15 +37,34 @@ class SendResultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func confirmAction(_ sender: Any) {
+    @objc func confirmAction() {
         let vc = SendFinalResultViewController()
         
         do {
-         
             navigationController?.pushViewController(vc, animated: true)
         } catch {
             
         }
+    }
+    
+    func setConfirmButton() {
+        confirmButton = UIButton(type: .custom)
+        confirmButton.backgroundColor = .black
+        confirmButton.setTitle("Confirm", for: .normal)
+        confirmButton.tintColor = .white
+        self.view.addSubview(confirmButton)
+        confirmButton.translatesAutoresizingMaskIntoConstraints = false
+        confirmButton.addTarget(self, action: #selector(confirmAction), for: .touchDown)
+        confirmButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        confirmButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        buttonConstraint = confirmButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        buttonConstraint.isActive = true
+        confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.view.layoutIfNeeded()
+        confirmButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        confirmButton.layer.masksToBounds = false
+        confirmButton.layer.cornerRadius = confirmButton.frame.width / CGFloat(28)
+        confirmButton.layer.borderWidth = 3.5
     }
     
 //    func prepareTransactionForSendingEther(destinationAddressString: String,

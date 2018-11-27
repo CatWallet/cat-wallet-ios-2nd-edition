@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendResultViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target">
             <connections>
-                <outlet property="confirmButton" destination="3ew-GH-D5g" id="dlj-Og-JVG"/>
                 <outlet property="textView" destination="zj6-gQ-eBG" id="vP4-It-iSl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,20 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ew-GH-D5g">
-                    <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="120" id="NAy-k8-zXN"/>
-                        <constraint firstAttribute="width" constant="120" id="Nu2-VU-G1G"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Confirm">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="confirmAction:" destination="-1" eventType="touchUpInside" id="cRx-3h-rS1"/>
-                    </connections>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zj6-gQ-eBG">
                     <rect key="frame" x="16" y="20" width="343" height="222.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,10 +31,8 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="zj6-gQ-eBG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1/3" id="5zO-kR-vkU"/>
-                <constraint firstItem="3ew-GH-D5g" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9k7-ks-67s"/>
                 <constraint firstItem="zj6-gQ-eBG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LM5-RK-x5x"/>
                 <constraint firstItem="zj6-gQ-eBG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MNf-wQ-zID"/>
-                <constraint firstItem="3ew-GH-D5g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dBM-kn-NlS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zj6-gQ-eBG" secondAttribute="trailing" constant="16" id="rWR-Pg-wot"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
