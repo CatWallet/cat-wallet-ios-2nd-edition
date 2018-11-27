@@ -48,6 +48,13 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func receiveButtonAction(_ sender: Any) {
+        let popupVC = ReceiveViewController()
+        popupVC.popupDelegate = self
+        present(popupVC, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func sendButtonAction(_ sender: Any) {
         guard let popupNavController = UIStoryboard(name: "SendStoryboard", bundle: nil).instantiateViewController(withIdentifier: "customNavController") as? SendNavigationViewController else { return }
         present(popupNavController, animated: true, completion: nil)
@@ -58,6 +65,8 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
         popupVC.popupDelegate = self
         present(popupVC, animated: true, completion: nil)
     }
+    
+    
     private func setButton(_ button: UIButton, _ num: Int) {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)

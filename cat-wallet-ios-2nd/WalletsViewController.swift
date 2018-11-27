@@ -18,16 +18,10 @@ class WalletsViewController: UIViewController {
 //        let tap = UITapGestureRecognizer(target: self.view, action: "Selector(“endEditing:”)")
 //        tap.cancelsTouchesInView = false
 //        self.view.addGestureRecognizer(tap)
-        title = "Wallet"
+        title = "Main"
         setupSGPagingView()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        //navigationController!.navigationBar.barTintColor = UIColor.
-    }
     
-    @IBAction func button(_ sender: Any) {
-        
-    }
     
     private func setupSGPagingView() {
         let statusHeight = UIApplication.shared.statusBarFrame.height

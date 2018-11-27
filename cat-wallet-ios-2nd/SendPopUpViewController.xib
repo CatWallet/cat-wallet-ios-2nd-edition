@@ -32,6 +32,9 @@
                     <state key="normal" title="Receive">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="receiveButtonAction:" destination="-1" eventType="touchUpInside" id="Ms2-il-0d0"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaH-o3-t6n">
                     <rect key="frame" x="230" y="76" width="60" height="60"/>

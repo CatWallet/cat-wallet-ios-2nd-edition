@@ -42,7 +42,7 @@ class SendResultViewController: UIViewController {
         
         do {
             navigationController?.pushViewController(vc, animated: true)
-        } catch {
+            } catch {
             
         }
     }
@@ -104,50 +104,8 @@ class SendResultViewController: UIViewController {
         return result
     }
     
-//    func send() {
-//        var options = Web3Options.defaultOptions()
-////        var eip67Data = Web3.EIP67Code.init(address: EthereumAddress("0x6394b37Cf80A7358b38068f0CA4760ad49983a1B")!)
-////        eip67Data.gasLimit = BigUInt(1)
-////        eip67Data.amount = BigUInt("1")
-////        //        eip67Data.data =
-////        let encoding = eip67Data.toImage(scale: 10.0)
-//
-//        //Send on Rinkeby using normal keystore
-//
-//        let web3Rinkeby = Web3.InfuraRinkebyWeb3()
-//        web3Rinkeby.addKeystoreManager(keystoreManager)
-//        let coldWalletABI = "[{\"payable\":true,\"type\":\"fallback\"}]"
-//        options = Web3Options.defaultOptions()
-//        options.gasLimit = BigUInt(1)
-//        options.from = EthereumAddress("0x60A5667f0b38e8EC0356cD1856B85E9798bE3098")
-//        options.value = BigUInt(1)
-//
-//        let estimatedGasResult = web3Rinkeby.contract(coldWalletABI, at: coldWalletAddress)!.method(options: options)!.estimateGas(options: nil)
-//        guard case .success(let estimatedGas) = estimatedGasResult else {return}
-//        options.gasLimit = estimatedGas
-//        var intermediateSend = web3Rinkeby.contract(coldWalletABI, at: coldWalletAddress, abiVersion: 2)!.method(options: options)!
-//        let sendResult = intermediateSend.send(password: "BANKEXFOUNDATION")
-//        //        let derivedSender = intermediateSend.transaction.sender
-//        //        if (derivedSender?.address != sender.address) {
-//        //            print(derivedSender!.address)
-//        //            print(sender.address)
-//        //            print("Address mismatch")
-//        //        }
-//        guard case .success(let sendingResult) = sendResult else {return}
-//        let txid = sendingResult.hash
-//        print("On Rinkeby TXid = " + txid)
-//
-//        //Send ETH on Rinkeby using BIP32 keystore. Should fail due to insufficient balance
-//        web3Rinkeby.addKeystoreManager(bip32keystoreManager)
-//        options.from = bip32ks?.addresses?.first!
-//        intermediateSend = web3Rinkeby.contract(coldWalletABI, at: coldWalletAddress, abiVersion: 2)!.method(options: options)!
-//        let sendResultBip32 = intermediateSend.send(password: "BANKEXFOUNDATION")
-//        switch sendResultBip32 {
-//        case .success(let r):
-//            print(r)
-//        case .failure(let err):
-//            print(err)
-//        }
-//    }
+    func send() {
+        
+    }
 
 }

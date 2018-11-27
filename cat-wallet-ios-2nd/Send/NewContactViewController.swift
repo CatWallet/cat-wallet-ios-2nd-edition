@@ -81,7 +81,6 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
         }
     }
     
-    
     func setNavigationBar() {
         let width = UIScreen.main.bounds.size.width
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))

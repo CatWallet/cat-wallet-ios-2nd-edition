@@ -76,6 +76,8 @@
 		ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9092821AB6D3800480883 /* NewContactViewController.xib */; };
 		ADB9093121AB747100480883 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093021AB747100480883 /* ContactModel.swift */; };
 		ADB9093321ABD27700480883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093221ABD27700480883 /* String.swift */; };
+		ADC7887F21AE01630073B94E /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7887D21AE01630073B94E /* ReceiveViewController.swift */; };
+		ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC7887E21AE01630073B94E /* ReceiveViewController.xib */; };
 		ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFA217BA247008740BD /* AppDelegate.swift */; };
 		ADC99BFD217BA247008740BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFC217BA247008740BD /* ViewController.swift */; };
 		ADC99C00217BA247008740BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99BFE217BA247008740BD /* Main.storyboard */; };
@@ -154,6 +156,8 @@
 		ADB9092821AB6D3800480883 /* NewContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewContactViewController.xib; sourceTree = "<group>"; };
 		ADB9093021AB747100480883 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		ADB9093221ABD27700480883 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		ADC7887D21AE01630073B94E /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
+		ADC7887E21AE01630073B94E /* ReceiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveViewController.xib; sourceTree = "<group>"; };
 		ADC99BF7217BA247008740BD /* cat-wallet-ios-2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-wallet-ios-2nd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC99BFA217BA247008740BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC99BFC217BA247008740BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 				ADB9092721AB6D3800480883 /* NewContactViewController.swift */,
 				ADB9092821AB6D3800480883 /* NewContactViewController.xib */,
 				ADB9093021AB747100480883 /* ContactModel.swift */,
+				ADC7887D21AE01630073B94E /* ReceiveViewController.swift */,
+				ADC7887E21AE01630073B94E /* ReceiveViewController.xib */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
 				AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
+				ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */,
 				AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */,
 				ADB9091821A0FAF100480883 /* SendResultViewController.xib in Resources */,
 				ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */,
@@ -567,6 +574,7 @@
 				AD1CFF0F21965B8A00843B91 /* CoinMarketTableViewCell.swift in Sources */,
 				ADB04B51219525EA00790A3D /* CentralizedWalletViewController.swift in Sources */,
 				AD1CFF5E219CF86D00843B91 /* SuccessCreationViewController.swift in Sources */,
+				ADC7887F21AE01630073B94E /* ReceiveViewController.swift in Sources */,
 				AD1CFF1121965B8A00843B91 /* TableViewCell.swift in Sources */,
 				AD1CFF532197D98100843B91 /* ContactsTableViewCell.swift in Sources */,
 				AD1CFF0D21965B8A00843B91 /* CoinMarketTableViewController.swift in Sources */,
