@@ -78,6 +78,7 @@
 		ADB9093321ABD27700480883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093221ABD27700480883 /* String.swift */; };
 		ADC7887F21AE01630073B94E /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7887D21AE01630073B94E /* ReceiveViewController.swift */; };
 		ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC7887E21AE01630073B94E /* ReceiveViewController.xib */; };
+		ADC7888221AE41330073B94E /* QRSacnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7888121AE41330073B94E /* QRSacnerViewController.swift */; };
 		ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFA217BA247008740BD /* AppDelegate.swift */; };
 		ADC99BFD217BA247008740BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFC217BA247008740BD /* ViewController.swift */; };
 		ADC99C00217BA247008740BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99BFE217BA247008740BD /* Main.storyboard */; };
@@ -158,6 +159,7 @@
 		ADB9093221ABD27700480883 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		ADC7887D21AE01630073B94E /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		ADC7887E21AE01630073B94E /* ReceiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveViewController.xib; sourceTree = "<group>"; };
+		ADC7888121AE41330073B94E /* QRSacnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRSacnerViewController.swift; sourceTree = "<group>"; };
 		ADC99BF7217BA247008740BD /* cat-wallet-ios-2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-wallet-ios-2nd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC99BFA217BA247008740BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC99BFC217BA247008740BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				ADB9093021AB747100480883 /* ContactModel.swift */,
 				ADC7887D21AE01630073B94E /* ReceiveViewController.swift */,
 				ADC7887E21AE01630073B94E /* ReceiveViewController.xib */,
+				ADC7888121AE41330073B94E /* QRSacnerViewController.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
@@ -513,6 +517,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
@@ -554,6 +559,7 @@
 				ADC99BFD217BA247008740BD /* ViewController.swift in Sources */,
 				ADB9093121AB747100480883 /* ContactModel.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
+				ADC7888221AE41330073B94E /* QRSacnerViewController.swift in Sources */,
 				ADB9092221A61E4D00480883 /* SettingTableViewController.swift in Sources */,
 				AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */,
 				AD1CFF61219CFDC900843B91 /* MainTabBarController.swift in Sources */,

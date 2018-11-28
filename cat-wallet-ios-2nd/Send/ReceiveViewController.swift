@@ -26,7 +26,7 @@ class ReceiveViewController: BottomPopupViewController {
     func setImage() {
         var eip67Data = Web3.EIP67Code.init(address: EthereumAddress(cKeyStore.address)!)
         eip67Data.gasLimit = BigUInt(21000)
-        eip67Data.amount = BigUInt("1000000000000000000")
+        eip67Data.amount = BigUInt("1")
         let encoding = eip67Data.toImage(scale: 10.0)
         self.addressimage.image = UIImage(ciImage: encoding)
         self.addressimage.contentMode = .scaleAspectFit
@@ -49,7 +49,7 @@ class ReceiveViewController: BottomPopupViewController {
     override func getPopupHeight() -> CGFloat {
         let stHeight = UIApplication.shared.statusBarFrame.size.height
         let scHeight = UIScreen.main.bounds.size.height
-        let height = Int(scHeight) - Int(stHeight*2)
+        let height = Int(scHeight) - Int(stHeight)
         return CGFloat(height)
     }
     

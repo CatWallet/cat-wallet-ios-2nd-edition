@@ -24,6 +24,7 @@ class SendViewController: UIViewController, PassContactData {
         setFloatTextField()
         getKeyStore()
         setFloatButton()
+        setQRButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +32,20 @@ class SendViewController: UIViewController, PassContactData {
         //self.hideKeyboardWhenTappedAround()
         //setFloatTextField()
         getKeyStore()
+    }
+    
+    func setQRButton() {
+        let QRbutton = UIButton(frame: CGRect(x: 351, y: 123, width: 25, height: 23))
+        QRbutton.setImage(UIImage(named: "qr_icon"), for: .normal)
+        QRbutton.setTitle("Tap me", for: .normal)
+        QRbutton.tintColor = UIColor.black
+        QRbutton.addTarget(self, action: #selector(QRAction), for: .touchUpInside)
+        self.view.addSubview(QRbutton)
+    }
+    
+    @objc func QRAction() {
+        let vc = QRSacnerViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setFloatButton() {
@@ -48,7 +63,6 @@ class SendViewController: UIViewController, PassContactData {
         sendButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.view.layoutIfNeeded()
         subscribeToShowKeyboardNotifications()
-        //addressField.becomeFirstResponder()
         sendButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         sendButton.layer.masksToBounds = false
         sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(28)
@@ -122,8 +136,8 @@ class SendViewController: UIViewController, PassContactData {
         self.view.addSubview(addressField)
         
         amountField = SkyFloatingLabelTextFieldWithIcon(frame: amountTextFieldFrame)
-        amountField.placeholder = "ETH amount"
-        amountField.title = "ETH amount"
+        amountField.placeholder = "Amount"
+        amountField.title = "Amount"
         amountField.keyboardType = .numberPad
         self.view.addSubview(amountField)
     }

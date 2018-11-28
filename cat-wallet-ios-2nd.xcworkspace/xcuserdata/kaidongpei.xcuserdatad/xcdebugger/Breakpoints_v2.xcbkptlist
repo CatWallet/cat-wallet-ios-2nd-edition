@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cat-wallet-ios-2nd/Send/SendViewController.swift"
-            timestampString = "564970697.991272"
+            timestampString = "565068286.736109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "setFloatButton()"
             landmarkType = "7">
          </BreakpointContent>

@@ -16,6 +16,7 @@ target 'cat-wallet-ios-2nd' do
   pod 'Eureka', '~> 4.3'
   pod 'Parse'
   pod 'PhoneNumberKit'
+  pod 'QRCodeReader.swift', '~> 9.0.1'
   #pod "SDSegmentController"
   # Pods for cat-wallet-ios-2nd
 
