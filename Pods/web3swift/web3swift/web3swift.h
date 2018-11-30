@@ -1,7 +1,9 @@
+//
+//  web3swift.h
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Petr Korolev on 06/12/2017.
+//  Copyright © 2017 Bankex Foundation. All rights reserved.
 //
 
 #if TARGET_OS_IPHONE

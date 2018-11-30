@@ -1,12 +1,14 @@
+//
+//  Web3+Personal.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 14.04.2018.
+//  Copyright © 2018 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
 import BigInt
-import EthereumAddress
+import Result
 
 extension web3.Personal {
     
@@ -24,9 +26,13 @@ extension web3.Personal {
      - important: This call is synchronous
      
      */
-    public func signPersonalMessage(message: Data, from: EthereumAddress, password:String = "web3swift") throws -> Data {
-        let result = try self.signPersonalMessagePromise(message: message, from: from, password: password).wait()
-        return result
+    public func signPersonalMessage(message: Data, from: EthereumAddress, password:String = "web3swift") -> Result<Data, Web3Error> {
+        do {
+            let result = try self.signPersonalMessagePromise(message: message, from: from, password: password).wait()
+            return Result(result)
+        } catch {
+            return Result.failure(error as! Web3Error)
+        }
     }
     
     /**
@@ -43,9 +49,13 @@ extension web3.Personal {
      - important: This call is synchronous. Does nothing if private keys are stored locally.
      
      */
-    public func unlockAccount(account: EthereumAddress, password:String = "web3swift", seconds: UInt64 = 300) throws -> Bool {
-        let result = try self.unlockAccountPromise(account: account).wait()
-        return result
+    public func unlockAccount(account: EthereumAddress, password:String = "web3swift", seconds: UInt64 = 300) -> Result<Bool, Web3Error> {
+        do {
+            let result = try self.unlockAccountPromise(account: account).wait()
+            return Result(result)
+        } catch {
+            return Result.failure(error as! Web3Error)
+        }
     }
     
     /**
@@ -59,11 +69,11 @@ extension web3.Personal {
         - Result object
      
      */
-    public func ecrecover(personalMessage: Data, signature: Data) throws -> EthereumAddress {
+    public func ecrecover(personalMessage: Data, signature: Data) -> Result<EthereumAddress, Web3Error> {
         guard let recovered = Web3.Utils.personalECRecover(personalMessage, signature: signature) else {
-            throw Web3Error.dataError
+            return Result.failure(Web3Error.dataError)
         }
-        return recovered
+        return Result(recovered)
     }
     
     /**
@@ -77,10 +87,10 @@ extension web3.Personal {
         - Result object
      
      */
-    public func ecrecover(hash: Data, signature: Data) throws -> EthereumAddress {
+    public func ecrecover(hash: Data, signature: Data) -> Result<EthereumAddress, Web3Error> {
         guard let recovered = Web3.Utils.hashECRecover(hash: hash, signature: signature) else {
-            throw Web3Error.dataError
+            return Result.failure(Web3Error.dataError)
         }
-        return recovered
+        return Result(recovered)
     }
 }

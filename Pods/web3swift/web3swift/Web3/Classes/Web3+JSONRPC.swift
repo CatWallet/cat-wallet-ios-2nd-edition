@@ -1,12 +1,13 @@
+//
+//  Web3+JSONRPC.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 21.12.2017.
+//  Copyright © 2017 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
 import BigInt
-import EthereumAddress
 
 /// Global counter object to enumerate JSON RPC requests.
 public struct Counter {
@@ -107,8 +108,7 @@ public struct JSONRPCresponse: Decodable{
                                   Int.self,
                                   Bool.self,
                                   [String:String].self,
-                                  [String:Int].self,
-                                  [String:[String:[String:[String]]]].self]
+                                  [String:Int].self]
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: JSONRPCresponseKeys.self)
@@ -142,10 +142,6 @@ public struct JSONRPCresponse: Decodable{
             result = rawValue
         } else if let rawValue = try? container.decodeIfPresent([TransactionDetails].self, forKey: .result) {
             result = rawValue
-        } else if let rawValue = try? container.decodeIfPresent(TxPoolStatus.self, forKey: .result) {
-            result = rawValue
-        } else if let rawValue = try? container.decodeIfPresent(TxPoolContent.self, forKey: .result) {
-            result = rawValue
         } else if let rawValue = try? container.decodeIfPresent([Bool].self, forKey: .result) {
             result = rawValue
         } else if let rawValue = try? container.decodeIfPresent([Int].self, forKey: .result) {
@@ -156,11 +152,7 @@ public struct JSONRPCresponse: Decodable{
             result = rawValue
         } else if let rawValue = try? container.decodeIfPresent([String: Int].self, forKey: .result) {
             result = rawValue
-        } else if let rawValue = try? container.decodeIfPresent([String:[String:[String:String]]].self, forKey: .result) {
-            result = rawValue
-        } else if let rawValue = try? container.decodeIfPresent([String:[String:[String:[String:String?]]]].self, forKey: .result) {
-            result = rawValue
-        }
+        } 
         self.init(id: id, jsonrpc: jsonrpc, result: result, error: nil)
     }
     

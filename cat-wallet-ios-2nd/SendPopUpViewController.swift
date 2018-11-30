@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Web3swift
-
+import web3swift
 class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
     @IBOutlet weak var sendButton: UIButton!

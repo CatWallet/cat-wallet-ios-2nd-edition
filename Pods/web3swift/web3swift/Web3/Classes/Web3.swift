@@ -1,10 +1,13 @@
+//
+//  Web3.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 11.12.2017.
+//  Copyright © 2017 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
+import Result
 
 public enum Web3Error: Error {
     case transactionSerializationError
@@ -77,24 +80,24 @@ public struct Web3 {
 }
 
 struct ResultUnwrapper {
-    static func getResponse(_ response: [String: Any]?) throws -> Any {
+    static func getResponse(_ response: [String: Any]?) -> Result<Any, Web3Error> {
         guard response != nil, let res = response else {
-            throw Web3Error.connectionError
+            return Result.failure(Web3Error.connectionError)
         }
         if let error = res["error"] {
             if let errString = error as? String {
-                throw Web3Error.nodeError(desc: errString)
+                return Result.failure(Web3Error.nodeError(desc: errString))
             } else if let errDict = error as? [String:Any] {
                 if errDict["message"] != nil, let descr = errDict["message"]! as? String  {
-                    throw Web3Error.nodeError(desc: descr)
+                    return Result.failure(Web3Error.nodeError(desc: descr))
                 }
             }
-            throw Web3Error.unknownError
+            return Result.failure(Web3Error.unknownError)
         }
         guard let result = res["result"] else {
-            throw Web3Error.dataError
+            return Result.failure(Web3Error.dataError)
         }
-        return result
+        return Result(result)
     }
 }
 

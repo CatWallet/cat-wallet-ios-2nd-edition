@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import QRCodeReaderViewController
 import SkyFloatingLabelTextField
 
-class SendViewController: UIViewController, PassContactData {
+class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegate {
 
     @IBOutlet weak var contactButton: UIButton!
     var addressField = SkyFloatingLabelTextField()
@@ -35,7 +36,7 @@ class SendViewController: UIViewController, PassContactData {
     }
     
     func setQRButton() {
-        let QRbutton = UIButton(frame: CGRect(x: 351, y: 123, width: 25, height: 23))
+        let QRbutton = UIButton(frame: CGRect(x: 310, y: 255, width: 25, height: 25))
         QRbutton.setImage(UIImage(named: "qr_icon"), for: .normal)
         QRbutton.setTitle("Tap me", for: .normal)
         QRbutton.tintColor = UIColor.black
@@ -44,8 +45,10 @@ class SendViewController: UIViewController, PassContactData {
     }
     
     @objc func QRAction() {
-        let vc = QRSacnerViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = QRCodeReaderViewController()
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setFloatButton() {
@@ -119,6 +122,23 @@ class SendViewController: UIViewController, PassContactData {
     
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func readerDidCancel(_ reader: QRCodeReaderViewController!) {
+        reader.stopScanning()
+        reader.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func reader(_ reader: QRCodeReaderViewController!, didScanResult result: String!) {
+        reader.stopScanning()
+        //self.navigationController?.popViewController(animated: true)
+        reader.dismiss(animated: true) { [weak self] in
+            self!.amountField.becomeFirstResponder()
+            self?.addressField.text = result
+        }
+        
+        
     }
     
     func setFloatTextField() {

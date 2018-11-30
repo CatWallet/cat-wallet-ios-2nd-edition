@@ -1,13 +1,15 @@
-//  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Web3+Protocols.swift
+//  web3swift-iOS
+//
+//  Created by Alexander Vlasov on 26.02.2018.
+//  Copyright © 2018 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
 import BigInt
+import Result
 import class PromiseKit.Promise
-import EthereumAddress
 
 /// Protocol for generic Ethereum event parsing results
 public protocol EventParserResultProtocol {
@@ -20,10 +22,10 @@ public protocol EventParserResultProtocol {
 
 /// Protocol for generic Ethereum event parser
 public protocol EventParserProtocol {
-    func parseTransaction(_ transaction: EthereumTransaction) throws -> [EventParserResultProtocol]
-    func parseTransactionByHash(_ hash: Data) throws -> [EventParserResultProtocol]
-    func parseBlock(_ block: Block) throws -> [EventParserResultProtocol]
-    func parseBlockByNumber(_ blockNumber: UInt64) throws -> [EventParserResultProtocol]
+    func parseTransaction(_ transaction: EthereumTransaction) -> Result<[EventParserResultProtocol], Web3Error>
+    func parseTransactionByHash(_ hash: Data) -> Result<[EventParserResultProtocol], Web3Error>
+    func parseBlock(_ block: Block) -> Result<[EventParserResultProtocol], Web3Error>
+    func parseBlockByNumber(_ blockNumber: UInt64) -> Result<[EventParserResultProtocol], Web3Error>
     func parseTransactionPromise(_ transaction: EthereumTransaction) -> Promise<[EventParserResultProtocol]>
     func parseTransactionByHashPromise(_ hash: Data) -> Promise<[EventParserResultProtocol]>
     func parseBlockByNumberPromise(_ blockNumber: UInt64) -> Promise<[EventParserResultProtocol]>
@@ -74,10 +76,4 @@ public enum Networks {
             return Networks.Custom(networkID: BigUInt(networkID))
         }
     }
-}
-
-public protocol EventLoopRunnableProtocol {
-    var name: String {get}
-    var queue: DispatchQueue {get}
-    func functionToRun()
 }

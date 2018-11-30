@@ -1,22 +1,23 @@
+//
+//  Promise+Web3+Personal+UnlockAccount.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 18.06.2018.
+//  Copyright © 2018 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
 import BigInt
 import PromiseKit
-import EthereumAddress
 
 extension web3.Personal {
-    public func unlockAccountPromise(account: EthereumAddress, password:String = "web3swift", seconds: UInt64 = 300) -> Promise<Bool> {
+    func unlockAccountPromise(account: EthereumAddress, password:String = "web3swift", seconds: UInt64 = 300) -> Promise<Bool> {
         let addr = account.address
         return unlockAccountPromise(account: addr, password: password, seconds: seconds)
     }
     
     
-    public func unlockAccountPromise(account: String, password:String = "web3swift", seconds: UInt64 = 300) -> Promise<Bool> {
+    func unlockAccountPromise(account: String, password:String = "web3swift", seconds: UInt64 = 300) -> Promise<Bool> {
         let queue = web3.requestDispatcher.queue
         do {
             if self.web3.provider.attachedKeystoreManager == nil {

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Web3swift
-import EthereumAddress
+import web3swift
+//import EthereumAddress
 
 class SendNavigationTableViewController: UITableViewController{
     var height = CGFloat(300)
@@ -68,7 +68,7 @@ class SendNavigationTableViewController: UITableViewController{
             do {
                 let web3 = Web3.InfuraMainnetWeb3()
                 let balancebigint = try web3.eth.getBalance(address: ethAdd)
-                balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
+                //balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
             } catch let error {
                 print(error)
             }

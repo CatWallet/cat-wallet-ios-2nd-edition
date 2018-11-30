@@ -1,7 +1,9 @@
-//  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Promise+Web3+Contract+GetIndexedEvents.swift
+//  web3swift-iOS
+//
+//  Created by Alexander Vlasov on 18.06.2018.
+//  Copyright © 2018 Bankex Foundation. All rights reserved.
 //
 
 

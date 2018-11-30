@@ -1,7 +1,9 @@
+//
+//  Web3+Methods.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 21.12.2017.
+//  Copyright © 2017 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
@@ -26,12 +28,7 @@ public enum JSONRPCmethod: String, Encodable {
     case getBlockByNumber = "eth_getBlockByNumber"
     case personalSign = "eth_sign"
     case unlockAccount = "personal_unlockAccount"
-    case createAccount = "personal_createAccount"
     case getLogs = "eth_getLogs"
-    case getTxPoolInspect = "txpool_inspect"
-    case getTxPoolStatus = "txpool_status"
-    case getTxPoolContent = "txpool_content"
-
     
     public var requiredNumOfParameters: Int {
         get {
@@ -57,12 +54,6 @@ public enum JSONRPCmethod: String, Encodable {
             case .getNetwork:
                 return 0
             case .getAccounts:
-                return 0
-            case .getTxPoolStatus:
-                return 0
-            case .getTxPoolContent:
-                return 0
-            case .getTxPoolInspect:
                 return 0
             default:
                 return 1

@@ -8,8 +8,8 @@
 
 import UIKit
 import BigInt
-import Web3swift
-import EthereumAddress
+import web3swift
+//import EthereumAddress
 
 class ReceiveViewController: BottomPopupViewController {
     @IBOutlet weak var addressLabel: UILabel!
@@ -19,20 +19,24 @@ class ReceiveViewController: BottomPopupViewController {
         super.viewDidLoad()
         setNavigationBar()
         getKeyStore()
-        setImage()
+        generate()
     
     }
     
-    func setImage() {
-        var eip67Data = Web3.EIP67Code.init(address: EthereumAddress(cKeyStore.address)!)
-        eip67Data.gasLimit = BigUInt(21000)
-        eip67Data.amount = BigUInt("1")
-        let encoding = eip67Data.toImage(scale: 10.0)
-        self.addressimage.image = UIImage(ciImage: encoding)
-        self.addressimage.contentMode = .scaleAspectFit
-        addressLabel.text = cKeyStore.address
-        addressLabel.adjustsFontSizeToFitWidth = true
+    func generate(){
+        let context = CIContext()
+        let data = cKeyStore.address.data(using: String.Encoding.ascii)
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 7, y: 7)
+            if let output = filter.outputImage?.transformed(by: transform), let cgImage = context.createCGImage(output, from: output.extent) {
+                addressLabel.text = cKeyStore.address
+                addressLabel.adjustsFontSizeToFitWidth = true
+                addressimage.image = UIImage(cgImage: cgImage)
+            }
+        }
     }
+    
     
     func getKeyStore() {
         cKeyStore = fetchCurrenKeyStore()

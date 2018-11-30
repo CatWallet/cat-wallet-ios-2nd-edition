@@ -1,12 +1,13 @@
+//
+//  EventFiltering.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 11.05.2018.
+//  Copyright © 2018 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
-import EthereumABI
-import EthereumAddress
+
 
 internal func filterLogs(decodedLogs: [EventParserResultProtocol], eventFilter: EventFilter) -> [EventParserResultProtocol] {
     let filteredLogs = decodedLogs.filter { (result) -> Bool in
@@ -58,9 +59,9 @@ internal func filterLogs(decodedLogs: [EventParserResultProtocol], eventFilter: 
     return filteredLogs
 }
 
-internal func encodeTopicToGetLogs(contract: EthereumContract, eventName: String?, filter: EventFilter) -> EventFilterParameters? {
+internal func encodeTopicToGetLogs(contract: ContractV2, eventName: String?, filter: EventFilter) -> EventFilterParameters? {
     var eventTopic: Data? = nil
-    var event: ABI.Element.Event? = nil
+    var event: ABIv2.Element.Event? = nil
     if eventName != nil {
         guard let ev = contract.events[eventName!] else {return nil}
         event = ev

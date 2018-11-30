@@ -8,8 +8,8 @@
 
 import UIKit
 import BigInt
-import Web3swift
-import EthereumAddress
+import web3swift
+//import EthereumAddress
 
 class SendResultViewController: UIViewController {
 
@@ -67,45 +67,37 @@ class SendResultViewController: UIViewController {
         confirmButton.layer.borderWidth = 3.5
     }
     
-//    func prepareTransactionForSendingEther(destinationAddressString: String,
-//                                           amountString: String,
-//                                           gasLimit: BigUInt) throws -> WriteTransaction {
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            guard let destinationEthAddress = EthereumAddress(destinationAddressString) else {throw SendErrors.invalidDestinationAddress}
-//            guard let amount = Web3.Utils.parseToBigUInt(amountString, units: .eth) else {throw SendErrors.invalidAmountFormat}
-//            guard let selectedKey = KeysService().selectedWallet()?.address else {throw SendErrors.noAvailableKeys}
-//            let web3 = Web3.InfuraMainnetWeb3() //or any other network
-//            web3.addKeystoreManager(KeysService().keystoreManager())
-//            guard let ethAddressFrom = EthereumAddress(selectedKey) else {throw SendErrors.invalidKey}
-//            guard let contract = web3.contract(Web3.Utils.coldWalletABI, at: destinationEthAddress, abiVersion: 2) else {throw SendErrors.invalidDestinationAddress}
-//            guard let writeTX = contract.write("fallback") else {throw SendErrors.invalidContract}
-//            writeTX.transactionOptions.from = ethAddressFrom
-//            writeTX.transactionOptions.value = value
-//            return writeTX
-//        }
-//    }
+    
+    func sendtry() {
+//        var options = Web3Options.defaultOptions()
+//        options.gasLimit = BigUInt(21000)
+//        options.from = EthereumAddress("0x60A5667f0b38e8EC0356cD1856B85E9798bE3098")
+//        let amountDouble = Int((Double(2) ?? 0.0)*pow(10, 18))
+//        let am = BigUInt.init(amountDouble)
+//        options.value = am
+//        let toaddress = EthereumAddress("0x0622074fc0a2faA152F0B3f6F4FAa4A7ef644741")
+//        let estimatedGasResult = self.web3Rinkeby.contract(<#T##abiString: String##String#>, at: <#T##EthereumAddress?#>, abiVersion: <#T##Int#>)
+//        //let estimatedGasResult = self.web3Rinkeby.contract(Web3.Utils.coldWalletABI, at: toaddress)!.method(options)!.estimateGas(options: nil)
+//        guard case .success(let estimatedGas)? = estimatedGasResult else {return}
+//        options.gasLimit = estimatedGas
+//        var intermediateSend = self.web3Rinkeby.contract(Web3.Utils.coldWalletABI, at: toaddress, abiVersion: 2)!.method()
+//        intermediateSend = self.web3Rinkeby.contract(Web3.Utils.coldWalletABI, at: toaddress, abiVersion: 2)!.method(options: options)!
+//        let sendResult = intermediateSend?.send(password: "pass")
+//        switch sendResult {
+//        case .success(let r)?:
+//        print("Sucess",r)
+//        case .failure(let err)?:
+//        print("Eroor",err)
+//        case .none:
+//        print("sendResultBip32",sendResult)
+    }
+    }
     
 
     
-    public func writeTx(transaction: WriteTransaction,
-                        options: TransactionOptions? = nil,
-                        password: String? = nil) throws -> TransactionSendingResult {
-        let options = options ?? transaction.transactionOptions
-        guard let result = password == nil ?
-            try? transaction.send() :
-            try? transaction.send(password: password!, transactionOptions: options) else {throw Errors.wrongPassword}
-        return result
-    }
-    
-    public func callTxPlasma(transaction: ReadTransaction,
-                             options: TransactionOptions? = nil) throws -> [String: Any] {
-        let options = options ?? transaction.transactionOptions
-        guard let result = try? transaction.call(transactionOptions: options) else {throw Errors.wrongPassword}
-        return result
-    }
-    
-    func send() {
-        
-    }
 
-}
+
+    
+
+
+

@@ -1,7 +1,9 @@
+//
+//  web3utils.swift
 //  web3swift
 //
-//  Created by Alex Vlasov.
-//  Copyright © 2018 Alex Vlasov. All rights reserved.
+//  Created by Alexander Vlasov on 18.12.2017.
+//  Copyright © 2017 Bankex Foundation. All rights reserved.
 //
 
 import Foundation
@@ -9,7 +11,6 @@ import BigInt
 import CryptoSwift
 import SwiftRLP
 import secp256k1_swift
-import EthereumAddress
 
 public typealias Web3Utils = Web3.Utils
 
@@ -713,11 +714,7 @@ extension Web3.Utils {
                         } else {
                             remainingDigits = String(fullPaddedRemainder[firstDigit+1 ..< fullPaddedRemainder.count])
                         }
-                        if remainingDigits != "" {
-                            fullRemainder = firstDecimalUnit + decimalSeparator + remainingDigits
-                        } else {
-                            fullRemainder = firstDecimalUnit
-                        }
+                        fullRemainder = firstDecimalUnit + decimalSeparator + remainingDigits
                         firstDigit = firstDigit + 1;
                         break
                     }
@@ -813,17 +810,5 @@ extension Web3.Utils {
         completeSignature.append(Data(unmarshalledSignature.s))
         completeSignature.append(Data(bytes: [unmarshalledSignature.v]))
         return completeSignature
-    }
-    
-    public static func hexToData(_ string: String) -> Data? {
-        return Data.fromHex(string)
-    }
-    
-    public static func hexToBigUInt(_ string: String) -> BigUInt? {
-        return BigUInt(string.stripHexPrefix(), radix: 16)
-    }
-    
-    public static func randomBytes(length: Int) -> Data? {
-        return Data.randomBytes(length:length)
     }
 }

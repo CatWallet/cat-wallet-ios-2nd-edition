@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 
 class NewWalletViewController: UIViewController {
     @IBOutlet weak var newWalletButton: UIButton!
