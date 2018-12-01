@@ -8,35 +8,11 @@
 
 import UIKit
 
-class SendNavigationViewController: BottomPopupNavigationController {
+class SendNavigationViewController: UINavigationController {
    
-    var height = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func getPopupHeight() -> CGFloat {
-        let stHeight = UIApplication.shared.statusBarFrame.size.height
-        let scHeight = UIScreen.main.bounds.size.height
-        height = Int(scHeight) - Int(stHeight)
-        return CGFloat(height)
-    }
-    
-    override func getPopupTopCornerRadius() -> CGFloat {
-        return CGFloat(35)
-    }
-    
-    override func getPopupPresentDuration() -> Double {
-        return 0.3
-    }
-    
-    override func getPopupDismissDuration() -> Double {
-        return 0.3
-    }
-    
-    override func shouldPopupDismissInteractivelty() -> Bool {
-        return true
     }
 }

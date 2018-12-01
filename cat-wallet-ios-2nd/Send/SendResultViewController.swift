@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import BigInt
-import web3swift
+//import Bigint
+import Web3swift
 //import EthereumAddress
 
 class SendResultViewController: UIViewController {
@@ -17,7 +17,6 @@ class SendResultViewController: UIViewController {
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
     var buttonConstraint: NSLayoutConstraint!
     var confirmButton: UIButton!
-    //let gasLimit = Web3.Utils.formatToEthereumUnits(transaction.transaction.gasLimit, toUnits: .eth, decimals: 16, decimalSeparator: ".")!
     var getFrom = ""
     var getTo = ""
     var totalPrice = ""
@@ -57,7 +56,7 @@ class SendResultViewController: UIViewController {
         confirmButton.addTarget(self, action: #selector(confirmAction), for: .touchDown)
         confirmButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         confirmButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        buttonConstraint = confirmButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        buttonConstraint = confirmButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(25 +  UIApplication.shared.statusBarFrame.size.height))
         buttonConstraint.isActive = true
         confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.view.layoutIfNeeded()

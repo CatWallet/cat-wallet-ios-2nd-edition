@@ -8,9 +8,9 @@ target 'cat-wallet-ios-2nd' do
   use_frameworks!
   #pod 'Charts'
   #pod 'R.swift'
-  #pod 'MBProgressHUD'
+  pod 'MBProgressHUD'
   pod 'RealmSwift', '~> 3.11'
-  pod 'web3swift', '~> 1.1.9'
+  pod 'web3swift', '~> 2.0.1'
   pod 'SkyFloatingLabelTextField', '~> 3.6'
   pod 'BigInt', '~> 3.1'
   pod 'Eureka', '~> 4.3'

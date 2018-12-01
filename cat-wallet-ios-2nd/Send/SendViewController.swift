@@ -20,23 +20,27 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     var buttonConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
-        title = "Send"
         self.hideKeyboardWhenTappedAround()
         setFloatTextField()
         getKeyStore()
         setFloatButton()
         setQRButton()
+        hideNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //title = "Send"
-        //self.hideKeyboardWhenTappedAround()
-        //setFloatTextField()
         getKeyStore()
     }
     
+    func hideNavigationBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
     func setQRButton() {
-        let QRbutton = UIButton(frame: CGRect(x: 310, y: 255, width: 25, height: 25))
+        let QRbutton = UIButton(frame: CGRect(x: 310, y: 205, width: 25, height: 25))
         QRbutton.setImage(UIImage(named: "qr_icon"), for: .normal)
         QRbutton.setTitle("Tap me", for: .normal)
         QRbutton.tintColor = UIColor.black
@@ -61,7 +65,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         sendButton.addTarget(self, action: #selector(buttonAction), for: .touchDown)
         sendButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         sendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        buttonConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        buttonConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(25 +  UIApplication.shared.statusBarFrame.size.height))
         buttonConstraint.isActive = true
         sendButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.view.layoutIfNeeded()
@@ -76,7 +80,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         let keyboardHeight = keyboardSize.cgRectValue.height
-        buttonConstraint.constant = -10 - keyboardHeight
+        buttonConstraint.constant = -(25 +  UIApplication.shared.statusBarFrame.size.height) - keyboardHeight
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animationDuration) {
             self.view.layoutIfNeeded()
@@ -84,7 +88,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        buttonConstraint.constant = -10
+        buttonConstraint.constant = -(25 +  UIApplication.shared.statusBarFrame.size.height)
         let userInfo = notification.userInfo
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animationDuration) {
@@ -132,7 +136,6 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     
     func reader(_ reader: QRCodeReaderViewController!, didScanResult result: String!) {
         reader.stopScanning()
-        //self.navigationController?.popViewController(animated: true)
         reader.dismiss(animated: true) { [weak self] in
             self!.amountField.becomeFirstResponder()
             self?.addressField.text = result
@@ -143,8 +146,8 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     
     func setFloatTextField() {
         let width = UIScreen.main.bounds.size.width - 40
-        let AddressTextFieldFrame = CGRect(x: 20, y: 100, width: width, height: 60)
-        let amountTextFieldFrame = CGRect(x: 20, y: 180, width: width, height: 60)
+        let AddressTextFieldFrame = CGRect(x: 20, y: 45, width: width, height: 60)
+        let amountTextFieldFrame = CGRect(x: 20, y: 115, width: width, height: 60)
         
         addressField = SkyFloatingLabelTextFieldWithIcon(frame: AddressTextFieldFrame)
         addressField.placeholder = "ETH address"

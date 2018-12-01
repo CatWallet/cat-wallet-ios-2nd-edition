@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import web3swift
-//import EthereumAddress
+import Web3swift
+import EthereumAddress
 
 class SendNavigationTableViewController: UITableViewController{
     var height = CGFloat(300)
@@ -49,13 +49,14 @@ class SendNavigationTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let popupVC = SendPopUpViewController()
-        popupVC.height = height
-        popupVC.topCornerRadius = 35
-        popupVC.presentDuration = 0.4
-        popupVC.dismissDuration = 0.3
-        popupVC.shouldDismissInteractivelty = true
-        popupVC.popupDelegate = self
+//        let popupVC = SendPopUpViewController()
+//        popupVC.height = height
+//        popupVC.topCornerRadius = 35
+//        popupVC.presentDuration = 0.4
+//        popupVC.dismissDuration = 0.3
+//        popupVC.shouldDismissInteractivelty = true
+//        popupVC.popupDelegate = self
+        let popupVC = TransferNavigationViewController()
         present(popupVC, animated: true, completion: nil)
     }
     @objc private func dismissKeyboard() {
@@ -68,11 +69,11 @@ class SendNavigationTableViewController: UITableViewController{
             do {
                 let web3 = Web3.InfuraMainnetWeb3()
                 let balancebigint = try web3.eth.getBalance(address: ethAdd)
-                //balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
+                balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
             } catch let error {
                 print(error)
             }
-            return balance
+                return balance
             } else {
                 return ""
         }

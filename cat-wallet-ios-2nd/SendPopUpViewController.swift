@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import web3swift
+import Web3swift
 class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
     @IBOutlet weak var sendButton: UIButton!
@@ -49,7 +49,6 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
     @IBAction func receiveButtonAction(_ sender: Any) {
         let popupVC = ReceiveViewController()
-        popupVC.popupDelegate = self
         present(popupVC, animated: true, completion: nil)
     }
     
@@ -61,7 +60,6 @@ class SendPopUpViewController: BottomPopupViewController , BottomPopupDelegate{
     
     @IBAction func historyButtonAction(_ sender: Any) {
         let popupVC = HistoryViewController()
-        popupVC.popupDelegate = self
         present(popupVC, animated: true, completion: nil)
     }
     
