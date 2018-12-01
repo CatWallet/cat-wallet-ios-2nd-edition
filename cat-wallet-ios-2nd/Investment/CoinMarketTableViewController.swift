@@ -9,6 +9,7 @@ class CoinMarketTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "CoinMarketTableViewCell", bundle: nil), forCellReuseIdentifier: "myCell")
+        title = "Market"
         //self.title = R.string.localizable.marketTabbarItemTitle()
         getInfo()
         //navigationController?.navigationBar.prefersLargeTitles = true

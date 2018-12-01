@@ -15,7 +15,7 @@ class SettingTableViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-
+        title = "Setting"
     }
     
     enum BiometricType {

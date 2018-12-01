@@ -32,7 +32,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZCD-Kw-gdd">
-                        <barButtonItem key="rightBarButtonItem" title="wallets" id="XYM-MJ-OL4">
+                        <barButtonItem key="rightBarButtonItem" image="money_bag" id="XYM-MJ-OL4">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ANB-Nv-VKA" kind="show" id="pzN-kV-u32"/>
@@ -181,6 +181,7 @@
     <resources>
         <image name="bank_cards" width="30" height="30"/>
         <image name="combo_chart" width="30" height="30"/>
+        <image name="money_bag" width="30" height="30"/>
         <image name="services" width="30" height="30"/>
     </resources>
 </document>
