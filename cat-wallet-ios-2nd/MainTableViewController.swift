@@ -20,6 +20,8 @@ class MainTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
         keyStore = fetchCurrenKeyStore()
+        self.tableView.tableFooterView = UIView()
+        title = "Main"
     }
     
     
@@ -51,13 +53,6 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let popupVC = SendPopUpViewController()
-        //        popupVC.height = height
-        //        popupVC.topCornerRadius = 35
-        //        popupVC.presentDuration = 0.4
-        //        popupVC.dismissDuration = 0.3
-        //        popupVC.shouldDismissInteractivelty = true
-        //        popupVC.popupDelegate = self
         let popupVC = TransferNavigationViewController()
         present(popupVC, animated: true, completion: nil)
     }

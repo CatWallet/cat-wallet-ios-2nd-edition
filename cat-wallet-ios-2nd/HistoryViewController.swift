@@ -18,6 +18,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
         tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "historyCell")
     }
     
