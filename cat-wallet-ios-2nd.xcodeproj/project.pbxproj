@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03DE6DA6139E6DCA91D230F9 /* Pods_cat_wallet_ios_2nd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D531AB9995410F27218089 /* Pods_cat_wallet_ios_2nd.framework */; };
-		AD11D5B32196516200B6BE65 /* SendNavigationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11D5B12196516200B6BE65 /* SendNavigationTableViewController.swift */; };
-		AD11D5B42196516200B6BE65 /* SendNavigationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD11D5B22196516200B6BE65 /* SendNavigationTableViewController.xib */; };
 		AD11D5B7219651DE00B6BE65 /* SendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11D5B5219651DE00B6BE65 /* SendTableViewCell.swift */; };
 		AD11D5B8219651DE00B6BE65 /* SendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD11D5B6219651DE00B6BE65 /* SendTableViewCell.xib */; };
 		AD1CFF0821965B8A00843B91 /* WebServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFEFD21965B8800843B91 /* WebServiceHandler.swift */; };
@@ -30,8 +28,6 @@
 		AD1CFF2121966A9F00843B91 /* BottomPopupTransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF1921966A9E00843B91 /* BottomPopupTransitionHandler.swift */; };
 		AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF1A21966A9E00843B91 /* BottomPopupDismissInteractionController.swift */; };
 		AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF1B21966A9F00843B91 /* BottomPopupViewController.swift */; };
-		AD1CFF2C21979A8100843B91 /* SendPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF2A21979A8100843B91 /* SendPopUpViewController.swift */; };
-		AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF2B21979A8100843B91 /* SendPopUpViewController.xib */; };
 		AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF322197B0DA00843B91 /* HistoryViewController.swift */; };
 		AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */; };
 		AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */; };
@@ -58,7 +54,6 @@
 		AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */; };
 		AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */; };
 		AD6CBF7221A0C88D002232C3 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBF7121A0C88D002232C3 /* RealmModel.swift */; };
-		ADB04B3F2194FE4600790A3D /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B3E2194FE4600790A3D /* WalletsViewController.swift */; };
 		ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B442195234000790A3D /* SGPageContentScrollView.swift */; };
 		ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */; };
 		ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B462195234000790A3D /* SGPageContentCollectionView.swift */; };
@@ -76,13 +71,13 @@
 		ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9092821AB6D3800480883 /* NewContactViewController.xib */; };
 		ADB9093121AB747100480883 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093021AB747100480883 /* ContactModel.swift */; };
 		ADB9093321ABD27700480883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093221ABD27700480883 /* String.swift */; };
+		ADBD797B21B2356A00D8BB6D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD797A21B2356A00D8BB6D /* MainTableViewController.swift */; };
 		ADC7887F21AE01630073B94E /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7887D21AE01630073B94E /* ReceiveViewController.swift */; };
 		ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC7887E21AE01630073B94E /* ReceiveViewController.xib */; };
 		ADC7888221AE41330073B94E /* QRSacnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7888121AE41330073B94E /* QRSacnerViewController.swift */; };
 		ADC7888821B21B570073B94E /* TransferNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7888621B21B570073B94E /* TransferNavigationViewController.swift */; };
 		ADC7888921B21B570073B94E /* TransferNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC7888721B21B570073B94E /* TransferNavigationViewController.xib */; };
 		ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFA217BA247008740BD /* AppDelegate.swift */; };
-		ADC99BFD217BA247008740BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC99BFC217BA247008740BD /* ViewController.swift */; };
 		ADC99C00217BA247008740BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99BFE217BA247008740BD /* Main.storyboard */; };
 		ADC99C02217BA249008740BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C01217BA249008740BD /* Assets.xcassets */; };
 		ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C03217BA249008740BD /* LaunchScreen.storyboard */; };
@@ -91,8 +86,6 @@
 /* Begin PBXFileReference section */
 		56B004E6FDBB87F45F5AFB54 /* Pods-cat-wallet-ios-2nd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cat-wallet-ios-2nd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cat-wallet-ios-2nd/Pods-cat-wallet-ios-2nd.debug.xcconfig"; sourceTree = "<group>"; };
 		90089F524BB8EB34418614CD /* Pods-cat-wallet-ios-2nd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cat-wallet-ios-2nd.release.xcconfig"; path = "Pods/Target Support Files/Pods-cat-wallet-ios-2nd/Pods-cat-wallet-ios-2nd.release.xcconfig"; sourceTree = "<group>"; };
-		AD11D5B12196516200B6BE65 /* SendNavigationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNavigationTableViewController.swift; sourceTree = "<group>"; };
-		AD11D5B22196516200B6BE65 /* SendNavigationTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendNavigationTableViewController.xib; sourceTree = "<group>"; };
 		AD11D5B5219651DE00B6BE65 /* SendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTableViewCell.swift; sourceTree = "<group>"; };
 		AD11D5B6219651DE00B6BE65 /* SendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendTableViewCell.xib; sourceTree = "<group>"; };
 		AD1CFEFD21965B8800843B91 /* WebServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceHandler.swift; sourceTree = "<group>"; };
@@ -113,8 +106,6 @@
 		AD1CFF1921966A9E00843B91 /* BottomPopupTransitionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupTransitionHandler.swift; sourceTree = "<group>"; };
 		AD1CFF1A21966A9E00843B91 /* BottomPopupDismissInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupDismissInteractionController.swift; sourceTree = "<group>"; };
 		AD1CFF1B21966A9F00843B91 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
-		AD1CFF2A21979A8100843B91 /* SendPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPopUpViewController.swift; sourceTree = "<group>"; };
-		AD1CFF2B21979A8100843B91 /* SendPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendPopUpViewController.xib; sourceTree = "<group>"; };
 		AD1CFF322197B0DA00843B91 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,7 +132,6 @@
 		AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletResultViewController.swift; sourceTree = "<group>"; };
 		AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateWalletResultViewController.xib; sourceTree = "<group>"; };
 		AD6CBF7121A0C88D002232C3 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
-		ADB04B3E2194FE4600790A3D /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
 		ADB04B442195234000790A3D /* SGPageContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentScrollView.swift; sourceTree = "<group>"; };
 		ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageViewPopGestureVC.swift; sourceTree = "<group>"; };
 		ADB04B462195234000790A3D /* SGPageContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentCollectionView.swift; sourceTree = "<group>"; };
@@ -159,6 +149,7 @@
 		ADB9092821AB6D3800480883 /* NewContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewContactViewController.xib; sourceTree = "<group>"; };
 		ADB9093021AB747100480883 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		ADB9093221ABD27700480883 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		ADBD797A21B2356A00D8BB6D /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		ADC7887D21AE01630073B94E /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		ADC7887E21AE01630073B94E /* ReceiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveViewController.xib; sourceTree = "<group>"; };
 		ADC7888121AE41330073B94E /* QRSacnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRSacnerViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +157,6 @@
 		ADC7888721B21B570073B94E /* TransferNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferNavigationViewController.xib; sourceTree = "<group>"; };
 		ADC99BF7217BA247008740BD /* cat-wallet-ios-2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-wallet-ios-2nd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC99BFA217BA247008740BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ADC99BFC217BA247008740BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ADC99BFF217BA247008740BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADC99C01217BA249008740BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC99C04217BA249008740BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -365,19 +355,14 @@
 				AD5433522182539A00F58C06 /* Wallets */,
 				ADC99BFA217BA247008740BD /* AppDelegate.swift */,
 				AD6CBF7121A0C88D002232C3 /* RealmModel.swift */,
-				ADC99BFC217BA247008740BD /* ViewController.swift */,
 				ADC99BFE217BA247008740BD /* Main.storyboard */,
 				AD1CFF60219CFDC900843B91 /* MainTabBarController.swift */,
 				ADC99C01217BA249008740BD /* Assets.xcassets */,
 				ADC99C03217BA249008740BD /* LaunchScreen.storyboard */,
 				ADC99C06217BA249008740BD /* Info.plist */,
-				ADB04B3E2194FE4600790A3D /* WalletsViewController.swift */,
-				AD11D5B12196516200B6BE65 /* SendNavigationTableViewController.swift */,
-				AD11D5B22196516200B6BE65 /* SendNavigationTableViewController.xib */,
+				ADBD797A21B2356A00D8BB6D /* MainTableViewController.swift */,
 				AD11D5B5219651DE00B6BE65 /* SendTableViewCell.swift */,
 				AD11D5B6219651DE00B6BE65 /* SendTableViewCell.xib */,
-				AD1CFF2A21979A8100843B91 /* SendPopUpViewController.swift */,
-				AD1CFF2B21979A8100843B91 /* SendPopUpViewController.xib */,
 				AD1CFF322197B0DA00843B91 /* HistoryViewController.swift */,
 				AD1CFF332197B0DA00843B91 /* HistoryViewController.xib */,
 				AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */,
@@ -458,10 +443,8 @@
 				AD1CFF0C21965B8A00843B91 /* CoinMarketDetialViewController.xib in Resources */,
 				ADB04B52219525EA00790A3D /* CentralizedWalletViewController.xib in Resources */,
 				AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */,
-				AD11D5B42196516200B6BE65 /* SendNavigationTableViewController.xib in Resources */,
 				AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */,
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
-				AD1CFF2D21979A8100843B91 /* SendPopUpViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
 				ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */,
 				ADC7888921B21B570073B94E /* TransferNavigationViewController.xib in Resources */,
@@ -565,15 +548,12 @@
 				AD1CFF0E21965B8A00843B91 /* CoinMarketDetialViewController.swift in Sources */,
 				AD11D5B7219651DE00B6BE65 /* SendTableViewCell.swift in Sources */,
 				AD1CFF1C21966A9F00843B91 /* BottomPopupDismissAnimator.swift in Sources */,
-				AD11D5B32196516200B6BE65 /* SendNavigationTableViewController.swift in Sources */,
-				ADB04B3F2194FE4600790A3D /* WalletsViewController.swift in Sources */,
 				AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */,
 				ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */,
 				AD1CFF1D21966A9F00843B91 /* BottomPopupUtils.swift in Sources */,
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
 				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,
-				ADC99BFD217BA247008740BD /* ViewController.swift in Sources */,
 				ADB9093121AB747100480883 /* ContactModel.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
 				ADC7888221AE41330073B94E /* QRSacnerViewController.swift in Sources */,
@@ -591,6 +571,7 @@
 				ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */,
 				AD1CFF2121966A9F00843B91 /* BottomPopupTransitionHandler.swift in Sources */,
 				ADB9092421AB67EC00480883 /* ContactsService.swift in Sources */,
+				ADBD797B21B2356A00D8BB6D /* MainTableViewController.swift in Sources */,
 				AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */,
 				ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */,
 				ADB9092921AB6D3800480883 /* NewContactViewController.swift in Sources */,
@@ -603,7 +584,6 @@
 				AD1CFF532197D98100843B91 /* ContactsTableViewCell.swift in Sources */,
 				AD1CFF0D21965B8A00843B91 /* CoinMarketTableViewController.swift in Sources */,
 				AD1CFF442197C03A00843B91 /* SendNavigationViewController.swift in Sources */,
-				AD1CFF2C21979A8100843B91 /* SendPopUpViewController.swift in Sources */,
 				AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */,
 				AD1CFF57219A711400843B91 /* DAppViewController.swift in Sources */,
 				AD1CFF1021965B8A00843B91 /* CoinMarketContant.swift in Sources */,

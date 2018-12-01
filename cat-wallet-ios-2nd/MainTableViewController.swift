@@ -1,8 +1,8 @@
 //
-//  SendNavigationTableViewController.swift
+//  MainTableViewController.swift
 //  cat-wallet-ios-2nd
 //
-//  Created by kaidong pei on 11/9/18.
+//  Created by kaidong pei on 11/30/18.
 //  Copyright © 2018 CatWallet. All rights reserved.
 //
 
@@ -10,7 +10,9 @@ import UIKit
 import Web3swift
 import EthereumAddress
 
-class SendNavigationTableViewController: UITableViewController{
+
+class MainTableViewController: UITableViewController {
+
     var height = CGFloat(300)
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
@@ -20,24 +22,24 @@ class SendNavigationTableViewController: UITableViewController{
         keyStore = fetchCurrenKeyStore()
     }
     
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         if walletDetect() {
             tableView.backgroundColor = UIColor.white
             return 1
         } else {
-//            let backgroundImage = UIImage(named: "address")
-//            let imageView = UIImageView(image: backgroundImage)
-//            tableView.backgroundView = imageView
+            //            let backgroundImage = UIImage(named: "address")
+            //            let imageView = UIImageView(image: backgroundImage)
+            //            tableView.backgroundView = imageView
             tableView.backgroundColor = UIColor.black
             return 0
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sendCoinCell", for: indexPath) as! SendTableViewCell
         cell.coinNum.text = getBalance()
@@ -49,13 +51,13 @@ class SendNavigationTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let popupVC = SendPopUpViewController()
-//        popupVC.height = height
-//        popupVC.topCornerRadius = 35
-//        popupVC.presentDuration = 0.4
-//        popupVC.dismissDuration = 0.3
-//        popupVC.shouldDismissInteractivelty = true
-//        popupVC.popupDelegate = self
+        //        let popupVC = SendPopUpViewController()
+        //        popupVC.height = height
+        //        popupVC.topCornerRadius = 35
+        //        popupVC.presentDuration = 0.4
+        //        popupVC.dismissDuration = 0.3
+        //        popupVC.shouldDismissInteractivelty = true
+        //        popupVC.popupDelegate = self
         let popupVC = TransferNavigationViewController()
         present(popupVC, animated: true, completion: nil)
     }
@@ -73,9 +75,9 @@ class SendNavigationTableViewController: UITableViewController{
             } catch let error {
                 print(error)
             }
-                return balance
-            } else {
-                return ""
+            return balance
+        } else {
+            return ""
         }
     }
     
@@ -87,27 +89,5 @@ class SendNavigationTableViewController: UITableViewController{
         } else {
             return false
         }
-    }
-}
-
-extension SendNavigationTableViewController: BottomPopupDelegate {
-
-    func bottomPopupViewLoaded() {
-    }
-
-    func bottomPopupWillAppear() {
-    }
-
-    func bottomPopupDidAppear() {
-    }
-
-    func bottomPopupWillDismiss() {
-    }
-
-    func bottomPopupDidDismiss() {
-    }
-
-    func bottomPopupDismissInteractionPercentChanged(from oldValue: CGFloat, to newValue: CGFloat) {
-        //print("\(oldValue) to: \(newValue)")
     }
 }

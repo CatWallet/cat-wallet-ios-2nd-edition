@@ -5,32 +5,44 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wallets View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Main Table View Controller-->
+        <scene sceneID="LFk-Hp-3eN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WalletsViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="mKL-h9-jaj" customClass="MainTableViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IE5-Iy-nkY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EuK-0s-dL8">
-                        <barButtonItem key="rightBarButtonItem" image="money_bag" id="gQp-On-k6m">
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1UM-Q8-juR">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1UM-Q8-juR" id="a2p-ZG-lAP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mKL-h9-jaj" id="Gfm-5W-wyW"/>
+                            <outlet property="delegate" destination="mKL-h9-jaj" id="LKa-Jc-Upw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ZCD-Kw-gdd">
+                        <barButtonItem key="rightBarButtonItem" title="wallets" id="XYM-MJ-OL4">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="button:" destination="BYZ-38-t0r" id="mu9-49-xam"/>
-                                <segue destination="ANB-Nv-VKA" kind="show" id="Quh-6u-yA6"/>
+                                <segue destination="ANB-Nv-VKA" kind="show" id="pzN-kV-u32"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKd-J9-v6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-171" y="1503"/>
+            <point key="canvasLocation" x="-162" y="1422"/>
         </scene>
         <!--WalletsStoryboard-->
         <scene sceneID="aWf-Qr-Imh">
@@ -38,7 +50,7 @@
                 <viewControllerPlaceholder storyboardName="WalletsStoryboard" id="ANB-Nv-VKA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4W-0m-yeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="1212"/>
+            <point key="canvasLocation" x="-162" y="1825"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="jZx-a4-Lg7">
@@ -51,39 +63,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9aP-0c-idi" kind="relationship" relationship="viewControllers" id="PTZ-iE-mm9"/>
-                        <segue destination="FSj-vZ-Q1Q" kind="relationship" relationship="viewControllers" id="hXh-z0-Exy"/>
-                        <segue destination="TXg-PI-Thz" kind="relationship" relationship="viewControllers" id="uYA-Gt-Whz"/>
+                        <segue destination="Ugh-YZ-9c7" kind="relationship" relationship="viewControllers" id="TTH-SA-18Z"/>
+                        <segue destination="FSj-vZ-Q1Q" kind="relationship" relationship="viewControllers" id="v1B-Nd-jza"/>
+                        <segue destination="TXg-PI-Thz" kind="relationship" relationship="viewControllers" id="mzE-0T-ALP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTt-4f-Lzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="274" y="9"/>
-        </scene>
-        <!--Wallet-->
-        <scene sceneID="woW-1S-qzD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9aP-0c-idi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wallet" image="bank_cards" id="vHE-Uq-mLs">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="TintColor">
-                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1jk-MH-fmY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Lve-zE-fAi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YNd-i2-u1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-170.40000000000001" y="796.55172413793105"/>
         </scene>
         <!--Coin Market Table View Controller-->
         <scene sceneID="FJM-wj-Dlc">
@@ -102,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3v-Ed-zjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024.6376811594205" y="1454.4642857142856"/>
+            <point key="canvasLocation" x="451" y="1422"/>
         </scene>
         <!--Investment-->
         <scene sceneID="af1-1J-cAN">
@@ -121,7 +108,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBV-js-uRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024.6376811594205" y="766.74107142857144"/>
+            <point key="canvasLocation" x="452" y="767"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="mVd-Xd-JWF">
@@ -150,7 +137,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0e-dT-3Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="1454"/>
+            <point key="canvasLocation" x="1064" y="1422"/>
         </scene>
         <!--Settings-->
         <scene sceneID="yxS-bO-iTc">
@@ -169,13 +156,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZc-Z9-B2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="767"/>
+            <point key="canvasLocation" x="1065" y="767"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="x33-np-1NE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ugh-YZ-9c7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" image="bank_cards" id="PSZ-4o-4G8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8d2-DD-mOd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mKL-h9-jaj" kind="relationship" relationship="rootViewController" id="JeB-me-YY7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeQ-AW-joY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="767"/>
         </scene>
     </scenes>
     <resources>
         <image name="bank_cards" width="30" height="30"/>
         <image name="combo_chart" width="30" height="30"/>
-        <image name="money_bag" width="30" height="30"/>
         <image name="services" width="30" height="30"/>
     </resources>
 </document>
