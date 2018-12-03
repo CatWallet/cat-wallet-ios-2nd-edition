@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Web3swift
 
 
 
@@ -22,3 +23,5 @@ class CurrentKeyStoreRealm: Object {
     @objc dynamic var data: Data?
     @objc dynamic var name: String = ""
 }
+
+

@@ -35,12 +35,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LWpxKEv3_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-MY-o5L">
-                        <rect key="frame" x="0.0" y="12" width="65" height="64.666666666666671"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="65" id="Doo-oO-MDL"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNh-bG-syg">
                         <rect key="frame" x="206" y="29" width="98" height="30"/>
                         <constraints>
@@ -51,13 +45,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LWpxKEv3_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-MY-o5L">
+                        <rect key="frame" x="16" y="12" width="65" height="64.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="Doo-oO-MDL"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="L2Q-Vx-bqR" secondAttribute="trailing" constant="16" id="2MM-lU-5JV"/>
                     <constraint firstAttribute="bottom" secondItem="hiz-MY-o5L" secondAttribute="bottom" constant="12" id="EZc-c3-7dp"/>
                     <constraint firstAttribute="trailing" secondItem="QNh-bG-syg" secondAttribute="trailing" constant="16" id="Rhz-tO-RKB"/>
                     <constraint firstItem="hiz-MY-o5L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="g4D-IM-fxd"/>
-                    <constraint firstItem="hiz-MY-o5L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qMw-pg-q8d"/>
+                    <constraint firstItem="hiz-MY-o5L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qMw-pg-q8d"/>
                     <constraint firstItem="L2Q-Vx-bqR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qjy-3b-18P"/>
                     <constraint firstAttribute="bottom" secondItem="QNh-bG-syg" secondAttribute="bottom" constant="29.666666666666679" id="w0Q-vl-lRI"/>
                 </constraints>
@@ -69,7 +69,7 @@
                 <outlet property="coinNum" destination="QNh-bG-syg" id="xld-86-wRl"/>
                 <outlet property="totalPrice" destination="L2Q-Vx-bqR" id="ETX-Qo-pFh"/>
             </connections>
-            <point key="canvasLocation" x="176.81159420289856" y="129.57589285714286"/>
+            <point key="canvasLocation" x="176.81159420289856" y="129.24107142857142"/>
         </tableViewCell>
     </objects>
     <resources>

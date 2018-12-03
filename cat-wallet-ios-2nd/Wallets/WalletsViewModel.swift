@@ -9,6 +9,7 @@
 import Foundation
 import Web3swift
 import RealmSwift
+import EthereumAddress
 
 func generateMnemonics(bitsOfEntropy: Int) -> String? {
     guard let mnemonics = try? BIP39.generateMnemonics(bitsOfEntropy: bitsOfEntropy),
@@ -50,11 +51,12 @@ func createHDWallet(withName name: String?,
                                      data: keyData,
                                      name: name ?? "",
                                      isHD: true)
-    saveKeyStore(address: address, data: keyData, name: name ?? "")
+    saveKeyStore(wallet)
+    saveWalletModel(address: address, data: keyData, name: name ?? "")
     completion(walletModel, nil, mnemonics)
 }
 
-func saveKeyStore(address: String, data: Data, name: String) {
+func saveWalletModel(address: String, data: Data, name: String) {
     let realm = try! Realm()
     let ksRealm = KeyStoreRealm()
     ksRealm.address = address
@@ -94,4 +96,27 @@ func fetchCurrenKeyStore() -> CurrentKeyStoreRealm{
         cksRealm = i
     }
     return cksRealm
+}
+
+func saveKeyStore(_ ks: BIP32Keystore) {
+    guard let userDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
+        let keystoreManager = KeystoreManager.managerForPath(userDirectory + "/keystore")
+        else {
+            fatalError("Couldn't create a KeystoreManager.")
+    }
+    
+    let newKeystoreJSON = try? JSONEncoder().encode(ks.keystoreParams)
+    FileManager.default.createFile(atPath: "\(keystoreManager.path)/keystore.json", contents: newKeystoreJSON, attributes: nil)
+    print(ks.addresses)
+}
+
+func getKeyStoreManager(_ data: Data) throws ->KeystoreManager{
+    guard let keystore = BIP32Keystore(data) else {
+        if let defaultKeystore = KeystoreManager.defaultManager {
+            return defaultKeystore
+        } else {
+            throw Web3Error.keystoreError(err: .invalidAccountError)
+        }
+    }
+    return KeystoreManager([keystore])
 }

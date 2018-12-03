@@ -95,7 +95,9 @@
         <scene sceneID="af1-1J-cAN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FSj-vZ-Q1Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Investment" image="combo_chart" id="hne-ew-rRG"/>
+                    <tabBarItem key="tabBarItem" title="Investment" image="combo_chart" id="hne-ew-rRG">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Gs-Ng-zwr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -143,7 +145,9 @@
         <scene sceneID="yxS-bO-iTc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TXg-PI-Thz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="services" id="g4s-k3-maQ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="services" id="g4s-k3-maQ">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="one-W3-Mzm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -162,7 +166,9 @@
         <scene sceneID="x33-np-1NE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ugh-YZ-9c7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Main" image="bank_cards" id="PSZ-4o-4G8"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="bank_cards" id="PSZ-4o-4G8">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8d2-DD-mOd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -14,12 +14,16 @@ import Web3swift
 class ReceiveViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addressimage: UIImageView!
+    var copyButton: UIButton!
+    var buttonConstraint: NSLayoutConstraint!
     var cKeyStore = CurrentKeyStoreRealm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getKeyStore()
+        getWallet()
         generate()
-    
+        setCopyButton()
+        retreiveKeyStore()
     }
     
     func generate(){
@@ -36,7 +40,48 @@ class ReceiveViewController: UIViewController {
         }
     }
     
-    func getKeyStore() {
+    func setCopyButton() {
+        copyButton = UIButton(type: .custom)
+        copyButton.backgroundColor = .black
+        copyButton.setTitle("Copy", for: .normal)
+        copyButton.tintColor = .white
+        self.view.addSubview(copyButton)
+        copyButton.translatesAutoresizingMaskIntoConstraints = false
+        copyButton.addTarget(self, action: #selector(copyAction), for: .touchUpInside)
+        copyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        copyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        buttonConstraint = copyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(25 +  UIApplication.shared.statusBarFrame.size.height))
+        buttonConstraint.isActive = true
+        copyButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.view.layoutIfNeeded()
+        copyButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        copyButton.layer.masksToBounds = false
+        copyButton.layer.cornerRadius = copyButton.frame.width / CGFloat(28)
+        copyButton.layer.borderWidth = 3.5
+    }
+    
+    @objc func copyAction() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = addressLabel.text
+        if pasteboard.string != nil {
+            let alert = UIAlertController(title: "", message: "Public key is copied", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: false, completion: nil)
+        }
+    }
+    
+    func getWallet() {
         cKeyStore = fetchCurrenKeyStore()
+    }
+    
+    func retreiveKeyStore() {
+        cKeyStore = fetchCurrenKeyStore()
+        do {
+            let ks = try getKeyStoreManager(cKeyStore.data!)
+        } catch {
+            
+        }
+        
     }
 }
