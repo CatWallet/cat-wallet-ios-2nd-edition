@@ -23,7 +23,6 @@ class ReceiveViewController: UIViewController {
         getWallet()
         generate()
         setCopyButton()
-        retreiveKeyStore()
     }
     
     func generate(){
@@ -73,15 +72,5 @@ class ReceiveViewController: UIViewController {
     
     func getWallet() {
         cKeyStore = fetchCurrenKeyStore()
-    }
-    
-    func retreiveKeyStore() {
-        cKeyStore = fetchCurrenKeyStore()
-        do {
-            let ks = try getKeyStoreManager(cKeyStore.data!)
-        } catch {
-            
-        }
-        
     }
 }

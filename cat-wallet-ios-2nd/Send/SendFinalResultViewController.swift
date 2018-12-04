@@ -24,6 +24,7 @@ class SendFinalResultViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setButton.setButton(doneButton, 2)
+        retreiveKeyStore()
        
     }
 
@@ -50,30 +51,20 @@ class SendFinalResultViewController: UIViewController {
 //            return nil
 //        }
 //    }
+    
+    func retreiveKeyStore() {
+        let fetchks = fetchCurrenKeyStore()
+        do {
+            let ks = try getKeyStoreManager(fetchks.data!)
+        } catch {
+            
+        }
+        
+    }
             
     
     func send() {
-        createHDWallet(withName: "catwallet", password: "catwallet") { (wallet, error, mnemonics) in
-            if error != nil {
-                print(error as! String)
-            } else {
-                guard let userDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
-                    let keystoreManager = KeystoreManager.managerForPath(userDirectory + "/keystore")
-                    else {
-                        fatalError("Couldn't create a KeystoreManager.")
-                }
-                
-                // Next you create a new Keystore:
-                
-                let newKeystore = try? EthereumKeystoreV3(password: "YOUR_PASSWORD")
-                print(newKeystore!!)
-                
-                // Then you save the created keystore to the file system:
-                
-                let newKeystoreJSON = try? JSONEncoder().encode(newKeystore!!.keystoreParams)
-                FileManager.default.createFile(atPath: "\(keystoreManager.path)/keystore.json", contents: newKeystoreJSON, attributes: nil)
-            }
-        }
+        
         
      }
 }

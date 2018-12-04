@@ -68,27 +68,7 @@ class SendResultViewController: UIViewController {
     
     
     func sendtry() {
-//        var options = Web3Options.defaultOptions()
-//        options.gasLimit = BigUInt(21000)
-//        options.from = EthereumAddress("0x60A5667f0b38e8EC0356cD1856B85E9798bE3098")
-//        let amountDouble = Int((Double(2) ?? 0.0)*pow(10, 18))
-//        let am = BigUInt.init(amountDouble)
-//        options.value = am
-//        let toaddress = EthereumAddress("0x0622074fc0a2faA152F0B3f6F4FAa4A7ef644741")
-//        let estimatedGasResult = self.web3Rinkeby.contract(<#T##abiString: String##String#>, at: <#T##EthereumAddress?#>, abiVersion: <#T##Int#>)
-//        //let estimatedGasResult = self.web3Rinkeby.contract(Web3.Utils.coldWalletABI, at: toaddress)!.method(options)!.estimateGas(options: nil)
-//        guard case .success(let estimatedGas)? = estimatedGasResult else {return}
-//        options.gasLimit = estimatedGas
-//        var intermediateSend = self.web3Rinkeby.contract(Web3.Utils.coldWalletABI, at: toaddress, abiVersion: 2)!.method()
-//        intermediateSend = self.web3Rinkeby.contract(Web3.Utils.coldWalletABI, at: toaddress, abiVersion: 2)!.method(options: options)!
-//        let sendResult = intermediateSend?.send(password: "pass")
-//        switch sendResult {
-//        case .success(let r)?:
-//        print("Sucess",r)
-//        case .failure(let err)?:
-//        print("Eroor",err)
-//        case .none:
-//        print("sendResultBip32",sendResult)
+
     }
     }
     

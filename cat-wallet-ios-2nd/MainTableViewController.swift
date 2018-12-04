@@ -16,9 +16,12 @@ class MainTableViewController: UITableViewController {
     var height = CGFloat(300)
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
+    var buttonConstraint: NSLayoutConstraint!
+    var sendButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
+        setSendButton()
         keyStore = fetchCurrenKeyStore()
         self.tableView.tableFooterView = UIView()
         title = "Main"
@@ -74,6 +77,24 @@ class MainTableViewController: UITableViewController {
         } else {
             return ""
         }
+    }
+    
+    func setSendButton() {
+        let y = UIScreen.main.bounds.height - 3.5*(tabBarController?.tabBar.frame.size.height)!
+        let x = UIScreen.main.bounds.width/4
+        sendButton = UIButton(frame: CGRect(x: x*3, y: y, width: 70, height: 70))
+        sendButton.backgroundColor = .black
+        sendButton.setImage(UIImage(named: "send"), for: .normal)
+        sendButton.addTarget(self, action: #selector(sendAction), for: .touchDown)
+        self.view.addSubview(sendButton)
+        sendButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        sendButton.layer.masksToBounds = false
+        sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(2)
+    }
+    
+    @objc func sendAction() {
+        let popupVC = TransferNavigationViewController()
+        present(popupVC, animated: true, completion: nil)
     }
     
     func walletDetect() -> Bool {
