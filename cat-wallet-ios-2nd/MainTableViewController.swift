@@ -47,7 +47,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sendCoinCell", for: indexPath) as! SendTableViewCell
-        cell.coinNum.text = getBalance()
+        cell.coinNum.text = getBalance(keyStore)
         return cell
     }
     
@@ -61,22 +61,6 @@ class MainTableViewController: UITableViewController {
     }
     @objc private func dismissKeyboard() {
         view.endEditing(true)
-    }
-    
-    func getBalance() -> String{
-        if let ethAdd = EthereumAddress(keyStore.address){
-            var balance = ""
-            do {
-                let web3 = Web3.InfuraMainnetWeb3()
-                let balancebigint = try web3.eth.getBalance(address: ethAdd)
-                balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
-            } catch let error {
-                print(error)
-            }
-            return balance
-        } else {
-            return ""
-        }
     }
     
     func setSendButton() {
