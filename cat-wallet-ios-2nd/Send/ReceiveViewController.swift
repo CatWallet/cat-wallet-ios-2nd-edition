@@ -9,11 +9,12 @@
 import UIKit
 import BigInt
 import Web3swift
-//import EthereumAddress
+
 
 class ReceiveViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addressimage: UIImageView!
+    let ws = WalletService()
     var copyButton: UIButton!
     var buttonConstraint: NSLayoutConstraint!
     var cKeyStore = CurrentKeyStoreRealm()
@@ -71,6 +72,6 @@ class ReceiveViewController: UIViewController {
     }
     
     func getWallet() {
-        cKeyStore = fetchCurrenKeyStore()
+        cKeyStore = ws.fetchCurrenKeyStore()
     }
 }

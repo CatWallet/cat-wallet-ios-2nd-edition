@@ -12,6 +12,7 @@ import Web3swift
 class NewWalletViewController: UIViewController {
     @IBOutlet weak var newWalletButton: UIButton!
     @IBOutlet weak var importWalletButton: UIButton!
+    let ws = WalletService()
     let setButton = SetButton()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class NewWalletViewController: UIViewController {
     }
     
     @IBAction func createNewWallet(_ sender: Any) {
-        createHDWallet(withName: "String", password: "Password") { (keyWallet, error, mnemonics) in
+        ws.createHDWallet(withName: "String", password: "Password") { (keyWallet, error, mnemonics) in
             if error != nil {
                 print(error as! String)
             } else {

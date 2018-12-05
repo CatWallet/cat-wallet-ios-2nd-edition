@@ -12,6 +12,7 @@ import RealmSwift
 class WalletsTableViewController: UITableViewController {
     
     var wallets:[KeyStoreRealm] = []
+    let ws = WalletService()
     
     override func viewWillAppear(_ animated: Bool) {
         wallets = []
@@ -44,7 +45,7 @@ class WalletsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let num = getKeyStoreCount()
+        let num = ws.getKeyStoreCount()
         return num
     }
     
@@ -58,7 +59,7 @@ class WalletsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         let keyStore = wallets[index]
-        saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name)
+        ws.saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name)
         dismiss(animated: true, completion: nil)
     }
     

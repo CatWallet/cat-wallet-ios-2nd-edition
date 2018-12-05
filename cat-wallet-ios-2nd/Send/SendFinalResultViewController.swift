@@ -19,6 +19,7 @@ enum Result<T> {
 class SendFinalResultViewController: UIViewController {
 
     @IBOutlet weak var doneButton: UIButton!
+    let ws = WalletService()
     let setButton = SetButton()
     var fetchks = CurrentKeyStoreRealm()
     var keyStore: KeystoreManager?
@@ -26,89 +27,64 @@ class SendFinalResultViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setButton.setButton(doneButton, 2)
-        retreiveKeyStore()
        
     }
 
     @IBAction func doneAction(_ sender: Any) {
         retreiveKeyStore()
-
+        
     }
-    
-
     
     func retreiveKeyStore() {
-        fetchks = fetchCurrenKeyStore()
+        fetchks = ws.fetchCurrenKeyStore()
         do {
-            let ks = try getKeyStoreManager(fetchks.data!)
+            let ks = try ws.getKeyStoreManager(fetchks.data!)
             keyStore = ks
-            let act = try prepareTransactionForSendingEther()
+            let act = try prepareSendEthTx(toAddress: "sddsd", value: "1.0", gasLimit: TransactionOptions.GasLimitPolicy.automatic, gasPrice: TransactionOptions.GasPricePolicy.automatic)
             let result = try sendTx(transaction: act, password: "Password")
-            print(result)
-        } catch {
-            
+            print(result.transaction.description)
+        } catch let error{
+            print(error)
+            print(error.localizedDescription)
         }
-        
     }
     
-    func prepareTransactionForSendingEther() throws -> WriteTransaction {
-        //DispatchQueue.global(qos: .userInitiated).async {
-            guard let destinationEthAddress = EthereumAddress("0x60A5667f0b38e8EC0356cD1856B85E9798bE3098") else {throw Errors.invalidDestinationAddress}
-            guard let amount = Web3.Utils.parseToBigUInt("1", units: .eth) else {throw Errors.invalidAmountFormat}
-        
-            let web3 = Web3.InfuraRinkebyWeb3()
-            web3.addKeystoreManager(keyStore)
-            guard let ethAddressFrom = EthereumAddress(fetchks.address) else {throw Errors.invalidKey}
-            guard let contract = web3.contract(Web3.Utils.coldWalletABI, at: destinationEthAddress, abiVersion: 2) else {throw Errors.invalidDestinationAddress}
-            guard let writeTX = contract.write("fallback") else {throw Errors.invalidContract}
-            writeTX.transactionOptions.from = ethAddressFrom
-            writeTX.transactionOptions.value = amount
-            return writeTX
+    func prepareSendEthTx(toAddress: String,
+                          value: String,
+                          gasLimit: TransactionOptions.GasLimitPolicy = .automatic,
+                          gasPrice: TransactionOptions.GasPricePolicy = .automatic) throws -> WriteTransaction {
+        guard let ethAddress = EthereumAddress("0x2DbB29b741Ec75B01973bEC782A998D4b231B3Bb") else {
+            throw Web3Error.dataError
         }
-    
-//    func prepareSendEthTx(toAddress: String,
-//                          value: String = "1.0",
-//                          gasLimit: TransactionOptions.GasLimitPolicy = .automatic,
-//                          gasPrice: TransactionOptions.GasPricePolicy = .automatic) throws -> WriteTransaction {
-//        guard let ethAddress = EthereumAddress(toAddress) else {
-//            throw Web3Error.dataError
-//        }
-//        guard let contract = web3Instance.contract(Web3.Utils.coldWalletABI, at: ethAddress, abiVersion: 2) else {
-//            throw Web3Error.dataError
-//        }
-//        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
-//        var options = defaultOptions()
-//        options.value = amount
-//        options.gasPrice = gasPrice
-//        options.gasLimit = gasLimit
-//        guard let tx = contract.write("fallback",
-//                                      parameters: [AnyObject](),
-//                                      extraData: Data(),
-//                                      transactionOptions: options) else {
-//                                        throw Web3Error.transactionSerializationError
-//        }
-//        return tx
-//    }
+        let web3 = Web3.InfuraRinkebyWeb3()
+        web3.addKeystoreManager(keyStore)
+        guard let contract = web3.contract(Web3.Utils.coldWalletABI, at: ethAddress, abiVersion: 2) else {
+            throw Web3Error.dataError
+        }
+        guard let ethAddressFrom = EthereumAddress(fetchks.address) else {throw Errors.invalidKey}
+        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
+        print(amount)
+        var options = web3.transactionOptions
+        options.from = ethAddressFrom
+        options.value = amount
+        options.gasPrice = gasPrice
+        options.gasLimit = gasLimit
+        guard let tx = contract.write("fallback",parameters: [AnyObject](),extraData: Data(),transactionOptions: options) else { throw Web3Error.transactionSerializationError
+        }
+        return tx
+    }
     
     func sendTx(transaction: WriteTransaction,
                 options: TransactionOptions? = nil,
                 password: String) throws -> TransactionSendingResult {
         do {
             let txOptions = options ?? transaction.transactionOptions
+            print(txOptions.value)
             let result = try transaction.send(password: password, transactionOptions: txOptions)
             return result
         } catch let error {
+            print(error)
             print(error.localizedDescription)
-            throw error
-        }
-    }
-    func callTx(transaction: ReadTransaction,
-                options: TransactionOptions? = nil) throws -> [String : Any] {
-        do {
-            let txOptions = options ?? transaction.transactionOptions
-            let result = try transaction.call(transactionOptions: txOptions)
-            return result
-        } catch let error {
             throw error
         }
     }

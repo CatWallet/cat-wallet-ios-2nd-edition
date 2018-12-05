@@ -16,13 +16,14 @@ class MainTableViewController: UITableViewController {
     var height = CGFloat(300)
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
+    let ws = WalletService()
     var buttonConstraint: NSLayoutConstraint!
     var sendButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
         setSendButton()
-        keyStore = fetchCurrenKeyStore()
+        keyStore = ws.fetchCurrenKeyStore()
         self.tableView.tableFooterView = UIView()
         title = "Main"
     }
@@ -47,7 +48,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sendCoinCell", for: indexPath) as! SendTableViewCell
-        cell.coinNum.text = getBalance(keyStore)
+        cell.coinNum.text = "x" + ws.getBalance(keyStore)
         return cell
     }
     

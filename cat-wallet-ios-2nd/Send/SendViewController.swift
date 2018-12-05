@@ -16,6 +16,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     var addressField = SkyFloatingLabelTextField()
     var amountField = SkyFloatingLabelTextField()
     var cKeyStore = CurrentKeyStoreRealm()
+    let ws = WalletService()
     var sendButton: UIButton!
     var buttonConstraint: NSLayoutConstraint!
     
@@ -111,7 +112,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     }
     
     func getKeyStore() {
-        cKeyStore = fetchCurrenKeyStore()
+        cKeyStore = ws.fetchCurrenKeyStore()
     }
     
     func passContact(_ address: String) {

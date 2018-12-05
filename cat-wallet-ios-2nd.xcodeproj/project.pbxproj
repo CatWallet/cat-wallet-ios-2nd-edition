@@ -49,7 +49,7 @@
 		AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543355218253C700F58C06 /* WalletsTableViewController.swift */; };
 		AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433572182548A00F58C06 /* NewWalletViewController.swift */; };
 		AD54335A2182554F00F58C06 /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5433592182554F00F58C06 /* WalletModel.swift */; };
-		AD54335C2182580300F58C06 /* WalletsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335B2182580300F58C06 /* WalletsViewModel.swift */; };
+		AD54335C2182580300F58C06 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335B2182580300F58C06 /* WalletService.swift */; };
 		AD54335E2182616900F58C06 /* WalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335D2182616900F58C06 /* WalletError.swift */; };
 		AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */; };
 		AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */; };
@@ -127,7 +127,7 @@
 		AD543355218253C700F58C06 /* WalletsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewController.swift; sourceTree = "<group>"; };
 		AD5433572182548A00F58C06 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
 		AD5433592182554F00F58C06 /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
-		AD54335B2182580300F58C06 /* WalletsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewModel.swift; sourceTree = "<group>"; };
+		AD54335B2182580300F58C06 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		AD54335D2182616900F58C06 /* WalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletError.swift; sourceTree = "<group>"; };
 		AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletResultViewController.swift; sourceTree = "<group>"; };
 		AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateWalletResultViewController.xib; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 				AD543355218253C700F58C06 /* WalletsTableViewController.swift */,
 				AD5433572182548A00F58C06 /* NewWalletViewController.swift */,
 				AD5433592182554F00F58C06 /* WalletModel.swift */,
-				AD54335B2182580300F58C06 /* WalletsViewModel.swift */,
+				AD54335B2182580300F58C06 /* WalletService.swift */,
 				AD54335D2182616900F58C06 /* WalletError.swift */,
 				AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */,
 				AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */,
@@ -544,7 +544,7 @@
 				ADB9091B21A102EB00480883 /* SendFinalResultViewController.swift in Sources */,
 				AD1CFF0821965B8A00843B91 /* WebServiceHandler.swift in Sources */,
 				AD54335A2182554F00F58C06 /* WalletModel.swift in Sources */,
-				AD54335C2182580300F58C06 /* WalletsViewModel.swift in Sources */,
+				AD54335C2182580300F58C06 /* WalletService.swift in Sources */,
 				AD1CFF0E21965B8A00843B91 /* CoinMarketDetialViewController.swift in Sources */,
 				AD11D5B7219651DE00B6BE65 /* SendTableViewCell.swift in Sources */,
 				AD1CFF1C21966A9F00843B91 /* BottomPopupDismissAnimator.swift in Sources */,
