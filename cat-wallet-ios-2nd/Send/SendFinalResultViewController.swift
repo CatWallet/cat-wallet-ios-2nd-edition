@@ -53,25 +53,27 @@ class SendFinalResultViewController: UIViewController {
                           value: String,
                           gasLimit: TransactionOptions.GasLimitPolicy = .automatic,
                           gasPrice: TransactionOptions.GasPricePolicy = .automatic) throws -> WriteTransaction {
-        guard let ethAddress = EthereumAddress("0x2DbB29b741Ec75B01973bEC782A998D4b231B3Bb") else {
+//        guard let ethAddress = EthereumAddress("0x2DbB29b741Ec75B01973bEC782A998D4b231B3Bb") else {
+//            throw Web3Error.dataError
+//        }
+        guard let ethAddress = EthereumAddress(toAddress) else {
             throw Web3Error.dataError
         }
-        let web3 = Web3.InfuraRinkebyWeb3()
+        let web3 = Web3.InfuraMainnetWeb3()
         web3.addKeystoreManager(keyStore)
         guard let contract = web3.contract(Web3.Utils.coldWalletABI, at: ethAddress, abiVersion: 2) else {
             throw Web3Error.dataError
         }
         guard let ethAddressFrom = EthereumAddress(fetchks.address) else {throw Errors.invalidKey}
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
-        print(amount)
         var options = web3.transactionOptions
         options.from = ethAddressFrom
         options.value = amount
         options.gasPrice = gasPrice
         options.gasLimit = gasLimit
-        guard let tx = contract.write("fallback",parameters: [AnyObject](),extraData: Data(),transactionOptions: options) else { throw Web3Error.transactionSerializationError
+        guard let transaction = contract.method("fallback",parameters: [AnyObject](),extraData: Data(),transactionOptions: options) else { throw Web3Error.transactionSerializationError
         }
-        return tx
+        return transaction
     }
     
     func sendTx(transaction: WriteTransaction,
@@ -79,14 +81,18 @@ class SendFinalResultViewController: UIViewController {
                 password: String) throws -> TransactionSendingResult {
         do {
             let txOptions = options ?? transaction.transactionOptions
-            print(txOptions.value)
             let result = try transaction.send(password: password, transactionOptions: txOptions)
+            dismiss(animated: false, completion: nil)
             return result
         } catch let error {
             print(error)
             print(error.localizedDescription)
             throw error
         }
+    }
+    
+    func getPendingTransaction() {
+        //web3.txPool.getStatus()
     }
 }
 
