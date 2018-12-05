@@ -14,6 +14,9 @@ struct ShowNotiBar {
     func showBar(title: String, subtitle: String, style: BannerStyle) {
         let banner = NotificationBanner(title: title, subtitle: subtitle, leftView: nil, rightView: nil, style: style)
         banner.show()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            banner.dismiss()
+        }
     }
     
     func hide(bar: NotificationBanner) {

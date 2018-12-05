@@ -27,6 +27,7 @@ class MainTableViewController: UITableViewController {
         keyStore = ws.fetchCurrenKeyStore()
         self.tableView.tableFooterView = UIView()
         title = "Main"
+        shownotibar.showBar(title: "", subtitle: "message", style: .success)
     }
     
     
