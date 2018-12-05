@@ -32,12 +32,14 @@ class MainTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if walletDetect() {
+            sendButton.isHidden = false
             tableView.backgroundColor = UIColor.white
             return 1
         } else {
             //            let backgroundImage = UIImage(named: "address")
             //            let imageView = UIImageView(image: backgroundImage)
             //            tableView.backgroundView = imageView
+            sendButton.isHidden = true
             tableView.backgroundColor = UIColor.black
             return 0
         }
@@ -79,6 +81,7 @@ class MainTableViewController: UITableViewController {
     }
     
     @objc func sendAction() {
+        
         let popupVC = TransferNavigationViewController()
         present(popupVC, animated: true, completion: nil)
     }
