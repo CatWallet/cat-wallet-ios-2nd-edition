@@ -72,6 +72,7 @@
 		ADB9093121AB747100480883 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093021AB747100480883 /* ContactModel.swift */; };
 		ADB9093321ABD27700480883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9093221ABD27700480883 /* String.swift */; };
 		ADBD797B21B2356A00D8BB6D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD797A21B2356A00D8BB6D /* MainTableViewController.swift */; };
+		ADBD797F21B8621100D8BB6D /* NotificationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD797E21B8621100D8BB6D /* NotificationBar.swift */; };
 		ADC7887F21AE01630073B94E /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7887D21AE01630073B94E /* ReceiveViewController.swift */; };
 		ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC7887E21AE01630073B94E /* ReceiveViewController.xib */; };
 		ADC7888221AE41330073B94E /* QRSacnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7888121AE41330073B94E /* QRSacnerViewController.swift */; };
@@ -150,6 +151,7 @@
 		ADB9093021AB747100480883 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		ADB9093221ABD27700480883 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		ADBD797A21B2356A00D8BB6D /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		ADBD797E21B8621100D8BB6D /* NotificationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBar.swift; sourceTree = "<group>"; };
 		ADC7887D21AE01630073B94E /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		ADC7887E21AE01630073B94E /* ReceiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveViewController.xib; sourceTree = "<group>"; };
 		ADC7888121AE41330073B94E /* QRSacnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRSacnerViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,21 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		ADBD797C21B861CE00D8BB6D /* NotificationBar */ = {
+			isa = PBXGroup;
+			children = (
+				ADBD797E21B8621100D8BB6D /* NotificationBar.swift */,
+			);
+			path = NotificationBar;
+			sourceTree = "<group>";
+		};
+		ADBD797D21B861DD00D8BB6D /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
 		ADC7888321B1F9CF0073B94E /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +360,8 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
+				ADBD797D21B861DD00D8BB6D /* New Group1 */,
+				ADBD797C21B861CE00D8BB6D /* NotificationBar */,
 				ADC7888321B1F9CF0073B94E /* History */,
 				ADB9093421ABD27C00480883 /* Extension */,
 				ADB9092021A61D6700480883 /* Setting */,
@@ -492,6 +511,8 @@
 				"${BUILT_PRODUCTS_DIR}/EthereumAddress/EthereumAddress.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -500,6 +521,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRLP/SwiftRLP.framework",
 				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1_swift/secp256k1_swift.framework",
@@ -514,6 +536,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumAddress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
@@ -522,6 +546,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRLP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1_swift.framework",
@@ -563,6 +588,7 @@
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
 				AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */,
 				AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */,
+				ADBD797F21B8621100D8BB6D /* NotificationBar.swift in Sources */,
 				AD1CFF4A2197CFFA00843B91 /* SetButton.swift in Sources */,
 				AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */,
 				AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */,

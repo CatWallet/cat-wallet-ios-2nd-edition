@@ -17,6 +17,7 @@ class MainTableViewController: UITableViewController {
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
     let ws = WalletService()
+    let shownotibar = ShowNotiBar()
     var buttonConstraint: NSLayoutConstraint!
     var sendButton: UIButton!
     
@@ -26,6 +27,9 @@ class MainTableViewController: UITableViewController {
         keyStore = ws.fetchCurrenKeyStore()
         self.tableView.tableFooterView = UIView()
         title = "Main"
+        
+        shownotibar.showBar(title: "bubu", subtitle: "bu", style: .info)
+        
     }
     
     
