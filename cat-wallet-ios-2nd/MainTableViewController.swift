@@ -81,7 +81,8 @@ class MainTableViewController: UITableViewController {
     }
     
     @objc func sendAction() {
-        
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
         let popupVC = TransferNavigationViewController()
         present(popupVC, animated: true, completion: nil)
     }
