@@ -48,7 +48,9 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
         self.view.addSubview(navBar)
         let navItem = UINavigationItem(title: "Contacts")
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: nil, action: #selector(addContact))
-        let dismiss = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(dismissAction))
+        doneItem.tintColor = UIColor.black
+        let dismiss = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: nil, action: #selector(dismissAction))
+        dismiss.tintColor = UIColor.black
         navItem.rightBarButtonItem = doneItem
         navItem.leftBarButtonItem = dismiss
         navBar.setItems([navItem], animated: false)
