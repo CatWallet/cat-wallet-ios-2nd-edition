@@ -156,13 +156,21 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     func setCleanButton() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let button = UIBarButtonItem(title: "Empty", style: .done, target: self, action: #selector(clearAddressField))
-        toolbar.setItems([button], animated: false)
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let emptyButton = UIBarButtonItem(title: "Empty", style: .done, target: self, action: #selector(clearAddressField))
+        let pasteButton = UIBarButtonItem(title: "Paste", style: .done, target: self, action: #selector(pasteToAddressField))
+        toolbar.setItems([emptyButton, flexible, pasteButton], animated: false)
         addressField.inputAccessoryView = toolbar
     }
     
     @objc func clearAddressField() {
         addressField.text = ""
+    }
+    
+    @objc func pasteToAddressField() {
+        if let address = UIPasteboard.general.string {
+            addressField.insertText(address)
+        }
     }
     
     func setFloatTextField() {
