@@ -9,10 +9,18 @@
 import Foundation
 import NotificationBannerSwift
 
-
 struct ShowNotiBar {
+    let success = UIImageView(image: #imageLiteral(resourceName: "success"))
+    let danger = UIImageView(image: #imageLiteral(resourceName: "danger"))
+    
     func showBar(title: String, subtitle: String, style: BannerStyle) {
-        let banner = NotificationBanner(title: title, subtitle: subtitle, leftView: nil, rightView: nil, style: style)
+        var view = UIImageView()
+        if style == BannerStyle.danger {
+            view = danger
+        } else {
+            view = success
+        }
+        let banner = NotificationBanner(title: title, subtitle: subtitle, leftView: view, rightView: nil, style: style)
         banner.show()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             banner.dismiss()

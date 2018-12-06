@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import EthereumAddress
 import QRCodeReaderViewController
 import SkyFloatingLabelTextField
+
 
 class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegate {
 
@@ -17,6 +19,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     var amountField = SkyFloatingLabelTextField()
     var cKeyStore = CurrentKeyStoreRealm()
     let ws = WalletService()
+    let notification = ShowNotiBar()
     var sendButton: UIButton!
     var buttonConstraint: NSLayoutConstraint!
     
@@ -27,6 +30,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         setFloatButton()
         setQRButton()
         hideNavigationBar()
+        setCleanButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +57,6 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         let vc = QRCodeReaderViewController()
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
-        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setFloatButton() {
@@ -103,11 +106,16 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     }
     
     @objc func buttonAction() {
-        if addressField.text != "" || amountField.text != "" {
-            let vc = SendResultViewController()
-            vc.getFrom = cKeyStore.address
-            vc.getTo = addressField.text!
-            self.navigationController?.pushViewController(vc, animated: true)
+        if let _ = EthereumAddress(addressField.text!), let amount = amountField.text{
+            if addressField.text != "" || amountField.text != "" {
+                let vc = SendResultViewController()
+                vc.getFrom = cKeyStore.address
+                vc.getTo = addressField.text!
+                vc.totalPrice = amount
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            notification.showBar(title: "Not a vaild Ethereum address or amount", subtitle: "", style: .danger)
         }
     }
     
@@ -143,6 +151,18 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         }
         
         
+    }
+    
+    func setCleanButton() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let button = UIBarButtonItem(title: "Empty", style: .done, target: self, action: #selector(clearAddressField))
+        toolbar.setItems([button], animated: false)
+        addressField.inputAccessoryView = toolbar
+    }
+    
+    @objc func clearAddressField() {
+        addressField.text = ""
     }
     
     func setFloatTextField() {

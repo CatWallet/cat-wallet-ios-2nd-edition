@@ -15,6 +15,7 @@ class ReceiveViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addressimage: UIImageView!
     let ws = WalletService()
+    let shownotibar = ShowNotiBar()
     var copyButton: UIButton!
     var buttonConstraint: NSLayoutConstraint!
     var cKeyStore = CurrentKeyStoreRealm()
@@ -64,10 +65,7 @@ class ReceiveViewController: UIViewController {
         let pasteboard = UIPasteboard.general
         pasteboard.string = addressLabel.text
         if pasteboard.string != nil {
-            let alert = UIAlertController(title: "", message: "Public key is copied", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: false, completion: nil)
+            shownotibar.showBar(title: "Public key is copied", subtitle: "", style: .success)
         }
     }
     
