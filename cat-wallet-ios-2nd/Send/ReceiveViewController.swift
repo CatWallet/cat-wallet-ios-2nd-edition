@@ -22,6 +22,7 @@ class ReceiveViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.endEditing(true)
         getWallet()
         generate()
         setCopyButton()

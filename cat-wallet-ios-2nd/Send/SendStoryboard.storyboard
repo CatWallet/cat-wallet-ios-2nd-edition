@@ -20,7 +20,7 @@
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-VZ-1zV">
                                 <rect key="frame" x="351" y="203" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="user_male"/>
+                                <state key="normal" title="Button" image="contact"/>
                                 <connections>
                                     <action selector="contactButtonAction:" destination="scv-zT-25X" eventType="touchUpInside" id="39f-gv-AN1"/>
                                 </connections>
@@ -60,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="user_male" width="30" height="30"/>
+        <image name="contact" width="37.5" height="37.5"/>
     </resources>
 </document>
