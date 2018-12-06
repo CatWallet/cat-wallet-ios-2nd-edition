@@ -23,7 +23,7 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchContacts()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
+        tableView.register(UINib(nibName: "ContactsTableViewCell", bundle: nil), forCellReuseIdentifier: "contactsCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         setNavigationBar()
@@ -32,7 +32,6 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(false)
-        //fetchContacts()
         tableView.reloadData()
         tableView.tableFooterView = UIView()
     }
@@ -78,9 +77,9 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell")
-        cell?.textLabel?.text = people[indexPath.row].name
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell") as! ContactsTableViewCell
+        cell.nameLabel.text = people[indexPath.row].name
+        return cell
     }
     
     
