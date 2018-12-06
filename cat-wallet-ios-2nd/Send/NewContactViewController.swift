@@ -25,6 +25,7 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
     var phoneField = SkyFloatingLabelTextField()
     let contactService = ContactsService()
     var contact = Contact()
+    var shownotibar = ShowNotiBar()
     var isEmail: Bool?
     weak var delegate: PassNewContact?
     let phoneNumberKit = PhoneNumberKit()
@@ -73,11 +74,7 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
                 phoneField.text = message
             }
         } catch {
-            let alert = UIAlertController(title: "", message: "No user found", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: false, completion: nil)
-            print(error.localizedDescription)
+            shownotibar.showBar(title: "User not found", subtitle: "", style: .warning)
         }
     }
     

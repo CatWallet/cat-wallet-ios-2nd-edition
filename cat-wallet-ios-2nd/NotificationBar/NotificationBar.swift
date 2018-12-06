@@ -15,10 +15,10 @@ struct ShowNotiBar {
     
     func showBar(title: String, subtitle: String, style: BannerStyle) {
         var view = UIImageView()
-        if style == BannerStyle.danger {
-            view = danger
-        } else {
+        if style == BannerStyle.success {
             view = success
+        } else {
+            view = danger
         }
         let banner = NotificationBanner(title: title, subtitle: subtitle, leftView: view, rightView: nil, style: style)
         banner.show()

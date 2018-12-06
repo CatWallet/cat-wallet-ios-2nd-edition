@@ -80,7 +80,6 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell")
         cell?.textLabel?.text = people[indexPath.row].name
-        //cell?.detailTextLabel?.text = people[indexPath.row].address
         return cell!
     }
     
@@ -104,18 +103,6 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete{
-//            self.contactService.deleteWallet(self.people[indexPath.row].name)
-//            self.people.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
     
     override func getPopupHeight() -> CGFloat {
         let stHeight = UIApplication.shared.statusBarFrame.size.height
