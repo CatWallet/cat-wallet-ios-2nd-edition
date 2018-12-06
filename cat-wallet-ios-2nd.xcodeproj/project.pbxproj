@@ -325,13 +325,6 @@
 			path = NotificationBar;
 			sourceTree = "<group>";
 		};
-		ADBD797D21B861DD00D8BB6D /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
-			sourceTree = "<group>";
-		};
 		ADC7888321B1F9CF0073B94E /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,7 +353,6 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
-				ADBD797D21B861DD00D8BB6D /* New Group1 */,
 				ADBD797C21B861CE00D8BB6D /* NotificationBar */,
 				ADC7888321B1F9CF0073B94E /* History */,
 				ADB9093421ABD27C00480883 /* Extension */,
