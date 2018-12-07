@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BottomPopup
 
 protocol PassContactData: class {
     func passContact( _ address: String)

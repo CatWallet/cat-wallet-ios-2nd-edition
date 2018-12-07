@@ -11,8 +11,7 @@ import Web3swift
 import EthereumAddress
 
 
-class MainTableViewController: UITableViewController {
-
+class MainTableViewController: UITableViewController, ReloadTableView {
     var height = CGFloat(300)
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
@@ -23,7 +22,6 @@ class MainTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
-        setSendButton()
         keyStore = ws.fetchCurrenKeyStore()
         self.tableView.tableFooterView = UIView()
         title = "Main"
@@ -32,15 +30,19 @@ class MainTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if walletDetect() {
-            sendButton.isHidden = false
+            setSendButton()
             tableView.backgroundColor = UIColor.white
             return 1
         } else {
-            //            let backgroundImage = UIImage(named: "address")
-            //            let imageView = UIImageView(image: backgroundImage)
-            //            tableView.backgroundView = imageView
-            sendButton.isHidden = true
-            tableView.backgroundColor = UIColor.black
+            let width = UIScreen.main.bounds.size.width
+            let textView = UITextView(frame: CGRect(x: 0, y: 120, width: width, height: 60))
+            textView.textAlignment = .center
+            textView.text = "Clikc the button on the top right corner to create wallets"
+            self.view.addSubview(textView)
+            let backgroundImage = UIImage(named: "wallet_large")
+            let imageView = UIImageView(image: backgroundImage)
+            imageView.contentMode = .center
+            tableView.backgroundView = imageView
             return 0
         }
     }
@@ -65,6 +67,10 @@ class MainTableViewController: UITableViewController {
     }
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
     }
     
     func setSendButton() {

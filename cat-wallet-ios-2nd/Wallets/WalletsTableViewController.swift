@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+protocol ReloadTableView {
+    func reloadTableView()
+}
+
 class WalletsTableViewController: UITableViewController {
     
     var wallets:[KeyStoreRealm] = []
