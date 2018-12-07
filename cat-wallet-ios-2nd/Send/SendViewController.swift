@@ -31,6 +31,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         setQRButton()
         hideNavigationBar()
         setCleanButton()
+        setAmountToolbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -165,6 +166,18 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         addressField.inputAccessoryView = toolbar
     }
     
+    func setAmountToolbar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let dismissButton = UIBarButtonItem(title: "Dismiss", style: .done, target: self, action: #selector(dissKeyboard))
+        let leftSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+        let rightSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+        //let emptyButton = UIBarButtonItem(title: "Empty", style: .done, target: self, action: #selector(clearAddressField))
+        //let pasteButton = UIBarButtonItem(title: "Paste", style: .done, target: self, action: #selector(pasteToAddressField))
+        toolbar.setItems([leftSpace ,dismissButton,rightSpace], animated: false)
+        amountField.inputAccessoryView = toolbar
+    }
+    
     @objc func clearAddressField() {
         addressField.text = ""
     }
@@ -183,7 +196,6 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         let width = UIScreen.main.bounds.size.width - 40
         let AddressTextFieldFrame = CGRect(x: 20, y: 45, width: width, height: 60)
         let amountTextFieldFrame = CGRect(x: 20, y: 115, width: width, height: 60)
-        
         addressField = SkyFloatingLabelTextFieldWithIcon(frame: AddressTextFieldFrame)
         addressField.placeholder = "ETH address"
         addressField.title = "ETH address"
@@ -192,7 +204,6 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         addressField.autocorrectionType = .no
         addressField.adjustsFontSizeToFitWidth = true
         self.view.addSubview(addressField)
-        
         amountField = SkyFloatingLabelTextFieldWithIcon(frame: amountTextFieldFrame)
         amountField.placeholder = "Amount"
         amountField.title = "Amount"
