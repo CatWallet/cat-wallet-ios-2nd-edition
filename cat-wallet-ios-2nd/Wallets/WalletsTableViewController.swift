@@ -10,15 +10,17 @@ import UIKit
 import RealmSwift
 
 protocol ReloadTableView {
-    func reloadTableView()
+    func reloadTableView(_ message: String)
 }
 
 class WalletsTableViewController: UITableViewController {
     
     var wallets:[KeyStoreRealm] = []
     let ws = WalletService()
+    var delegate: ReloadTableView?
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         wallets = []
         fetchWallet()
         tableView.reloadData()
@@ -64,7 +66,9 @@ class WalletsTableViewController: UITableViewController {
         let index = indexPath.row
         let keyStore = wallets[index]
         ws.saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name)
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.delegate?.reloadTableView("pass a message")
+        }
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

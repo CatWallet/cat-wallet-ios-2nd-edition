@@ -99,9 +99,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-Xp-lnu">
-                                <rect key="frame" x="16" y="135" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-Xp-lnu">
+                                <rect key="frame" x="16" y="135" width="378" height="29"/>
                                 <segments>
                                     <segment title="KeyStore"/>
                                     <segment title="PrivateKey"/>
@@ -109,27 +108,36 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-EQ-bcB">
-                                <rect key="frame" x="16" y="183" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-EQ-bcB">
+                                <rect key="frame" x="16" y="183" width="378" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZn-Dx-XB4">
-                                <rect key="frame" x="164" y="346" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZn-Dx-XB4">
+                                <rect key="frame" x="182" y="346" width="46" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Import"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <constraints>
+                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="trailing" secondItem="6kz-7I-OBP" secondAttribute="trailingMargin" id="8z0-Ec-I6z"/>
+                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="leading" secondItem="Crb-EQ-bcB" secondAttribute="leading" id="AFb-PB-dxb"/>
+                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="trailing" secondItem="Crb-EQ-bcB" secondAttribute="trailing" id="Kcv-Vy-Lqe"/>
+                            <constraint firstItem="AZn-Dx-XB4" firstAttribute="top" secondItem="Crb-EQ-bcB" secondAttribute="bottom" constant="35" id="POg-Hp-iVe"/>
+                            <constraint firstItem="rlr-pj-vGn" firstAttribute="bottom" secondItem="AZn-Dx-XB4" secondAttribute="bottom" constant="486" id="YEo-Ug-I2l"/>
+                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="top" secondItem="rlr-pj-vGn" secondAttribute="top" constant="47" id="olT-XZ-OeF"/>
+                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="leading" secondItem="rlr-pj-vGn" secondAttribute="leading" constant="16" id="ox1-DY-3w6"/>
+                            <constraint firstItem="Crb-EQ-bcB" firstAttribute="centerX" secondItem="AZn-Dx-XB4" secondAttribute="centerX" id="tVI-6c-RMT"/>
+                            <constraint firstItem="Crb-EQ-bcB" firstAttribute="top" secondItem="B1I-Xp-lnu" secondAttribute="bottom" constant="20" id="ujq-Vp-Dli"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rlr-pj-vGn"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="029-H4-dd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488.8" y="82.3088455772114"/>
+            <point key="canvasLocation" x="1437.68115942029" y="-338.16964285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eRo-yO-hE9">
