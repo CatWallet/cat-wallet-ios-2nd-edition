@@ -13,6 +13,7 @@ class SuccessCreationViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    let ws = WalletService()
     let setButton = SetButton()
     var getAddress = ""
     var getMnemonics = ""

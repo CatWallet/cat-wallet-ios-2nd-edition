@@ -53,6 +53,7 @@ struct WalletService {
                                          data: keyData,
                                          name: name ?? "",
                                          isHD: true)
+        saveCurrentKeyStore(address: address, data: keyData, name: name ?? "")
         saveKeyStore(wallet)
         saveWalletModel(address: address, data: keyData, name: name ?? "")
         completion(walletModel, nil, mnemonics)
@@ -125,7 +126,6 @@ struct WalletService {
         if let ethAdd = EthereumAddress(keyStore.address){
             var balance = ""
             do {
-                //let web3 = Web3.InfuraRinkebyWeb3()
                 let web3 = Web3.InfuraMainnetWeb3()
                 let balancebigint = try web3.eth.getBalance(address: ethAdd)
                 balance = String(describing: Web3.Utils.formatToEthereumUnits(balancebigint)!)
