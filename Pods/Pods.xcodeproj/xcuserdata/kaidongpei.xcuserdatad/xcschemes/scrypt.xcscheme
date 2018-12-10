@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "741099AFA7530D115914D78236335B5B"
+               BlueprintIdentifier = "42B05E591053F3C2A97258D8BCECFA92"
                BlueprintName = "scrypt"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "scrypt.framework">

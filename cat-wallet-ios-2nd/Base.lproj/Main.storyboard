@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -65,7 +66,8 @@
                     <connections>
                         <segue destination="Ugh-YZ-9c7" kind="relationship" relationship="viewControllers" id="TTH-SA-18Z"/>
                         <segue destination="FSj-vZ-Q1Q" kind="relationship" relationship="viewControllers" id="v1B-Nd-jza"/>
-                        <segue destination="TXg-PI-Thz" kind="relationship" relationship="viewControllers" id="mzE-0T-ALP"/>
+                        <segue destination="13m-7y-8v1" kind="relationship" relationship="viewControllers" id="Gg1-br-osA"/>
+                        <segue destination="TXg-PI-Thz" kind="relationship" relationship="viewControllers" id="tai-pB-bBJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTt-4f-Lzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,7 +141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0e-dT-3Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="1422"/>
+            <point key="canvasLocation" x="1670" y="1422"/>
         </scene>
         <!--Settings-->
         <scene sceneID="yxS-bO-iTc">
@@ -160,7 +162,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZc-Z9-B2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="767"/>
+            <point key="canvasLocation" x="1671" y="767"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="qqJ-oe-BPr">
+            <objects>
+                <viewController id="13m-7y-8v1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yy0-My-OIs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QgP-x8-NfJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="people" id="AYA-Vz-6yn">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ff1-B8-biv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="767"/>
         </scene>
         <!--Main-->
         <scene sceneID="x33-np-1NE">
@@ -188,6 +208,7 @@
         <image name="bank_cards" width="30" height="30"/>
         <image name="combo_chart" width="30" height="30"/>
         <image name="money_bag" width="30" height="30"/>
+        <image name="people" width="30" height="30"/>
         <image name="services" width="30" height="30"/>
     </resources>
 </document>

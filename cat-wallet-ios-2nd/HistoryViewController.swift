@@ -10,7 +10,7 @@ import UIKit
 import Web3swift
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let a = ["01/11/2018", "11/11/2018"]
+    let a = [""]
     
     @IBOutlet weak var tableView: UITableView!
     

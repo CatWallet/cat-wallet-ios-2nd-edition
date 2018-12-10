@@ -82,6 +82,7 @@
 		ADC99C00217BA247008740BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99BFE217BA247008740BD /* Main.storyboard */; };
 		ADC99C02217BA249008740BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C01217BA249008740BD /* Assets.xcassets */; };
 		ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C03217BA249008740BD /* LaunchScreen.storyboard */; };
+		ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,7 @@
 		ADC99C01217BA249008740BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC99C04217BA249008740BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADC99C06217BA249008740BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletViewController.swift; sourceTree = "<group>"; };
 		B3D531AB9995410F27218089 /* Pods_cat_wallet_ios_2nd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cat_wallet_ios_2nd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -276,6 +278,7 @@
 				AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */,
 				AD1CFF5C219CF86D00843B91 /* SuccessCreationViewController.swift */,
 				AD1CFF5D219CF86D00843B91 /* SuccessCreationViewController.xib */,
+				ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */,
 			);
 			path = Wallets;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
+				ADE4B49021BB678500833376 /* Chat */,
 				ADBD797C21B861CE00D8BB6D /* NotificationBar */,
 				ADC7888321B1F9CF0073B94E /* History */,
 				ADB9093421ABD27C00480883 /* Extension */,
@@ -381,6 +385,13 @@
 				AD1CFF492197CFFA00843B91 /* SetButton.swift */,
 			);
 			path = "cat-wallet-ios-2nd";
+			sourceTree = "<group>";
+		};
+		ADE4B49021BB678500833376 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +525,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SlackTextViewController/SlackTextViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRLP/SwiftRLP.framework",
 				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
@@ -540,6 +552,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlackTextViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRLP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
@@ -607,6 +620,7 @@
 				AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */,
 				AD1CFF57219A711400843B91 /* DAppViewController.swift in Sources */,
 				AD1CFF1021965B8A00843B91 /* CoinMarketContant.swift in Sources */,
+				ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */,
 				ADB9093321ABD27700480883 /* String.swift in Sources */,
 				AD54335E2182616900F58C06 /* WalletError.swift in Sources */,
 				AD1CFF1E21966A9F00843B91 /* BottomPopupPresentationController.swift in Sources */,

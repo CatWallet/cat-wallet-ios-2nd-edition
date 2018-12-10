@@ -37,7 +37,7 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         let width = UIScreen.main.bounds.size.width
         let textView = UITextView(frame: CGRect(x: 0, y: 120, width: width, height: 60))
         textView.textAlignment = .center
-        textView.text = "Clikc the button on the top right corner to create wallets"
+        textView.text = "Clikc the button on the top right corner of the page"
         if walletDetect() {
             setSendButton()
             textView.text = "Welcome back"

@@ -19,6 +19,7 @@ target 'cat-wallet-ios-2nd' do
   pod 'QRCodeReaderViewController'
   pod 'NotificationBannerSwift'
   pod 'BottomPopup'
+  pod 'SlackTextViewController'
   #pod "SDSegmentController"
   # Pods for cat-wallet-ios-2nd
 

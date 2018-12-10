@@ -16,7 +16,11 @@ class SendResultViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
     var buttonConstraint: NSLayoutConstraint!
+    var keyStore = CurrentKeyStoreRealm()
     var confirmButton: UIButton!
+    var shownoti = ShowNotiBar()
+    let ws = WalletService()
+    var balance = 0
     var getFrom = ""
     var getTo = ""
     var totalPrice = ""
@@ -24,6 +28,7 @@ class SendResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setConfirmButton()
+        checkBalance()
         textView.isEditable = false
         textView.text = """
         From: \n
@@ -37,12 +42,20 @@ class SendResultViewController: UIViewController {
     }
 
     @objc func confirmAction() {
-        let vc = SendFinalResultViewController()
-        
-        do {
+        if Int(balance) == 0 || Int(totalPrice)! < balance{
+            shownoti.showBar(title: "Insufficient balance", subtitle: "", style: .warning)
+    
+        } else {
+            let vc = SendFinalResultViewController()
             navigationController?.pushViewController(vc, animated: true)
-            } catch {
-            
+        }
+    }
+    
+    func checkBalance() {
+        keyStore = ws.fetchCurrenKeyStore()
+        balance = Int(ws.getBalance(keyStore)) ?? 0
+        if Int(totalPrice) == 0 || Int(totalPrice)! < balance {
+            confirmButton.isEnabled = false
         }
     }
     
