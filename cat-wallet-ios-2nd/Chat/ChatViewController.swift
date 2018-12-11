@@ -110,4 +110,15 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    
+    private func textView(_ textView: GrowingTextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            // User pressed Done
+            print("hitting it again and again!")
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }
