@@ -20,6 +20,7 @@ target 'cat-wallet-ios-2nd' do
   pod 'NotificationBannerSwift'
   pod 'BottomPopup'
   pod 'SlackTextViewController'
+  pod 'GrowingTextView', '0.6.1'
   #pod "SDSegmentController"
   # Pods for cat-wallet-ios-2nd
 

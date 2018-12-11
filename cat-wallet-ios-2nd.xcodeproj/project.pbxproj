@@ -83,6 +83,11 @@
 		ADC99C02217BA249008740BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C01217BA249008740BD /* Assets.xcassets */; };
 		ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C03217BA249008740BD /* LaunchScreen.storyboard */; };
 		ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */; };
+		ADE4B49321BF13A000833376 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49121BF13A000833376 /* SignUpViewController.swift */; };
+		ADE4B49421BF13A000833376 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49221BF13A000833376 /* SignUpViewController.xib */; };
+		ADE4B49721BF158000833376 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49521BF158000833376 /* ChatViewController.swift */; };
+		ADE4B49821BF158000833376 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49621BF158000833376 /* ChatViewController.xib */; };
+		ADE4B49A21BF353500833376 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49921BF353500833376 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +170,11 @@
 		ADC99C04217BA249008740BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADC99C06217BA249008740BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletViewController.swift; sourceTree = "<group>"; };
+		ADE4B49121BF13A000833376 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ADE4B49221BF13A000833376 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		ADE4B49521BF158000833376 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		ADE4B49621BF158000833376 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		ADE4B49921BF353500833376 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B3D531AB9995410F27218089 /* Pods_cat_wallet_ios_2nd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cat_wallet_ios_2nd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -390,6 +400,11 @@
 		ADE4B49021BB678500833376 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				ADE4B49121BF13A000833376 /* SignUpViewController.swift */,
+				ADE4B49221BF13A000833376 /* SignUpViewController.xib */,
+				ADE4B49521BF158000833376 /* ChatViewController.swift */,
+				ADE4B49621BF158000833376 /* ChatViewController.xib */,
+				ADE4B49921BF353500833376 /* Message.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -459,6 +474,7 @@
 				ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */,
 				AD1CFF5F219CF86D00843B91 /* SuccessCreationViewController.xib in Resources */,
 				AD1CFF58219A711400843B91 /* DAppViewController.xib in Resources */,
+				ADE4B49421BF13A000833376 /* SignUpViewController.xib in Resources */,
 				ADC99C02217BA249008740BD /* Assets.xcassets in Resources */,
 				AD11D5B8219651DE00B6BE65 /* SendTableViewCell.xib in Resources */,
 				AD1CFF542197D98100843B91 /* ContactsTableViewCell.xib in Resources */,
@@ -467,6 +483,7 @@
 				AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */,
 				AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */,
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
+				ADE4B49821BF158000833376 /* ChatViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
 				ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */,
 				ADC7888921B21B570073B94E /* TransferNavigationViewController.xib in Resources */,
@@ -514,6 +531,7 @@
 				"${BUILT_PRODUCTS_DIR}/EthereumABI/EthereumABI.framework",
 				"${BUILT_PRODUCTS_DIR}/EthereumAddress/EthereumAddress.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
@@ -541,6 +559,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumABI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumAddress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
@@ -577,12 +596,15 @@
 				AD1CFF0821965B8A00843B91 /* WebServiceHandler.swift in Sources */,
 				AD54335A2182554F00F58C06 /* WalletModel.swift in Sources */,
 				AD54335C2182580300F58C06 /* WalletService.swift in Sources */,
+				ADE4B49321BF13A000833376 /* SignUpViewController.swift in Sources */,
 				AD1CFF0E21965B8A00843B91 /* CoinMarketDetialViewController.swift in Sources */,
 				AD11D5B7219651DE00B6BE65 /* SendTableViewCell.swift in Sources */,
 				AD1CFF1C21966A9F00843B91 /* BottomPopupDismissAnimator.swift in Sources */,
 				AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */,
 				ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */,
 				AD1CFF1D21966A9F00843B91 /* BottomPopupUtils.swift in Sources */,
+				ADE4B49A21BF353500833376 /* Message.swift in Sources */,
+				ADE4B49721BF158000833376 /* ChatViewController.swift in Sources */,
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
 				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,

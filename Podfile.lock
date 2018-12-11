@@ -11,6 +11,7 @@ PODS:
   - EthereumAddress (1.0.0):
     - CryptoSwift (~> 0.13)
   - Eureka (4.3.0)
+  - GrowingTextView (0.6.1)
   - MarqueeLabel/Swift (3.2.0)
   - MBProgressHUD (1.1.0)
   - NotificationBannerSwift (1.8.0):
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - BigInt (~> 3.1)
   - BottomPopup
   - Eureka (~> 4.3)
+  - GrowingTextView (= 0.6.1)
   - MBProgressHUD
   - NotificationBannerSwift
   - Parse
@@ -83,6 +85,7 @@ SPEC REPOS:
     - EthereumABI
     - EthereumAddress
     - Eureka
+    - GrowingTextView
     - MarqueeLabel
     - MBProgressHUD
     - NotificationBannerSwift
@@ -109,6 +112,7 @@ SPEC CHECKSUMS:
   EthereumABI: f040f5429e5a4366d028c88b88d9441e137593af
   EthereumAddress: f476e1320dca3a0024431e713ede7a09c7eb7796
   Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
+  GrowingTextView: 335aefa45df7df06b01edede1363414d6ee5d6bc
   MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   NotificationBannerSwift: 49fc4be7fabada55b189b50e72184c92edd5f7f7
@@ -127,6 +131,6 @@ SPEC CHECKSUMS:
   SwiftRLP: 98a02b2210128353ca02e4c2f4d83e2a9796db4f
   web3swift: 33f30ca0e061e0f89117dfb46f5ee9f626eff6d6
 
-PODFILE CHECKSUM: 786287daf27548730c0ea735d6bc26f0f2c3bd02
+PODFILE CHECKSUM: 63a6eb38feb067dc42091c439a82809c0f3062ad
 
 COCOAPODS: 1.5.3
