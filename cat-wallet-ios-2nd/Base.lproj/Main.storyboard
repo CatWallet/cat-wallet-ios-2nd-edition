@@ -174,7 +174,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QgP-x8-NfJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gxu-no-NmL"/>
+                    <navigationItem key="navigationItem" id="Gxu-no-NmL">
+                        <barButtonItem key="rightBarButtonItem" image="contact_card" id="oNn-UW-GPt">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="updateUsername:" destination="13m-7y-8v1" id="UaF-XH-9Yi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff1-B8-biv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,6 +233,7 @@
     <resources>
         <image name="bank_cards" width="30" height="30"/>
         <image name="combo_chart" width="30" height="30"/>
+        <image name="contact_card" width="30" height="30"/>
         <image name="money_bag" width="30" height="30"/>
         <image name="people" width="30" height="30"/>
         <image name="services" width="30" height="30"/>

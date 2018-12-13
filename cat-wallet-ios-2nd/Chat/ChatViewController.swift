@@ -16,16 +16,28 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
     var inputToolbar: UIView!
     var textView: GrowingTextView!
     var textViewBottomConstraint: NSLayoutConstraint!
+    var shownoti = ShowNotiBar()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //checkRegistration()
+        let user = PFUser.current()
+        
+        print(user?.username)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Chat"
         checkRegistration()
+        setTextView()
         
+        let user = PFUser.current()
+        
+        print(user?.username)
+    }
+    
+    func setTextView() {
         inputToolbar = UIView()
         inputToolbar.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         inputToolbar.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +53,9 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         textView.placeholderColor = UIColor(white: 0.8, alpha: 1.0)
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.keyboardType = .default
+        textView.autocorrectionType = .no
+        textView.autocapitalizationType = .none
         textView.returnKeyType = .send
         inputToolbar.addSubview(textView)
         
@@ -96,6 +111,30 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         view.endEditing(true)
     }
 
+    @IBAction func updateUsername(_ sender: Any) {
+        if let user = PFUser.current() {
+            let alert = UIAlertController(title: "Update username", message: "!You can only change your username once!", preferredStyle: .alert)
+            alert.addTextField { (usernametextfield: UITextField) in
+                usernametextfield.placeholder = "Username"
+            }
+            let confirmaction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+                let username = alert.textFields![0]
+                if username.text != ""{
+                    user["username"] = username.text
+                    user.saveInBackground()
+                    self.shownoti.showBar(title: "Your username has been changed successfully.", subtitle: "", style: .success)
+                } else {
+                    self.shownoti.showBar(title: "Please enter a username.", subtitle: "", style: .warning)
+                }
+            }
+            let cancelaction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(confirmaction)
+            alert.addAction(cancelaction)
+            self.present(alert, animated: true) {
+                //update tb view
+            }
+        }
+    }
     func checkRegistration() {
         if PFUser.current() == nil {
             let vc = SignUpViewController()
@@ -114,15 +153,18 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n"{
             view.endEditing(true)
+            print(textView.text)
             textView.text = ""
-            print("sdsdsd")
             return false
         }
         return true
     }
     
     func textViewDidChange(_ textView: UITextView) {
+        
     }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
+        
     }
 }
