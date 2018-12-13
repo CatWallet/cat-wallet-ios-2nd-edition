@@ -12,6 +12,7 @@ import GrowingTextView
 
 class ChatViewController: UIViewController, GrowingTextViewDelegate {
     
+    @IBOutlet weak var chatTb: UITableView!
     var conversationId: String!
     var inputToolbar: UIView!
     var textView: GrowingTextView!
@@ -21,20 +22,16 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //checkRegistration()
-        let user = PFUser.current()
-        
-        print(user?.username)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chat"
+        chatTb.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "chatCell")
+        chatTb.delegate = self
+        chatTb.dataSource = self
         checkRegistration()
         setTextView()
-        
-        let user = PFUser.current()
-        
-        print(user?.username)
     }
     
     func setTextView() {
@@ -150,12 +147,23 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         }, completion: nil)
     }
     
+    func sendMessage(_ text: String, _ username: String) {
+        let message = PFObject(className: "Message")
+        message.setObject(username, forKey: "username")
+        message.setObject(text, forKey: "text")
+        message.saveInBackground()
+    }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n"{
-            view.endEditing(true)
-            print(textView.text)
-            textView.text = ""
-            return false
+            if let user = PFUser.current() {
+                sendMessage(textView.text, (user.username)!)
+                view.endEditing(true)
+                textView.text = ""
+                return false
+            } else {
+                return true
+            }
         }
         return true
     }
@@ -166,5 +174,24 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         
+    }
+}
+
+extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLoad()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! ChatTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

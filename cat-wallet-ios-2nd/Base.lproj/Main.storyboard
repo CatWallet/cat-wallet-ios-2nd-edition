@@ -171,7 +171,19 @@
                     <view key="view" contentMode="scaleToFill" id="yy0-My-OIs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UJz-53-4jM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UJz-53-4jM" firstAttribute="top" secondItem="QgP-x8-NfJ" secondAttribute="top" id="4u4-6B-B82"/>
+                            <constraint firstItem="QgP-x8-NfJ" firstAttribute="bottom" secondItem="UJz-53-4jM" secondAttribute="bottom" id="65Y-x1-wRe"/>
+                            <constraint firstItem="UJz-53-4jM" firstAttribute="leading" secondItem="QgP-x8-NfJ" secondAttribute="leading" id="oBK-mB-sJB"/>
+                            <constraint firstItem="QgP-x8-NfJ" firstAttribute="trailing" secondItem="UJz-53-4jM" secondAttribute="trailing" id="qhr-F5-CNK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QgP-x8-NfJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Gxu-no-NmL">

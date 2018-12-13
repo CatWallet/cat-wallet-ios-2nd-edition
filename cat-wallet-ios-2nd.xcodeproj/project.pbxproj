@@ -82,12 +82,13 @@
 		ADC99C00217BA247008740BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99BFE217BA247008740BD /* Main.storyboard */; };
 		ADC99C02217BA249008740BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C01217BA249008740BD /* Assets.xcassets */; };
 		ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C03217BA249008740BD /* LaunchScreen.storyboard */; };
+		ADD868EF21C1F6EE007B0670 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */; };
+		ADD868F021C1F6EE007B0670 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */; };
 		ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */; };
 		ADE4B49321BF13A000833376 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49121BF13A000833376 /* SignUpViewController.swift */; };
 		ADE4B49421BF13A000833376 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49221BF13A000833376 /* SignUpViewController.xib */; };
 		ADE4B49721BF158000833376 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49521BF158000833376 /* ChatViewController.swift */; };
 		ADE4B49821BF158000833376 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49621BF158000833376 /* ChatViewController.xib */; };
-		ADE4B49A21BF353500833376 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49921BF353500833376 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,12 +170,13 @@
 		ADC99C01217BA249008740BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC99C04217BA249008740BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADC99C06217BA249008740BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletViewController.swift; sourceTree = "<group>"; };
 		ADE4B49121BF13A000833376 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ADE4B49221BF13A000833376 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		ADE4B49521BF158000833376 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		ADE4B49621BF158000833376 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
-		ADE4B49921BF353500833376 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B3D531AB9995410F27218089 /* Pods_cat_wallet_ios_2nd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cat_wallet_ios_2nd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -404,7 +406,8 @@
 				ADE4B49221BF13A000833376 /* SignUpViewController.xib */,
 				ADE4B49521BF158000833376 /* ChatViewController.swift */,
 				ADE4B49621BF158000833376 /* ChatViewController.xib */,
-				ADE4B49921BF353500833376 /* Message.swift */,
+				ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */,
+				ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				ADE4B49821BF158000833376 /* ChatViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
 				ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */,
+				ADD868F021C1F6EE007B0670 /* ChatTableViewCell.xib in Resources */,
 				ADC7888921B21B570073B94E /* TransferNavigationViewController.xib in Resources */,
 				AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */,
 				ADB9091821A0FAF100480883 /* SendResultViewController.xib in Resources */,
@@ -603,7 +607,6 @@
 				AD1CFF382197B33300843B91 /* HistoryTableViewCell.swift in Sources */,
 				ADB04B4B2195234100790A3D /* SGPageContentCollectionView.swift in Sources */,
 				AD1CFF1D21966A9F00843B91 /* BottomPopupUtils.swift in Sources */,
-				ADE4B49A21BF353500833376 /* Message.swift in Sources */,
 				ADE4B49721BF158000833376 /* ChatViewController.swift in Sources */,
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
@@ -614,6 +617,7 @@
 				ADB9092221A61E4D00480883 /* SettingTableViewController.swift in Sources */,
 				AD1CFF342197B0DA00843B91 /* HistoryViewController.swift in Sources */,
 				AD1CFF61219CFDC900843B91 /* MainTabBarController.swift in Sources */,
+				ADD868EF21C1F6EE007B0670 /* ChatTableViewCell.swift in Sources */,
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
 				AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */,
 				AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */,
