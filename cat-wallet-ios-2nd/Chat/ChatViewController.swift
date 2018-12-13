@@ -52,8 +52,9 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         }
         DispatchQueue.main.async {
             self.chatTb.reloadData()
-            self.chatTb.setContentOffset(CGPoint(x: 0, y: (1000000.0)), animated: false)
         }
+        let indexPath = IndexPath(item: self.chatdata.count - 1 , section: 0)
+        self.chatTb.scrollToRow(at: indexPath, at: .bottom, animated: true)
         
     }
     
@@ -122,8 +123,13 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
                     keyboardHeight = keyboardHeight - view.safeAreaInsets.bottom
                 }
             }
+            let indexPath = IndexPath(item: self.chatdata.count - 1 , section: 0)
+            self.chatTb.scrollToRow(at: indexPath, at: .bottom, animated: true)
             textViewBottomConstraint.constant = -keyboardHeight - 8
             view.layoutIfNeeded()
+            
+            
+            
         }
     }
     

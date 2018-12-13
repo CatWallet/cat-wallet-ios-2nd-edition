@@ -173,14 +173,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UJz-53-4jM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="655"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UJz-53-4jM" firstAttribute="top" secondItem="QgP-x8-NfJ" secondAttribute="top" id="4u4-6B-B82"/>
-                            <constraint firstItem="QgP-x8-NfJ" firstAttribute="bottom" secondItem="UJz-53-4jM" secondAttribute="bottom" id="65Y-x1-wRe"/>
+                            <constraint firstItem="QgP-x8-NfJ" firstAttribute="bottom" secondItem="UJz-53-4jM" secondAttribute="bottom" constant="70" id="65Y-x1-wRe"/>
                             <constraint firstItem="UJz-53-4jM" firstAttribute="leading" secondItem="QgP-x8-NfJ" secondAttribute="leading" id="oBK-mB-sJB"/>
                             <constraint firstItem="QgP-x8-NfJ" firstAttribute="trailing" secondItem="UJz-53-4jM" secondAttribute="trailing" id="qhr-F5-CNK"/>
                         </constraints>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff1-B8-biv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="1422"/>
+            <point key="canvasLocation" x="1063.768115942029" y="1421.6517857142856"/>
         </scene>
         <!--Main-->
         <scene sceneID="x33-np-1NE">
