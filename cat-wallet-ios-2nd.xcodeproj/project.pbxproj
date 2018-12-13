@@ -84,11 +84,11 @@
 		ADC99C05217BA249008740BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC99C03217BA249008740BD /* LaunchScreen.storyboard */; };
 		ADD868EF21C1F6EE007B0670 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */; };
 		ADD868F021C1F6EE007B0670 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */; };
+		ADD868F221C205C4007B0670 /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD868F121C205C4007B0670 /* ChatData.swift */; };
 		ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */; };
 		ADE4B49321BF13A000833376 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49121BF13A000833376 /* SignUpViewController.swift */; };
 		ADE4B49421BF13A000833376 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49221BF13A000833376 /* SignUpViewController.xib */; };
 		ADE4B49721BF158000833376 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49521BF158000833376 /* ChatViewController.swift */; };
-		ADE4B49821BF158000833376 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49621BF158000833376 /* ChatViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,11 +172,11 @@
 		ADC99C06217BA249008740BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		ADD868F121C205C4007B0670 /* ChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
 		ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletViewController.swift; sourceTree = "<group>"; };
 		ADE4B49121BF13A000833376 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ADE4B49221BF13A000833376 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		ADE4B49521BF158000833376 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		ADE4B49621BF158000833376 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		B3D531AB9995410F27218089 /* Pods_cat_wallet_ios_2nd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cat_wallet_ios_2nd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -405,9 +405,9 @@
 				ADE4B49121BF13A000833376 /* SignUpViewController.swift */,
 				ADE4B49221BF13A000833376 /* SignUpViewController.xib */,
 				ADE4B49521BF158000833376 /* ChatViewController.swift */,
-				ADE4B49621BF158000833376 /* ChatViewController.xib */,
 				ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */,
 				ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */,
+				ADD868F121C205C4007B0670 /* ChatData.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -486,7 +486,6 @@
 				AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */,
 				AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */,
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
-				ADE4B49821BF158000833376 /* ChatViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
 				ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */,
 				ADD868F021C1F6EE007B0670 /* ChatTableViewCell.xib in Resources */,
@@ -594,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD868F221C205C4007B0670 /* ChatData.swift in Sources */,
 				ADB9091721A0FAF100480883 /* SendResultViewController.swift in Sources */,
 				ADB04B4D2195234100790A3D /* SGPageTitleView.swift in Sources */,
 				ADB9091B21A102EB00480883 /* SendFinalResultViewController.swift in Sources */,

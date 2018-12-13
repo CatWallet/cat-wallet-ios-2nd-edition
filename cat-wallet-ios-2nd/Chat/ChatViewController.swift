@@ -12,12 +12,15 @@ import GrowingTextView
 
 class ChatViewController: UIViewController, GrowingTextViewDelegate {
     
+    @IBOutlet weak var tbBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var chatTb: UITableView!
     var conversationId: String!
     var inputToolbar: UIView!
     var textView: GrowingTextView!
     var textViewBottomConstraint: NSLayoutConstraint!
     var shownoti = ShowNotiBar()
+    var chatdata = [ChatData]()
+    var timer = Timer()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,6 +35,25 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         chatTb.dataSource = self
         checkRegistration()
         setTextView()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getChatData), userInfo: nil, repeats: true)
+    }
+    
+    @objc func getChatData() {
+        let query = PFQuery(className: "Message")
+        query.limit = 1000
+        let objects = try! query.findObjects()
+        chatdata = []
+        for i in objects {
+            let name = i.object(forKey: "username") as! String
+            let message = i.object(forKey: "text") as! String
+            let chat = ChatData(getName: name, getMessage: message)
+            chatdata.append(chat)
+        }
+        DispatchQueue.main.async {
+            self.chatTb.reloadData()
+        }
+        
     }
     
     func setTextView() {
@@ -183,11 +205,14 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return chatdata.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! ChatTableViewCell
+        let message = chatdata[indexPath.row].message
+        let name = chatdata[indexPath.row].name
+        cell.textLabel?.text = name + ":  " + message
         return cell
     }
     
