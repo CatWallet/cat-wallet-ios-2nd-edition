@@ -111,14 +111,18 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         }, completion: nil)
     }
     
-    private func textView(_ textView: GrowingTextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text != "\n" {
-            // User pressed Done
-            print("hitting it again and again!")
-            textView.resignFirstResponder()
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"{
+            view.endEditing(true)
+            textView.text = ""
+            print("sdsdsd")
             return false
         }
-        print("hitting it again and again!!!!!")
         return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
     }
 }

@@ -66,7 +66,7 @@
                     <connections>
                         <segue destination="Ugh-YZ-9c7" kind="relationship" relationship="viewControllers" id="TTH-SA-18Z"/>
                         <segue destination="FSj-vZ-Q1Q" kind="relationship" relationship="viewControllers" id="v1B-Nd-jza"/>
-                        <segue destination="13m-7y-8v1" kind="relationship" relationship="viewControllers" id="Gg1-br-osA"/>
+                        <segue destination="E2n-fJ-MX4" kind="relationship" relationship="viewControllers" id="Gg1-br-osA"/>
                         <segue destination="TXg-PI-Thz" kind="relationship" relationship="viewControllers" id="tai-pB-bBJ"/>
                     </connections>
                 </tabBarController>
@@ -162,9 +162,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZc-Z9-B2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="767"/>
+            <point key="canvasLocation" x="1670" y="767"/>
         </scene>
-        <!--Group-->
+        <!--Chat View Controller-->
         <scene sceneID="qqJ-oe-BPr">
             <objects>
                 <viewController id="13m-7y-8v1" customClass="ChatViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,13 +174,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QgP-x8-NfJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Group" image="people" id="AYA-Vz-6yn">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="Gxu-no-NmL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff1-B8-biv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="767"/>
+            <point key="canvasLocation" x="1064" y="1422"/>
         </scene>
         <!--Main-->
         <scene sceneID="x33-np-1NE">
@@ -202,6 +200,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeQ-AW-joY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-162" y="767"/>
+        </scene>
+        <!--Group-->
+        <scene sceneID="Ebc-5N-ml2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E2n-fJ-MX4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Group" image="people" id="AYA-Vz-6yn">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CTH-Gt-t0l">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="13m-7y-8v1" kind="relationship" relationship="rootViewController" id="yp3-g0-7yk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iId-Xm-pQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063.768115942029" y="766.74107142857144"/>
         </scene>
     </scenes>
     <resources>

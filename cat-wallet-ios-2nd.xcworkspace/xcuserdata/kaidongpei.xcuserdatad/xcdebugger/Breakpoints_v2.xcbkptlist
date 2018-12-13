@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cat-wallet-ios-2nd/Send/ContactsViewController.swift"
-            timestampString = "566265239.645419"
+            timestampString = "566346176.035643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -42,77 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cat-wallet-ios-2nd/Wallets/WalletsTableViewController.swift"
-            timestampString = "566265239.645522"
+            timestampString = "566346176.035723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "cat-wallet-ios-2nd/Chat/ChatViewController.swift"
-            timestampString = "566265239.6456161"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "cat-wallet-ios-2nd/Chat/ChatViewController.swift"
-            timestampString = "566265239.646435"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "ChatViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "cat_wallet_ios_2nd.ChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; cat_wallet_ios_2nd.ChatViewController"
-                  moduleName = "cat-wallet-ios-2nd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kaidongpei/Desktop/cat-wallet-ios-2nd/cat-wallet-ios-2nd/Chat/ChatViewController.swift"
-                  timestampString = "566180920.140478"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "cat_wallet_ios_2nd.ChatViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;cat_wallet_ios_2nd.ChatViewController&gt;"
-                  moduleName = "cat-wallet-ios-2nd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kaidongpei/Desktop/cat-wallet-ios-2nd/cat-wallet-ios-2nd/Chat/ChatViewController.swift"
-                  timestampString = "566180920.14228"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
