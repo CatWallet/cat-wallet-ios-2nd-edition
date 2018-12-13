@@ -52,6 +52,7 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         }
         DispatchQueue.main.async {
             self.chatTb.reloadData()
+            self.chatTb.setContentOffset(CGPoint(x: 0, y: (1000000.0)), animated: false)
         }
         
     }
