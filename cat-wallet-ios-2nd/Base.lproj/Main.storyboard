@@ -197,6 +197,7 @@
                     <connections>
                         <outlet property="chatTb" destination="UJz-53-4jM" id="5hk-GZ-MVe"/>
                         <outlet property="tbBottomConstraint" destination="65Y-x1-wRe" id="1wp-Wo-RJ0"/>
+                        <outlet property="usernameButton" destination="oNn-UW-GPt" id="Lnv-hR-GTw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff1-B8-biv" userLabel="First Responder" sceneMemberID="firstResponder"/>

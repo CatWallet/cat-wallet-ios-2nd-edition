@@ -12,6 +12,7 @@ import GrowingTextView
 
 class ChatViewController: UIViewController, GrowingTextViewDelegate {
     
+    @IBOutlet weak var usernameButton: UIBarButtonItem!
     @IBOutlet weak var tbBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var chatTb: UITableView!
     var conversationId: String!
@@ -55,7 +56,14 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
                 let indexPath = IndexPath(item: self.chatdata.count - 1 , section: 0)
                 self.chatTb.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
-            
+        }
+    }
+    
+    func currentUserChanecking() {
+        if let _ = PFUser.current() {
+            //
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
         }
     }
     
