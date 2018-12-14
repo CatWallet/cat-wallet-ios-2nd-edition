@@ -85,6 +85,7 @@
 		ADD868EF21C1F6EE007B0670 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */; };
 		ADD868F021C1F6EE007B0670 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */; };
 		ADD868F221C205C4007B0670 /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD868F121C205C4007B0670 /* ChatData.swift */; };
+		ADD868F421C32D57007B0670 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD868F321C32D57007B0670 /* TableView.swift */; };
 		ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */; };
 		ADE4B49321BF13A000833376 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4B49121BF13A000833376 /* SignUpViewController.swift */; };
 		ADE4B49421BF13A000833376 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4B49221BF13A000833376 /* SignUpViewController.xib */; };
@@ -173,6 +174,7 @@
 		ADD868ED21C1F6EE007B0670 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		ADD868EE21C1F6EE007B0670 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		ADD868F121C205C4007B0670 /* ChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
+		ADD868F321C32D57007B0670 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletViewController.swift; sourceTree = "<group>"; };
 		ADE4B49121BF13A000833376 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ADE4B49221BF13A000833376 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB9093221ABD27700480883 /* String.swift */,
+				ADD868F321C32D57007B0670 /* TableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				ADC99BFB217BA247008740BD /* AppDelegate.swift in Sources */,
 				AD1CFF2121966A9F00843B91 /* BottomPopupTransitionHandler.swift in Sources */,
 				ADB9092421AB67EC00480883 /* ContactsService.swift in Sources */,
+				ADD868F421C32D57007B0670 /* TableView.swift in Sources */,
 				ADBD797B21B2356A00D8BB6D /* MainTableViewController.swift in Sources */,
 				AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */,
 				ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */,

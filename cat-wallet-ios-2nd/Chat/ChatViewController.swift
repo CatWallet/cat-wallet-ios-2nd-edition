@@ -51,11 +51,12 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
             chatdata.append(chat)
         }
         DispatchQueue.main.async {
-            self.chatTb.reloadData()
+            self.chatTb.reloadData {
+                let indexPath = IndexPath(item: self.chatdata.count - 1 , section: 0)
+                self.chatTb.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+            
         }
-        let indexPath = IndexPath(item: self.chatdata.count - 1 , section: 0)
-        self.chatTb.scrollToRow(at: indexPath, at: .bottom, animated: true)
-        
     }
     
     func setTextView() {
@@ -227,3 +228,4 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         return 60
     }
 }
+
