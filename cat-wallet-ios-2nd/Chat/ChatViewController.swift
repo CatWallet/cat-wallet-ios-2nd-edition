@@ -220,12 +220,14 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! ChatTableViewCell
         let message = chatdata[indexPath.row].message
         let name = chatdata[indexPath.row].name
-        cell.textLabel?.text = name + ":  " + message
+        cell.namelabel.text = name + ": "
+        cell.messagelabel.text = message
+        //cell.textLabel?.text =
         return cell
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
 
