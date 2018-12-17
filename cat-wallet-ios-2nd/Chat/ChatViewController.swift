@@ -42,7 +42,7 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
     
     @objc func getChatData() {
         let query = PFQuery(className: "Message")
-        query.limit = 20
+        query.limit = 1000
         let objects = try! query.findObjects()
         chatdata = []
         for i in objects {
