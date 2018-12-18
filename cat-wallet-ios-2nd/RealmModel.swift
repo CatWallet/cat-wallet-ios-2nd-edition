@@ -16,12 +16,14 @@ class KeyStoreRealm: Object {
     @objc dynamic var address: String = ""
     @objc dynamic var data: Data?
     @objc dynamic var name: String = ""
+    @objc dynamic var mnemonics : String = ""
 }
 
 class CurrentKeyStoreRealm: Object {
     @objc dynamic var address: String = ""
     @objc dynamic var data: Data?
     @objc dynamic var name: String = ""
+    @objc dynamic var mnemonics : String = ""
 }
 
 
