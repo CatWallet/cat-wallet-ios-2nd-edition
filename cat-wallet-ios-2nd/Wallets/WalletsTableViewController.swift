@@ -65,7 +65,7 @@ class WalletsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         let keyStore = wallets[index]
-        ws.saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name)
+        ws.saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name, mnemonics: keyStore.mnemonics)
         dismiss(animated: true) {
             self.delegate?.reloadTableView("pass a message")
         }

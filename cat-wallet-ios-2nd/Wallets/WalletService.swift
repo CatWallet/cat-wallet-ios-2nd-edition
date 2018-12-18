@@ -53,24 +53,25 @@ struct WalletService {
                                          data: keyData,
                                          name: name ?? "",
                                          isHD: true)
-        saveCurrentKeyStore(address: address, data: keyData, name: name ?? "")
+        saveCurrentKeyStore(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics)
         saveKeyStore(wallet)
-        saveWalletModel(address: address, data: keyData, name: name ?? "")
+        saveWalletModel(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics)
         completion(walletModel, nil, mnemonics)
     }
 
-    func saveWalletModel(address: String, data: Data, name: String) {
+    func saveWalletModel(address: String, data: Data, name: String, mnemonics: String) {
         let realm = try! Realm()
         let ksRealm = KeyStoreRealm()
         ksRealm.address = address
         ksRealm.data = data
         ksRealm.name = name
+        ksRealm.mnemonics = mnemonics
         try! realm.write{
             realm.add(ksRealm)
         }
     }
 
-    func saveCurrentKeyStore(address: String, data: Data, name: String) {
+    func saveCurrentKeyStore(address: String, data: Data, name: String, mnemonics: String) {
         let realm = try! Realm()
         let cksRealm = CurrentKeyStoreRealm()
         let ocksRealm = realm.objects(CurrentKeyStoreRealm.self)
@@ -80,6 +81,7 @@ struct WalletService {
         cksRealm.address = address
         cksRealm.data = data
         cksRealm.name = name
+        cksRealm.mnemonics = mnemonics
         try! realm.write{
             realm.add(cksRealm)
         }
