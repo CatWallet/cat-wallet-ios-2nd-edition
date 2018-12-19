@@ -80,4 +80,18 @@ class WalletsTableViewController: UITableViewController {
         }
         return [delete]
     }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Show backup phrase", message: "Never show phrase to other perople", preferredStyle: .alert)
+        let confirm = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            let vc = BackupPhraseViewController()
+            let phrase = self.wallets[indexPath.row].mnemonics
+            vc.getText = phrase
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        self.present(alert, animated: false, completion: nil)
+    }
 }
