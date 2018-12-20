@@ -809,13 +809,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MSVWC4J65;
+				DEVELOPMENT_TEAM = A232G68VWN;
 				INFOPLIST_FILE = "cat-wallet-ios-2nd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "CatWallet.cat-wallet-ios-2nd";
+				PRODUCT_BUNDLE_IDENTIFIER = cat.wallet.trust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -828,13 +828,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MSVWC4J65;
+				DEVELOPMENT_TEAM = A232G68VWN;
 				INFOPLIST_FILE = "cat-wallet-ios-2nd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "CatWallet.cat-wallet-ios-2nd";
+				PRODUCT_BUNDLE_IDENTIFIER = cat.wallet.trust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -15,16 +15,19 @@ import SkyFloatingLabelTextField
 class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegate {
 
     @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var qrButton: UIButton!
     var addressField = SkyFloatingLabelTextField()
     var amountField = SkyFloatingLabelTextField()
     var cKeyStore = CurrentKeyStoreRealm()
     let ws = WalletService()
     let notification = ShowNotiBar()
     var sendButton: UIButton!
+    var height = CGFloat(25)
     var buttonConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
+        checkDevice()
         setFloatTextField()
         getKeyStore()
         setFloatButton()
@@ -46,18 +49,25 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     }
     
     func setQRButton() {
-        let QRbutton = UIButton(frame: CGRect(x: 310, y: 205, width: 25, height: 25))
-        QRbutton.setImage(UIImage(named: "qr_icon"), for: .normal)
-        QRbutton.setTitle("Tap me", for: .normal)
-        QRbutton.tintColor = UIColor.black
-        QRbutton.addTarget(self, action: #selector(QRAction), for: .touchUpInside)
-        self.view.addSubview(QRbutton)
+        qrButton.setImage(UIImage(named: "qr_icon"), for: .normal)
+        qrButton.setTitle("Tap me", for: .normal)
+        qrButton.tintColor = UIColor.black
+        qrButton.addTarget(self, action: #selector(QRAction), for: .touchUpInside)
+        //self.view.addSubview(QRbutton)
     }
+    
     
     @objc func QRAction() {
         let vc = QRCodeReaderViewController()
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    func checkDevice() {
+        let statusHeight = UIApplication.shared.statusBarFrame.height
+        if statusHeight == 20{
+            height = 200
+        }
     }
     
     func setFloatButton() {
@@ -70,7 +80,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         sendButton.addTarget(self, action: #selector(buttonAction), for: .touchDown)
         sendButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         sendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        buttonConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(25 +  UIApplication.shared.statusBarFrame.size.height))
+        buttonConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(height +  UIApplication.shared.statusBarFrame.size.height))
         buttonConstraint.isActive = true
         sendButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.view.layoutIfNeeded()
@@ -85,7 +95,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         let keyboardHeight = keyboardSize.cgRectValue.height
-        buttonConstraint.constant = -(25 +  UIApplication.shared.statusBarFrame.size.height) - keyboardHeight
+        buttonConstraint.constant = -(height +  UIApplication.shared.statusBarFrame.size.height) - keyboardHeight
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animationDuration) {
             self.view.layoutIfNeeded()
@@ -93,7 +103,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        buttonConstraint.constant = -(25 +  UIApplication.shared.statusBarFrame.size.height)
+        buttonConstraint.constant = -(height +  UIApplication.shared.statusBarFrame.size.height)
         let userInfo = notification.userInfo
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animationDuration) {

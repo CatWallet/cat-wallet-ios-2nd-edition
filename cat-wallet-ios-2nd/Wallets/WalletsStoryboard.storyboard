@@ -99,45 +99,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-Xp-lnu">
-                                <rect key="frame" x="16" y="135" width="378" height="29"/>
-                                <segments>
-                                    <segment title="KeyStore"/>
-                                    <segment title="PrivateKey"/>
-                                    <segment title="Phrase"/>
-                                    <segment title=""/>
-                                </segments>
-                            </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-EQ-bcB">
-                                <rect key="frame" x="16" y="183" width="378" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your backup phrase" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-EQ-bcB">
+                                <rect key="frame" x="20" y="183" width="374" height="128"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ZFX-g6-k3F"/>
+                                    <constraint firstAttribute="height" constant="128" id="Sqm-Ux-81l"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZn-Dx-XB4">
-                                <rect key="frame" x="167" y="433" width="80" height="30"/>
+                                <rect key="frame" x="182" y="433" width="50" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="C6w-Tt-0vr"/>
+                                    <constraint firstAttribute="width" constant="50" id="hpB-GM-Zzo"/>
+                                </constraints>
                                 <state key="normal" title="Import"/>
+                                <connections>
+                                    <action selector="importAction:" destination="m17-7a-ikc" eventType="touchUpInside" id="gE6-uW-40r"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="trailing" secondItem="Crb-EQ-bcB" secondAttribute="trailing" id="BE6-E5-7Ns"/>
-                            <constraint firstItem="Crb-EQ-bcB" firstAttribute="top" secondItem="B1I-Xp-lnu" secondAttribute="bottom" constant="20" id="RoZ-ZP-C3W"/>
-                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="trailing" secondItem="6kz-7I-OBP" secondAttribute="trailingMargin" id="T25-Bn-wr4"/>
-                            <constraint firstItem="AZn-Dx-XB4" firstAttribute="centerX" secondItem="6kz-7I-OBP" secondAttribute="centerX" id="WFL-yQ-yv9"/>
-                            <constraint firstItem="AZn-Dx-XB4" firstAttribute="leading" secondItem="rlr-pj-vGn" secondAttribute="leading" constant="167" id="afs-4h-tyX"/>
-                            <constraint firstItem="AZn-Dx-XB4" firstAttribute="centerY" secondItem="6kz-7I-OBP" secondAttribute="centerY" id="lYa-Sg-mat"/>
-                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="leading" secondItem="Crb-EQ-bcB" secondAttribute="leading" id="orl-FU-aQ0"/>
-                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="top" secondItem="rlr-pj-vGn" secondAttribute="top" constant="47" id="scc-lj-8zB"/>
-                            <constraint firstItem="B1I-Xp-lnu" firstAttribute="leading" secondItem="rlr-pj-vGn" secondAttribute="leading" constant="16" id="ue7-cJ-oKg"/>
+                            <constraint firstItem="Crb-EQ-bcB" firstAttribute="top" secondItem="rlr-pj-vGn" secondAttribute="top" constant="95" id="CUU-xs-WDe"/>
+                            <constraint firstItem="Crb-EQ-bcB" firstAttribute="leading" secondItem="rlr-pj-vGn" secondAttribute="leading" constant="20" id="MYw-c7-GlL"/>
+                            <constraint firstItem="AZn-Dx-XB4" firstAttribute="centerY" secondItem="6kz-7I-OBP" secondAttribute="centerY" id="RCF-1c-93l"/>
+                            <constraint firstItem="AZn-Dx-XB4" firstAttribute="centerX" secondItem="6kz-7I-OBP" secondAttribute="centerX" id="bZO-QS-Pt5"/>
+                            <constraint firstItem="rlr-pj-vGn" firstAttribute="trailing" secondItem="Crb-EQ-bcB" secondAttribute="trailing" constant="20" id="eZF-yT-7YP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rlr-pj-vGn"/>
                     </view>
+                    <connections>
+                        <outlet property="importButton" destination="AZn-Dx-XB4" id="LMz-KW-Cdr"/>
+                        <outlet property="phraseTextView" destination="Crb-EQ-bcB" id="r8H-RI-sYO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="029-H4-dd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

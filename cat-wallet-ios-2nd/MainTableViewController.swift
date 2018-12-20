@@ -81,9 +81,15 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     }
     
     func setSendButton() {
-        let y = UIScreen.main.bounds.height - 3.5*(tabBarController?.tabBar.frame.size.height)!
+        let statusHeight = UIApplication.shared.statusBarFrame.height
+        var y: CGFloat?
+        if statusHeight == 20{
+            y = UIScreen.main.bounds.height - 4.5*(tabBarController?.tabBar.frame.size.height)!
+        } else {
+            y = UIScreen.main.bounds.height - 3.5*(tabBarController?.tabBar.frame.size.height)!
+        }
         let x = UIScreen.main.bounds.width/4
-        sendButton = UIButton(frame: CGRect(x: x*3, y: y, width: 70, height: 70))
+        sendButton = UIButton(frame: CGRect(x: x*3, y: y!, width: 70, height: 70))
         sendButton.backgroundColor = .black
         sendButton.setImage(UIImage(named: "send"), for: .normal)
         sendButton.addTarget(self, action: #selector(sendAction), for: .touchDown)

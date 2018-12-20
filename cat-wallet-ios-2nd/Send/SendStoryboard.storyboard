@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,24 +14,42 @@
             <objects>
                 <viewController id="scv-zT-25X" customClass="SendViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KaL-rc-Ahi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-VZ-1zV">
-                                <rect key="frame" x="351" y="203" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-VZ-1zV">
+                                <rect key="frame" x="313" y="258" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GWl-N8-UfD"/>
+                                    <constraint firstAttribute="width" constant="30" id="dTn-2G-alK"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="contact"/>
                                 <connections>
                                     <action selector="contactButtonAction:" destination="scv-zT-25X" eventType="touchUpInside" id="39f-gv-AN1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDp-cd-SEn">
+                                <rect key="frame" x="260" y="258" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2ox-xe-V2l"/>
+                                    <constraint firstAttribute="width" constant="30" id="BeM-1k-kj1"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="qr_icon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TOl-VZ-1zV" firstAttribute="leading" secondItem="tDp-cd-SEn" secondAttribute="trailing" constant="23" id="HWF-fP-XZh"/>
+                            <constraint firstItem="TOl-VZ-1zV" firstAttribute="top" secondItem="lV1-PC-17D" secondAttribute="top" constant="170" id="Olc-KR-vKw"/>
+                            <constraint firstItem="lV1-PC-17D" firstAttribute="trailing" secondItem="TOl-VZ-1zV" secondAttribute="trailing" constant="32" id="WG4-pa-Y4b"/>
+                            <constraint firstItem="tDp-cd-SEn" firstAttribute="bottom" secondItem="TOl-VZ-1zV" secondAttribute="bottom" id="g4Z-Ik-p1t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lV1-PC-17D"/>
                     </view>
                     <navigationItem key="navigationItem" id="azz-yc-HnH"/>
                     <connections>
                         <outlet property="contactButton" destination="TOl-VZ-1zV" id="lf3-KE-5F4"/>
+                        <outlet property="qrButton" destination="tDp-cd-SEn" id="MFg-Z8-Eiu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsi-XU-3iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,7 +62,7 @@
                 <navigationController storyboardIdentifier="customNavController" automaticallyAdjustsScrollViewInsets="NO" id="DGQ-E4-71p" customClass="SendNavigationViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="reW-gO-yyt">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,5 +79,6 @@
     </scenes>
     <resources>
         <image name="contact" width="37.5" height="37.5"/>
+        <image name="qr_icon" width="966" height="834"/>
     </resources>
 </document>

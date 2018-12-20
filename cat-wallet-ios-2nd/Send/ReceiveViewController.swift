@@ -19,6 +19,7 @@ class ReceiveViewController: UIViewController {
     var copyButton: UIButton!
     var buttonConstraint: NSLayoutConstraint!
     var cKeyStore = CurrentKeyStoreRealm()
+    var height = CGFloat(25)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,13 @@ class ReceiveViewController: UIViewController {
         }
     }
     
+    func checkDevice() {
+        let statusHeight = UIApplication.shared.statusBarFrame.height
+        if statusHeight == 20{
+            height = 200
+        }
+    }
+    
     func setCopyButton() {
         copyButton = UIButton(type: .custom)
         copyButton.backgroundColor = .black
@@ -52,7 +60,7 @@ class ReceiveViewController: UIViewController {
         copyButton.addTarget(self, action: #selector(copyAction), for: .touchUpInside)
         copyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         copyButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        buttonConstraint = copyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(25 +  UIApplication.shared.statusBarFrame.size.height))
+        buttonConstraint = copyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(height +  UIApplication.shared.statusBarFrame.size.height))
         buttonConstraint.isActive = true
         copyButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.view.layoutIfNeeded()

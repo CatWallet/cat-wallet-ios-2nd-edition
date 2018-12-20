@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="em2-bc-hRU">
-                    <rect key="frame" x="153.33333333333334" y="304" width="107.33333333333334" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="em2-bc-hRU">
+                    <rect key="frame" x="91" y="303" width="233" height="29"/>
                     <segments>
                         <segment title="Email"/>
                         <segment title="Phone"/>
@@ -34,11 +34,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="em2-bc-hRU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="260" id="80S-ch-JQO"/>
+                <constraint firstItem="em2-bc-hRU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="259" id="80S-ch-JQO"/>
                 <constraint firstItem="em2-bc-hRU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ukz-3N-eHO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="em2-bc-hRU" secondAttribute="trailing" constant="153.33333333333337" id="jx3-Ey-26G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="em2-bc-hRU" secondAttribute="trailing" constant="90" id="jx3-Ey-26G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </view>
     </objects>
 </document>

@@ -21,6 +21,7 @@ enum Errors: LocalizedError {
     case invalidKey
     case invalidContract
     case invalidDestinationAddress
+    case cantCreateWallet
     
     var errorDescription: String? {
         switch self {
@@ -48,6 +49,8 @@ enum Errors: LocalizedError {
             return "Invalid Contract"
         case .invalidDestinationAddress:
             return "Invalid Destination Address"
+        case .cantCreateWallet:
+            return "Cant Create Wallet"
         }
     }
 }
