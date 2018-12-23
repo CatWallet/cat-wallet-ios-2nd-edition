@@ -160,8 +160,6 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
             self!.amountField.becomeFirstResponder()
             self?.addressField.text = result
         }
-        
-        
     }
     
     func setCleanButton() {
@@ -207,8 +205,8 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         let AddressTextFieldFrame = CGRect(x: 20, y: 45, width: width, height: 60)
         let amountTextFieldFrame = CGRect(x: 20, y: 115, width: width, height: 60)
         addressField = SkyFloatingLabelTextFieldWithIcon(frame: AddressTextFieldFrame)
-        addressField.placeholder = "ETH address"
-        addressField.title = "ETH address"
+        addressField.placeholder = "\(cryptoName) address"
+        addressField.title = "\(cryptoName) address"
         addressField.keyboardType = .default
         addressField.autocapitalizationType = .none
         addressField.autocorrectionType = .no

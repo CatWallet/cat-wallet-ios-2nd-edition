@@ -8,11 +8,13 @@
 
 import UIKit
 
+
 class TransferNavigationViewController: BottomPopupViewController {
 
     @IBOutlet weak var dismissButon: UIButton!
     private var pageTitleView: SGPageTitleView? = nil
     private var pageContentCollectionView: SGPageContentCollectionView? = nil
+    var cryptoname = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

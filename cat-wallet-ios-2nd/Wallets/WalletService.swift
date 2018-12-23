@@ -9,9 +9,12 @@
 import Foundation
 import Web3swift
 import RealmSwift
+import BitcoinKit
 import EthereumAddress
 
 struct WalletService {
+    
+    let btcWallet = BitcoinService()
 
     func generateMnemonics(bitsOfEntropy: Int) -> String? {
         guard let mnemonics = try? BIP39.generateMnemonics(bitsOfEntropy: bitsOfEntropy),
@@ -23,11 +26,11 @@ struct WalletService {
 
     func createHDWallet(withName name: String?,
                         password: String,
-                        completion: @escaping (KeyWalletModel?, Error?, String?) -> Void)
+                        completion: @escaping (KeyWalletModel?, Error?, String?, String?) -> Void)
     {
         
         guard let mnemonics = generateMnemonics(bitsOfEntropy: 128) else {
-            completion(nil, Errors.couldNotGenerateMnemonics, nil)
+            completion(nil, Errors.couldNotGenerateMnemonics, nil, nil)
             return
         }
         
@@ -38,40 +41,42 @@ struct WalletService {
             language: .english
             ),
             let wallet = keystore else {
-                completion(nil, Errors.couldNotCreateKeystore, nil)
+                completion(nil, Errors.couldNotCreateKeystore, nil, nil)
                 return
         }
         guard let address = wallet.addresses?.first?.address else {
-            completion(nil, Errors.couldNotCreateAddress, nil)
+            completion(nil, Errors.couldNotCreateAddress, nil, nil)
             return
         }
         guard let keyData = try? JSONEncoder().encode(wallet.keystoreParams) else {
-            completion(nil, Errors.couldNotGetKeyData, nil)
+            completion(nil, Errors.couldNotGetKeyData, nil, nil)
             return
         }
-        let walletModel = KeyWalletModel(address: address,
-                                         data: keyData,
-                                         name: name ?? "",
-                                         isHD: true)
-        saveCurrentKeyStore(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics)
+        
+        let btc = btcWallet.createBTCWallet(mnemonics)
+        let btcAddress = btcWallet.getRecieveAddress(btc)
+        let finalBtcAddress = btcAddress.replacingOccurrences(of: "bitcoincash:", with: "")
+        let walletModel = KeyWalletModel(address: address, data: keyData, name: name ?? "", isHD: true)
+        saveCurrentKeyStore(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics, btcaddress: finalBtcAddress)
         saveKeyStore(wallet)
-        saveWalletModel(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics)
-        completion(walletModel, nil, mnemonics)
+        saveWalletModel(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics, btcaddress: finalBtcAddress)
+        completion(walletModel, nil, mnemonics, finalBtcAddress)
     }
 
-    func saveWalletModel(address: String, data: Data, name: String, mnemonics: String) {
+    func saveWalletModel(address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
         let realm = try! Realm()
         let ksRealm = KeyStoreRealm()
         ksRealm.address = address
         ksRealm.data = data
         ksRealm.name = name
         ksRealm.mnemonics = mnemonics
+        ksRealm.btcaddress = btcaddress
         try! realm.write{
             realm.add(ksRealm)
         }
     }
 
-    func saveCurrentKeyStore(address: String, data: Data, name: String, mnemonics: String) {
+    func saveCurrentKeyStore(address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
         let realm = try! Realm()
         let cksRealm = CurrentKeyStoreRealm()
         let ocksRealm = realm.objects(CurrentKeyStoreRealm.self)
@@ -82,6 +87,7 @@ struct WalletService {
         cksRealm.data = data
         cksRealm.name = name
         cksRealm.mnemonics = mnemonics
+        cksRealm.btcaddress = btcaddress
         try! realm.write{
             realm.add(cksRealm)
         }

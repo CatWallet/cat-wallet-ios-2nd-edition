@@ -22,13 +22,14 @@ class NewWalletViewController: UIViewController {
     }
     
     @IBAction func createNewWallet(_ sender: Any) {
-        ws.createHDWallet(withName: "String", password: "Password") { (keyWallet, error, mnemonics) in
+        ws.createHDWallet(withName: "String", password: "Password") { (keyWallet, error, mnemonics, btcAddress) in
             if error != nil {
                 print(error as! String)
             } else {
                 let vc = SuccessCreationViewController()
-                vc.getAddress = keyWallet?.address ?? "nothing"
-                vc.getMnemonics = mnemonics ?? "nothing"
+                vc.getAddress = keyWallet?.address ?? ""
+                vc.getMnemonics = mnemonics ?? ""
+                vc.getBtcAddress = btcAddress ?? ""
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

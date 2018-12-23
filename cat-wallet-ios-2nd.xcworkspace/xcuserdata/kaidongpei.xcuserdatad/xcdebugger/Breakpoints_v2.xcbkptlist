@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "cat-wallet-ios-2nd/Send/ContactsViewController.swift"
-            timestampString = "566438791.110312"
+            filePath = "cat-wallet-ios-2nd/Wallets/ImportWalletViewController.swift"
+            timestampString = "567221760.3768851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "passContact(_:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "createHDWallet(withName:password:mnemonics:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "cat-wallet-ios-2nd/Wallets/ImportWalletViewController.swift"
-            timestampString = "566966065.5688421"
+            filePath = "cat-wallet-ios-2nd/MainTableViewController.swift"
+            timestampString = "567221760.376984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "createHDWallet(withName:password:mnemonics:completion:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cat-wallet-ios-2nd/MainTableViewController.swift"
+            timestampString = "567221760.377051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

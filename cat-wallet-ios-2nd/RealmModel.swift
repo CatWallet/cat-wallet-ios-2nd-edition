@@ -14,6 +14,7 @@ import Web3swift
 
 class KeyStoreRealm: Object {
     @objc dynamic var address: String = ""
+    @objc dynamic var btcaddress: String = ""
     @objc dynamic var data: Data?
     @objc dynamic var name: String = ""
     @objc dynamic var mnemonics : String = ""
@@ -21,6 +22,7 @@ class KeyStoreRealm: Object {
 
 class CurrentKeyStoreRealm: Object {
     @objc dynamic var address: String = ""
+    @objc dynamic var btcaddress: String = ""
     @objc dynamic var data: Data?
     @objc dynamic var name: String = ""
     @objc dynamic var mnemonics : String = ""

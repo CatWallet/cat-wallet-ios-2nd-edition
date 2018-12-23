@@ -20,10 +20,12 @@ class ReceiveViewController: UIViewController {
     var buttonConstraint: NSLayoutConstraint!
     var cKeyStore = CurrentKeyStoreRealm()
     var height = CGFloat(25)
+    var ETH = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.endEditing(true)
+        ETHName()
         getWallet()
         generate()
         setCopyButton()
@@ -31,15 +33,29 @@ class ReceiveViewController: UIViewController {
     
     func generate(){
         let context = CIContext()
-        let data = cKeyStore.address.data(using: String.Encoding.ascii)
+        var address = ""
+        if ETH == true{
+            address = cKeyStore.address
+        } else {
+            address = cKeyStore.btcaddress
+        }
+        let data = address.data(using: String.Encoding.ascii)
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
             let transform = CGAffineTransform(scaleX: 7, y: 7)
             if let output = filter.outputImage?.transformed(by: transform), let cgImage = context.createCGImage(output, from: output.extent) {
-                addressLabel.text = cKeyStore.address
+                addressLabel.text = address
                 addressLabel.adjustsFontSizeToFitWidth = true
                 addressimage.image = UIImage(cgImage: cgImage)
             }
+        }
+    }
+    
+    func ETHName() {
+        if cryptoName == "ETH" {
+            ETH = true
+        } else {
+            ETH = false
         }
     }
     
