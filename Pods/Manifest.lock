@@ -64,7 +64,7 @@ PODS:
 
 DEPENDENCIES:
   - BigInt (~> 3.1)
-  - BitcoinKit (~> 1.0)
+  - BitcoinKit (~> 1.0.2)
   - BottomPopup
   - Eureka (~> 4.3)
   - GrowingTextView (= 0.6.1)
@@ -135,6 +135,6 @@ SPEC CHECKSUMS:
   SwiftRLP: 98a02b2210128353ca02e4c2f4d83e2a9796db4f
   web3swift: 33f30ca0e061e0f89117dfb46f5ee9f626eff6d6
 
-PODFILE CHECKSUM: d4c8420794835f5ba1cce636fdbe502b9ca8bc51
+PODFILE CHECKSUM: 40ae90160c24eef59d9d9ef11818c855162c3cd2
 
 COCOAPODS: 1.5.3

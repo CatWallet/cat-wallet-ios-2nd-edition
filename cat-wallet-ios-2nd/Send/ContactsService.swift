@@ -14,9 +14,10 @@ struct ContactsService {
     let realm = try! Realm()
     let contact = Contact()
     
-    func saveContact(_ name: String, _ address: String, _ email: String, _ phone: Int) {
+    func saveContact(_ name: String, _ address: String, _ BTCAddress: String, _ email: String, _ phone: Int) {
         contact.name = name
         contact.address = address
+        contact.BTCAddress = BTCAddress
         contact.email = email
         contact.phone = phone
         try! realm.write{
@@ -24,9 +25,30 @@ struct ContactsService {
         }
     }
     
+    func updateContact(_ name: String, _ address: String, _ BTCAddress: String, _ email: String, _ phone: Int, _ ID: String) {
+        contact.id = ID
+        contact.name = name
+        contact.address = address
+        contact.BTCAddress = BTCAddress
+        contact.email = email
+        contact.phone = phone
+        try! realm.write{
+            realm.add(contact, update: true)
+        }
+    }
+    
     func fetchContacts() -> [Contact]{
         var contacts: [Contact] = []
         let contactsRealm = realm.objects(Contact.self)
+        for i in contactsRealm {
+            contacts.append(i)
+        }
+        return contacts
+    }
+    
+    func fetchBTCContacts() -> [Contact]{
+        var contacts: [Contact] = []
+        let contactsRealm = realm.objects(Contact.self).filter("BTCAddress != ''")
         for i in contactsRealm {
             contacts.append(i)
         }

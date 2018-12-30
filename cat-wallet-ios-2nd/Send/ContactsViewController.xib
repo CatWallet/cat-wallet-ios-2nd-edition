@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target">
             <connections>
+                <outlet property="segControl" destination="PHs-Mf-ONa" id="O5Z-oY-h0E"/>
                 <outlet property="tableView" destination="tPt-CG-PuR" id="WKx-Uz-wwN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,20 +21,35 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PHs-Mf-ONa">
+                    <rect key="frame" x="0.0" y="88" width="414" height="29"/>
+                    <segments>
+                        <segment title="ETH"/>
+                        <segment title="BTC"/>
+                    </segments>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <connections>
+                        <action selector="segmentAction:" destination="-1" eventType="valueChanged" id="BuF-H8-nKL"/>
+                    </connections>
+                </segmentedControl>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tPt-CG-PuR">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="118" width="414" height="744"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="tPt-CG-PuR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="BDR-Xa-u1c"/>
+                <constraint firstItem="PHs-Mf-ONa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="1jy-Jv-rac"/>
+                <constraint firstItem="tPt-CG-PuR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="74" id="BDR-Xa-u1c"/>
+                <constraint firstItem="PHs-Mf-ONa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LNH-i6-sQu"/>
                 <constraint firstItem="tPt-CG-PuR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NnR-6R-kaZ"/>
                 <constraint firstItem="tPt-CG-PuR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="X7r-p2-O8Z"/>
+                <constraint firstItem="PHs-Mf-ONa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kN2-Bc-1dh"/>
                 <constraint firstItem="tPt-CG-PuR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vcA-yi-K46"/>
+                <constraint firstItem="tPt-CG-PuR" firstAttribute="top" secondItem="PHs-Mf-ONa" secondAttribute="bottom" constant="2" id="vjJ-VT-Oh6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+            <point key="canvasLocation" x="-226.08695652173915" y="20.758928571428569"/>
         </view>
     </objects>
 </document>

@@ -21,7 +21,7 @@ target 'cat-wallet-ios-2nd' do
   pod 'BottomPopup'
   pod 'SlackTextViewController'
   pod 'GrowingTextView', '0.6.1'
-  pod 'BitcoinKit', '~> 1.0'
+  pod 'BitcoinKit', '~> 1.0.2'
   #pod "SDSegmentController"
   # Pods for cat-wallet-ios-2nd
 

@@ -10,8 +10,14 @@ import Foundation
 import RealmSwift
 
 class Contact: Object {
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var name: String = ""
     @objc dynamic var address: String = ""
+    @objc dynamic var BTCAddress: String = ""
     @objc dynamic var email: String = ""
     @objc dynamic var phone: Int = 0
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

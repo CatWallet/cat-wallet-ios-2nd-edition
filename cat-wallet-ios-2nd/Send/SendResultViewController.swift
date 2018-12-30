@@ -78,12 +78,7 @@ class SendResultViewController: UIViewController {
         confirmButton.layer.cornerRadius = confirmButton.frame.width / CGFloat(28)
         confirmButton.layer.borderWidth = 3.5
     }
-    
-    
-    func sendtry() {
-
-    }
-    }
+}
     
 
     

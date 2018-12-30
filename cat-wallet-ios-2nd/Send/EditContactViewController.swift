@@ -1,89 +1,54 @@
 //
-//  NewContactViewController.swift
+//  EditContactViewController.swift
 //  cat-wallet-ios-2nd
 //
-//  Created by kaidong pei on 11/25/18.
+//  Created by kaidong pei on 12/29/18.
 //  Copyright © 2018 CatWallet. All rights reserved.
 //
 
 import UIKit
-import Parse
 import PhoneNumberKit
 import SkyFloatingLabelTextField
 
-protocol PassNewContact: class{
-    func passContact(_ contact: Contact)
-}
-
-class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
+class EditContactViewController: BottomPopupViewController {
     
-    @IBOutlet weak var addressSerachBar: UISearchBar!
+    let contactService = ContactsService()
+    weak var delegate: PassNewContact?
+    var contact = Contact()
     var nameField = SkyFloatingLabelTextField()
     var addressField = SkyFloatingLabelTextField()
     var BTCAddressField = SkyFloatingLabelTextField()
     var emailField = SkyFloatingLabelTextField()
     var phoneField = SkyFloatingLabelTextField()
-    let contactService = ContactsService()
-    var contact = Contact()
-    var shownotibar = ShowNotiBar()
-    var isEmail: Bool?
-    weak var delegate: PassNewContact?
-    let phoneNumberKit = PhoneNumberKit()
-    
+    var getName = ""
+    var getAddress = ""
+    var getBTCAddress = ""
+    var getEmail = ""
+    var getPhone = ""
+    var getID = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         setNavigationBar()
         setFloatTextField()
-        setSearvhBar()
+        initTextField()
     }
     
-    func setSearvhBar() {
-        addressSerachBar.delegate = self
-        addressSerachBar.keyboardType = .default
-        addressSerachBar.autocapitalizationType = .none
-        addressSerachBar.autocorrectionType = .no
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let message = searchBar.text {
-            getAddress(message)
-        }
-    }
-    
-    func getAddress(_ message: String) {
-        var params = [String: String]()
-        if message.isEmail {
-            isEmail = true
-            params["email"] = message
-        } else {
-            do {
-                let num = try phoneNumberKit.parse( message )
-                let phoneNum = phoneNumberKit.format(num, toType: .e164)
-                params["phone"] = phoneNum
-                isEmail = false
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        do {
-            let requestAddress = try PFCloud.callFunction("queryAddress", withParameters: params)
-            addressField.text = requestAddress as? String
-            if isEmail! {
-                emailField.text = message
-            } else {
-                phoneField.text = message
-            }
-        } catch {
-            shownotibar.showBar(title: "User not found", subtitle: "", style: .warning)
-        }
+    func initTextField() {
+        nameField.text = getName
+        addressField.text = getAddress
+        BTCAddressField.text = getBTCAddress
+        emailField.text = getEmail
+        phoneField.text = getPhone
     }
     
     func setNavigationBar() {
         let width = UIScreen.main.bounds.size.width
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
         self.view.addSubview(navBar)
-        let navItem = UINavigationItem(title: "Add contact")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: nil, action: #selector(addContact))
+        let navItem = UINavigationItem(title: "Edit contact")
+        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(editContact))
         doneItem.tintColor = UIColor.black
         let dismiss = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: nil, action: #selector(dismissAction))
         dismiss.tintColor = UIColor.black
@@ -96,17 +61,10 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func addContact() {
+    @objc func editContact() {
         if nameField.text != "" && addressField.text != ""{
-            contactService.saveContact(nameField.text!, addressField.text!, BTCAddressField.text ?? "", emailField.text ?? "", Int(phoneField.text ?? "") ?? 0)
-            self.dismiss(animated: true) {
-                self.contact.name = self.nameField.text!
-                self.contact.address = self.addressField.text!
-                self.contact.BTCAddress = self.BTCAddressField.text ?? ""
-                self.contact.email = self.emailField.text ?? ""
-                self.contact.phone = Int(self.phoneField.text ?? "") ?? 0
-                self.delegate?.passContact(self.contact)
-            }
+            contactService.updateContact(nameField.text!, addressField.text!, BTCAddressField.text ?? "", emailField.text ?? "", Int(phoneField.text ?? "") ?? 0, getID)
+            self.dismiss(animated: true)
         } else {
             let alertController = UIAlertController(title: "", message: "Please enter a name and ETH address", preferredStyle: .alert)
             let action = UIAlertAction(title: "Done", style: .cancel, handler: nil)
@@ -117,11 +75,11 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
     
     func setFloatTextField() {
         let width = UIScreen.main.bounds.size.width - 40
-        let NameTextFieldFrame = CGRect(x: 20, y: 100, width: width, height: 60)
-        let AddressTextFieldFrame = CGRect(x: 20, y: 160, width: width, height: 60)
-        let BTCAddressTextFieldFrame = CGRect(x: 20, y: 220, width: width, height: 60)
-        let EmailTextFieldFrame = CGRect(x: 20, y: 280, width: width, height: 60)
-        let PhoneTextFieldFrame = CGRect(x: 20, y: 340, width: width, height: 60)
+        let NameTextFieldFrame = CGRect(x: 20, y: 60, width: width, height: 60)
+        let AddressTextFieldFrame = CGRect(x: 20, y: 120, width: width, height: 60)
+        let BTCAddressTextFieldFrame = CGRect(x: 20, y: 180, width: width, height: 60)
+        let EmailTextFieldFrame = CGRect(x: 20, y: 240, width: width, height: 60)
+        let PhoneTextFieldFrame = CGRect(x: 20, y: 300, width: width, height: 60)
         
         nameField = SkyFloatingLabelTextFieldWithIcon(frame: NameTextFieldFrame)
         nameField.placeholder = "Name"
@@ -129,6 +87,7 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
         nameField.keyboardType = .default
         nameField.autocapitalizationType = .none
         nameField.autocorrectionType = .no
+        nameField.isUserInteractionEnabled = false
         self.view.addSubview(nameField)
         
         addressField = SkyFloatingLabelTextFieldWithIcon(frame: AddressTextFieldFrame)

@@ -15,6 +15,7 @@ protocol PassContactData: class {
 
 class ContactsViewController: BottomPopupViewController, UITableViewDataSource, UITableViewDelegate, BottomPopupDelegate, PassNewContact {
     
+    @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     let contactService = ContactsService()
     var people: [Contact] = []
@@ -35,11 +36,28 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
         super.viewWillAppear(false)
         tableView.reloadData()
         tableView.tableFooterView = UIView()
+        fetchContacts()
     }
     
     func fetchContacts() {
         people = []
         people = contactService.fetchContacts()
+    }
+    
+    @IBAction func segmentAction(_ sender: Any) {
+        switch segControl.selectedSegmentIndex
+        {
+        case 0:
+            people = []
+            people = contactService.fetchContacts()
+            tableView.reloadData()
+        case 1:
+            people = []
+            people = contactService.fetchBTCContacts()
+            tableView.reloadData()
+        default:
+            break
+        }
     }
     
     func setNavigationBar() {
@@ -95,13 +113,32 @@ class ContactsViewController: BottomPopupViewController, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = people[indexPath.row]
+        var address = ""
+        switch cryptoName {
+        case "BTC":
+            address = index.BTCAddress
+        default:
+            address = index.address
+        }
         self.dismiss(animated: true) {
-            self.delegate?.passContact(index.address)
+            self.delegate?.passContact(address)
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let popupVC = EditContactViewController()
+        let index = people[indexPath.row]
+        popupVC.getName = index.name
+        popupVC.getAddress = index.address
+        popupVC.getBTCAddress = index.BTCAddress
+        popupVC.getEmail = index.email
+        popupVC.getPhone = String(index.phone)
+        popupVC.getID = index.id
+        present(popupVC, animated: true, completion: nil)
     }
     
     override func getPopupHeight() -> CGFloat {
