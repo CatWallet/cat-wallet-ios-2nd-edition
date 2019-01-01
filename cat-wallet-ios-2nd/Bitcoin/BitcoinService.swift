@@ -15,7 +15,7 @@ struct BitcoinService {
     func createBTCWallet(_ mnemonic: String) -> HDWallet{
         let mnemonicList = mnemonic.components(separatedBy: " ")
             let seed = Mnemonic.seed(mnemonic: mnemonicList)
-            let wallet = HDWallet(seed: seed, network: .mainnet)
+            let wallet = HDWallet(seed: seed, network: .mainnetBTC)
             return wallet
     }
     
@@ -23,8 +23,8 @@ struct BitcoinService {
         var btcAddress = ""
         do {
             let address = try wallet.receiveAddress()
-            btcAddress = address.cashaddr
-        } catch let error {
+            btcAddress = address.base58
+       } catch let error {
             print(error.localizedDescription)
         }
         return btcAddress
