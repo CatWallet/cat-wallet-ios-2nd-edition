@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -52,5 +54,38 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>StarTemplate</string>
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>shortcutSubtitleBTC</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>shortcutTitleBTC</string>
+            <key>UIApplicationShortcutItemType</key>
+            <string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenBTC</string>
+            <key>UIApplicationShortcutItemUserInfo</key>
+            <dict>
+                <key>version</key>
+                <string>3</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>EyeTemplate</string>
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>shortcutSubtitleETH</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>shortcutTitleETH</string>
+            <key>UIApplicationShortcutItemType</key>
+            <string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenETH</string>
+            <key>UIApplicationShortcutItemUserInfo</key>
+            <dict>
+                <key>version</key>
+                <string>3</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>

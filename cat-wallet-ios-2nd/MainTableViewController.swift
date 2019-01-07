@@ -40,8 +40,8 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         textView.textAlignment = .center
         textView.text = "Clikc the button on the top right corner of the page"
         if walletDetect() {
-            setSendButton()
-            setBtcSendButton()
+            //setSendButton()
+            //setBtcSendButton()
             textView.text = "Welcome back"
             self.view.addSubview(textView)
             tableView.backgroundView = nil

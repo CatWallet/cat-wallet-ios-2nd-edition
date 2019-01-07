@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickShowAddressViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target">
+            <connections>
+                <outlet property="QRimage" destination="ehr-or-tq1" id="9N2-G6-B3b"/>
+                <outlet property="nameLabel" destination="uu5-aW-lQL" id="kNR-YW-P8B"/>
+                <outlet property="refreshButton" destination="1my-Mo-qNc" id="2Ta-SJ-Bcp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX5-0b-Bfh">
+                    <rect key="frame" x="30" y="74" width="54" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="54" id="T3Q-qj-T70"/>
+                        <constraint firstAttribute="height" constant="32" id="haz-QX-WjQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="l0I-NX-zex"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-or-tq1">
+                    <rect key="frame" x="97" y="338" width="220" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="31Q-ao-3QJ"/>
+                        <constraint firstAttribute="height" constant="220" id="AEK-eU-e7s"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-aW-lQL">
+                    <rect key="frame" x="97" y="270" width="220" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="Cjt-I0-7ja"/>
+                        <constraint firstAttribute="height" constant="50" id="vA3-cg-o3o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1my-Mo-qNc">
+                    <rect key="frame" x="182" y="692" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="PBD-DJ-7ZU"/>
+                        <constraint firstAttribute="height" constant="50" id="lwk-q5-oCN"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="iconfinder_refresh27_216529"/>
+                    <connections>
+                        <action selector="refreshButtonAction:" destination="-1" eventType="touchUpInside" id="Q96-Z1-njT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.2784313725" green="0.47843137250000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="ehr-or-tq1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4cA-bZ-IY8"/>
+                <constraint firstItem="gX5-0b-Bfh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="8MS-ag-ecI"/>
+                <constraint firstItem="gX5-0b-Bfh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="Evw-tk-FkO"/>
+                <constraint firstItem="ehr-or-tq1" firstAttribute="top" secondItem="uu5-aW-lQL" secondAttribute="bottom" constant="18" id="P36-th-Iwx"/>
+                <constraint firstItem="uu5-aW-lQL" firstAttribute="trailing" secondItem="ehr-or-tq1" secondAttribute="trailing" id="Pxp-5v-vne"/>
+                <constraint firstItem="1my-Mo-qNc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Wjv-1k-D6m"/>
+                <constraint firstItem="ehr-or-tq1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oaf-cS-hR9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1my-Mo-qNc" secondAttribute="bottom" constant="120" id="zF9-E9-Oyv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-371.01449275362324" y="120.53571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconfinder_refresh27_216529" width="512" height="512"/>
+    </resources>
+</document>

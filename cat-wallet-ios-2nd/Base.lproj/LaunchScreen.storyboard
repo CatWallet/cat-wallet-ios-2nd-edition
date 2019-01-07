@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cat_icon" width="1536" height="1536"/>
+        <image name="cat_icon" width="1000" height="1000"/>
     </resources>
 </document>

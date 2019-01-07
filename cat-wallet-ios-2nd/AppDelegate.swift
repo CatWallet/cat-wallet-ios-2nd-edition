@@ -14,6 +14,18 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    enum ShortcutIdentifier: String {
+        case OpenETH
+        case OpenBTC
+        
+        init?(fullIdentifier: String) {
+            guard let shortIdentifier = fullIdentifier.components(separatedBy: ".").last else {
+                return nil
+            }
+            self.init(rawValue: shortIdentifier)
+        }
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,13 +34,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://cat-wallet.azurewebsites.net/parse"
             configuration.applicationId = "catwallet"
         }))
-//        let types: UIUserNotificationType = [.alert, .badge, .sound]
-//        let settings = UIUserNotificationSettings(types: types, categories: nil)
-//        application.registerUserNotificationSettings(settings)
-//        application.registerForRemoteNotifications()
+        
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            handleShortcut(shortcutItem)
+            return false
+        }
         return true
     }
-
+    
+    func application(_ application: UIApplication,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        
+        completionHandler(handleShortcut(shortcutItem))
+    }
+    
+    @discardableResult fileprivate func handleShortcut(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        let shortcutType = shortcutItem.type
+        guard let shortcutIdentifier = ShortcutIdentifier(fullIdentifier: shortcutType) else {
+            return false
+        }
+        
+        return selectTabBarItemForIdentifier(shortcutIdentifier)
+    }
+    
+    fileprivate func selectTabBarItemForIdentifier(_ identifier: ShortcutIdentifier) -> Bool {
+        
+        let vc = QuickShowAddressViewController()
+        guard let tabBarController = self.window?.rootViewController as? UITabBarController else {
+            return false
+        }
+        
+        switch (identifier) {
+        case .OpenETH:
+            vc.ETH = true
+            tabBarController.selectedIndex = 0
+            tabBarController.present(vc, animated: false, completion: nil)
+            return true
+        case .OpenBTC:
+            vc.ETH = false
+            tabBarController.selectedIndex = 0
+            tabBarController.present(vc, animated: false, completion: nil)
+            return true
+        }
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
