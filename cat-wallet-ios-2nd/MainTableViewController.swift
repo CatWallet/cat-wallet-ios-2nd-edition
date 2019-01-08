@@ -103,7 +103,6 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         let x = UIScreen.main.bounds.width/4
         sendButton = UIButton(frame: CGRect(x: x*3, y: y!, width: 50, height: 50))
         sendButton.backgroundColor = .black
-        //sendButton.setImage(UIImage(named: "send"), for: .normal)
         sendButton.setTitle("ETH", for: .normal)
         sendButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         sendButton.addTarget(self, action: #selector(sendAction), for: .touchDown)
