@@ -8,7 +8,9 @@
 
 import UIKit
 import Web3swift
+import HexColors
 import EthereumAddress
+import SWSegmentedControl
 
 
 class MainTableViewController: UITableViewController, ReloadTableView {
@@ -21,13 +23,15 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     var buttonConstraint: NSLayoutConstraint!
     var sendButton: UIButton!
     var sendBtcButton: UIButton!
+    var segment: SWSegmentedControl!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
         keyStore = ws.fetchCurrenKeyStore()
         self.tableView.tableFooterView = UIView()
-        title = "Main"
+        setSegmentedControl()
+        navigationController?.navigationBar.barTintColor = UIColor("#0E59B4")
         tableView.reloadData()
 }
     
@@ -87,6 +91,14 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         view.endEditing(true)
     }
     
+    func setSegmentedControl() {
+        segment = SWSegmentedControl(items: ["New", "Import"])
+        segment.sizeToFit()
+        segment.tintColor = UIColor.white
+        segment.selectedSegmentIndex = 0
+        self.navigationItem.titleView = segment
+    }
+    
     func reloadTableView(_ message: String) {
         print(message)
         self.tableView.reloadData()
@@ -125,7 +137,6 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         sendBtcButton.backgroundColor = .black
         sendBtcButton.setTitle("BTC", for: .normal)
         sendBtcButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        //sendButton.setImage(UIImage(named: "send"), for: .normal)
         sendBtcButton.addTarget(self, action: #selector(sendAction), for: .touchDown)
         self.view.addSubview(sendBtcButton)
         sendBtcButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)

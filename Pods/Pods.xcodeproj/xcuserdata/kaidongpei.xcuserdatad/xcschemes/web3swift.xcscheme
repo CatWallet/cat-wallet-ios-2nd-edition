@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B4A4DBF80C0060839298573EA85EA8E"
+               BlueprintIdentifier = "EC2425A452AA617C985E62DC294C0DD1"
                BuildableName = "Web3swift.framework"
                BlueprintName = "web3swift"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B4A4DBF80C0060839298573EA85EA8E"
+            BlueprintIdentifier = "EC2425A452AA617C985E62DC294C0DD1"
             BuildableName = "Web3swift.framework"
             BlueprintName = "web3swift"
             ReferencedContainer = "container:Pods.xcodeproj">
