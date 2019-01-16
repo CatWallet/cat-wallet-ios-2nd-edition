@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import HexColors
 import UserNotifications
 
 @UIApplicationMain
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UITabBar.appearance().tintColor = UIColor.black
+        UITabBar.appearance().tintColor = UIColor("#0E59B4")
         Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
             configuration.server = "https://cat-wallet.azurewebsites.net/parse"
             configuration.applicationId = "catwallet"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tte-BS-OQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="582-0Q-zjP">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,10 +40,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="barItem" destination="XYM-MJ-OL4" id="E8j-76-H1t"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKd-J9-v6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="1422"/>
+            <point key="canvasLocation" x="-49" y="1422"/>
         </scene>
         <!--WalletsStoryboard-->
         <scene sceneID="aWf-Qr-Imh">
@@ -53,35 +56,14 @@
             </objects>
             <point key="canvasLocation" x="-162" y="1825"/>
         </scene>
-        <!--Main Tab Bar Controller-->
-        <scene sceneID="jZx-a4-Lg7">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Tte-BS-OQS" customClass="MainTabBarController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kf2-hH-fmM">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Ugh-YZ-9c7" kind="relationship" relationship="viewControllers" id="TTH-SA-18Z"/>
-                        <segue destination="FSj-vZ-Q1Q" kind="relationship" relationship="viewControllers" id="v1B-Nd-jza"/>
-                        <segue destination="E2n-fJ-MX4" kind="relationship" relationship="viewControllers" id="Gg1-br-osA"/>
-                        <segue destination="TXg-PI-Thz" kind="relationship" relationship="viewControllers" id="tai-pB-bBJ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OTt-4f-Lzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="274" y="9"/>
-        </scene>
         <!--Coin Market Table View Controller-->
         <scene sceneID="FJM-wj-Dlc">
             <objects>
                 <tableViewController id="Drh-Yt-ryc" customClass="CoinMarketTableViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hgz-7T-UcH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hgz-7T-UcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="Drh-Yt-ryc" id="SqJ-P2-78W"/>
                             <outlet property="delegate" destination="Drh-Yt-ryc" id="kW4-vV-9qF"/>
@@ -91,28 +73,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3v-Ed-zjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451" y="1422"/>
-        </scene>
-        <!--Investment-->
-        <scene sceneID="af1-1J-cAN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FSj-vZ-Q1Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Investment" image="combo_chart" id="hne-ew-rRG">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Gs-Ng-zwr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Drh-Yt-ryc" kind="relationship" relationship="rootViewController" id="Frf-Jt-jyu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nBV-js-uRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="452" y="767"/>
+            <point key="canvasLocation" x="674" y="1422"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="mVd-Xd-JWF">
@@ -141,118 +102,171 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0e-dT-3Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="1422"/>
+            <point key="canvasLocation" x="2251" y="1422"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="yxS-bO-iTc">
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="3zv-Xz-0Qp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TXg-PI-Thz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="services" id="g4s-k3-maQ">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                <tabBarController id="582-0Q-zjP" customClass="MainTabBarController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vMD-8p-hjE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dP2-SL-rGg" kind="relationship" relationship="viewControllers" id="dkx-5T-Ura"/>
+                        <segue destination="K4k-of-hhL" kind="relationship" relationship="viewControllers" id="3ht-ED-q1V"/>
+                        <segue destination="mse-Of-PTz" kind="relationship" relationship="viewControllers" id="iPo-E0-rBd"/>
+                        <segue destination="ofs-wO-CWo" kind="relationship" relationship="viewControllers" id="VQx-mQ-HFI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOv-e3-ME0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="17"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="lru-DH-PGJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dP2-SL-rGg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" image="bank_cards" id="eXA-Md-Dsb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="one-W3-Mzm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RIy-l9-oST">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mZH-Qe-UOj" kind="relationship" relationship="rootViewController" id="wpU-oL-CLV"/>
+                        <segue destination="mKL-h9-jaj" kind="relationship" relationship="rootViewController" id="2yn-OJ-ygO"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nZc-Z9-B2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGb-Gj-eJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="767"/>
+            <point key="canvasLocation" x="-48" y="769"/>
         </scene>
-        <!--Chat View Controller-->
-        <scene sceneID="qqJ-oe-BPr">
+        <!--Investment-->
+        <scene sceneID="34k-wG-pcG">
             <objects>
-                <viewController id="13m-7y-8v1" customClass="ChatViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yy0-My-OIs">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K4k-of-hhL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Investment" image="combo_chart" id="gmO-uT-n1y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="db2-mk-ubg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Drh-Yt-ryc" kind="relationship" relationship="rootViewController" id="RNb-I0-2dO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPD-YH-UeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="769"/>
+        </scene>
+        <!--Cat Dapp View Controller-->
+        <scene sceneID="Eaa-Bs-IWA">
+            <objects>
+                <viewController id="QWF-a4-q8Y" customClass="CatDappViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mh7-Yg-VGf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UJz-53-4jM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="655"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7VH-h8-pFI">
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RWQ-yn-1CH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxQ-Fk-HJ7">
+                                                <rect key="frame" x="0.0" y="12.666666666666629" width="138" height="25"/>
+                                                <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="backButtonAction:" destination="QWF-a4-q8Y" eventType="touchUpInside" id="w2v-uI-8FL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qo7-hl-HD8">
+                                                <rect key="frame" x="138" y="10" width="138" height="30"/>
+                                                <state key="normal" image="home"/>
+                                                <connections>
+                                                    <action selector="homeButtonAction:" destination="QWF-a4-q8Y" eventType="touchUpInside" id="5ye-yL-U9r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9G-Hl-pSX">
+                                                <rect key="frame" x="276" y="12" width="138" height="26"/>
+                                                <state key="normal" image="go"/>
+                                                <connections>
+                                                    <action selector="forwardButtonAction:" destination="QWF-a4-q8Y" eventType="touchUpInside" id="pcx-Du-zE7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nOc-RM-dbo"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UJz-53-4jM" firstAttribute="top" secondItem="QgP-x8-NfJ" secondAttribute="top" id="4u4-6B-B82"/>
-                            <constraint firstItem="QgP-x8-NfJ" firstAttribute="bottom" secondItem="UJz-53-4jM" secondAttribute="bottom" constant="70" id="65Y-x1-wRe"/>
-                            <constraint firstItem="UJz-53-4jM" firstAttribute="leading" secondItem="QgP-x8-NfJ" secondAttribute="leading" id="oBK-mB-sJB"/>
-                            <constraint firstItem="QgP-x8-NfJ" firstAttribute="trailing" secondItem="UJz-53-4jM" secondAttribute="trailing" id="qhr-F5-CNK"/>
+                            <constraint firstItem="7VH-h8-pFI" firstAttribute="leading" secondItem="JE5-qa-GJt" secondAttribute="leading" id="03m-8s-wEV"/>
+                            <constraint firstItem="7VH-h8-pFI" firstAttribute="bottom" secondItem="JE5-qa-GJt" secondAttribute="bottom" id="KDQ-DA-5OH"/>
+                            <constraint firstItem="7VH-h8-pFI" firstAttribute="trailing" secondItem="JE5-qa-GJt" secondAttribute="trailing" id="iCo-Vg-FJu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QgP-x8-NfJ"/>
+                        <viewLayoutGuide key="safeArea" id="JE5-qa-GJt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gxu-no-NmL">
-                        <barButtonItem key="rightBarButtonItem" image="contact_card" id="oNn-UW-GPt">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <connections>
-                                <action selector="updateUsername:" destination="13m-7y-8v1" id="UaF-XH-9Yi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="chatTb" destination="UJz-53-4jM" id="5hk-GZ-MVe"/>
-                        <outlet property="tbBottomConstraint" destination="65Y-x1-wRe" id="1wp-Wo-RJ0"/>
-                        <outlet property="usernameButton" destination="oNn-UW-GPt" id="Lnv-hR-GTw"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="i83-qm-sWs"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ff1-B8-biv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVS-1v-VIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.768115942029" y="1421.6517857142856"/>
+            <point key="canvasLocation" x="1473.913043478261" y="1421.6517857142856"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="x33-np-1NE">
+        <!--Settings-->
+        <scene sceneID="lBQ-bg-CBC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ugh-YZ-9c7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Main" image="bank_cards" id="PSZ-4o-4G8">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ofs-wO-CWo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="services" id="p0Z-vr-8sg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8d2-DD-mOd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1r2-Y6-0Bg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mKL-h9-jaj" kind="relationship" relationship="rootViewController" id="JeB-me-YY7"/>
+                        <segue destination="mZH-Qe-UOj" kind="relationship" relationship="rootViewController" id="Lpi-tv-tQt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FeQ-AW-joY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZH-PF-UW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="767"/>
+            <point key="canvasLocation" x="2251" y="753"/>
         </scene>
-        <!--Group-->
-        <scene sceneID="Ebc-5N-ml2">
+        <!--DApp-->
+        <scene sceneID="guE-M8-8jF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E2n-fJ-MX4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Group" image="people" id="AYA-Vz-6yn">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mse-Of-PTz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="DApp" image="yab_time_secbrower" id="kIZ-gc-b1n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CTH-Gt-t0l">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vsg-CI-mFX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="13m-7y-8v1" kind="relationship" relationship="rootViewController" id="yp3-g0-7yk"/>
+                        <segue destination="QWF-a4-q8Y" kind="relationship" relationship="rootViewController" id="o0l-QC-DqI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iId-Xm-pQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBl-Cd-M6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.768115942029" y="766.74107142857144"/>
+            <point key="canvasLocation" x="1473.913043478261" y="765.40178571428567"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="13" height="25"/>
         <image name="bank_cards" width="30" height="30"/>
         <image name="combo_chart" width="30" height="30"/>
-        <image name="contact_card" width="30" height="30"/>
+        <image name="go" width="14" height="26"/>
+        <image name="home" width="30" height="30"/>
         <image name="money_bag" width="30" height="30"/>
-        <image name="people" width="30" height="30"/>
         <image name="services" width="30" height="30"/>
+        <image name="yab_time_secbrower" width="26" height="26"/>
     </resources>
 </document>

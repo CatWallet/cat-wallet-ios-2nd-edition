@@ -34,7 +34,7 @@ class ChatViewController: UIViewController, GrowingTextViewDelegate {
         chatTb.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "chatCell")
         chatTb.delegate = self
         chatTb.dataSource = self
-        checkRegistration()
+        //checkRegistration()
         setTextView()
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getChatData), userInfo: nil, repeats: true)

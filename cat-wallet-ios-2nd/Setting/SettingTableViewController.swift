@@ -15,6 +15,9 @@ class SettingTableViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        navigationController?.navigationBar.barTintColor = UIColor("#0E59B4")
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         title = "Setting"
     }
     

@@ -1,6 +1,7 @@
 // Copyright DApps Platform Inc. All rights reserved.
 
 import UIKit
+import HexColors
 
 class CoinMarketTableViewController: UITableViewController {
 
@@ -8,6 +9,9 @@ class CoinMarketTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor("#0E59B4")
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         tableView.register(UINib(nibName: "CoinMarketTableViewCell", bundle: nil), forCellReuseIdentifier: "myCell")
         title = "Market"
         //self.title = R.string.localizable.marketTabbarItemTitle()
@@ -41,11 +45,13 @@ class CoinMarketTableViewController: UITableViewController {
         let priceChange = coinData[indexPath.row].quote.USD.percent_change_1h
         
         if priceChange > 0 {
-            cell.priceChangeLabel.textColor = UIColor.blue
-            cell.priceLabel.textColor = UIColor.blue
+            cell.priceChangeLabel.textColor = UIColor("#0E59B4")
+            cell.priceLabel.textColor = UIColor("#0E59B4")
+            cell.marketImage.image = UIImage(named: "upPointer")
         } else {
             cell.priceChangeLabel.textColor = UIColor.red
             cell.priceLabel.textColor = UIColor.red
+            cell.marketImage.image = UIImage(named: "downPointer")
         }
         cell.priceChangeLabel.text = String(format: "%.3f", priceChange)
         cell.priceLabel.text = "$" + String(format: "%.4f", price)
@@ -64,6 +70,10 @@ class CoinMarketTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
         return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

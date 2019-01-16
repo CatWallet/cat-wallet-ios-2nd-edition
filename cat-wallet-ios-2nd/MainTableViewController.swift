@@ -24,6 +24,8 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     var sendButton: UIButton!
     var sendBtcButton: UIButton!
     var segment: SWSegmentedControl!
+    var textView: UITextView!
+    @IBOutlet weak var barItem: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,25 +39,52 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        let backgroundImage = UIImage(named: "wallet_large")
-        let imageView = UIImageView(image: backgroundImage)
         let width = UIScreen.main.bounds.size.width
-        let textView = UITextView(frame: CGRect(x: 0, y: 240, width: width, height: 20))
+        let height = UIScreen.main.bounds.size.height
+        textView = UITextView(frame: CGRect(x: 0, y: height/3, width: width, height: 30))
         textView.textAlignment = .center
-        textView.text = "Clikc the button on the top right corner of the page"
+        textView.text = "Create a wallet!"
+        textView.font = UIFont(name: "Avenir-Light", size: 18)
+        textView.textColor = UIColor("#0E59B4")
         if walletDetect() {
-            //setSendButton()
-            //setBtcSendButton()
             textView.text = "Welcome back"
             self.view.addSubview(textView)
             tableView.backgroundView = nil
             tableView.backgroundColor = UIColor.white
             return 1
         } else {
+            let button = UIButton()
+            self.navigationItem.rightBarButtonItem = nil
+            button.addTarget(self, action: #selector(add), for: .touchUpInside)
+            button.setBackgroundImage(UIImage(named: "add"), for: .normal)
+            button.frame = CGRect(x: width/2 - 20, y: height/3.6, width: 40, height: 40)
+            self.view.addSubview(button)
             self.view.addSubview(textView)
-            imageView.contentMode = .center
-            tableView.backgroundView = imageView
             return 0
+        }
+    }
+    
+    @objc func add() {
+        switch segment.selectedSegmentIndex
+        {
+        case 0:
+            print("00000")
+        case 1:
+            print("11111")
+        default:
+            break
+        }
+    }
+    
+    @objc func segmentAction() {
+        switch segment.selectedSegmentIndex
+        {
+        case 0:
+            textView.text = "Create a wallet!"
+        case 1:
+            textView.text = "Import a wallet"
+        default:
+            break
         }
     }
     
@@ -93,6 +122,7 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     
     func setSegmentedControl() {
         segment = SWSegmentedControl(items: ["New", "Import"])
+        segment.addTarget(self, action: #selector(segmentAction), for: .valueChanged)
         segment.sizeToFit()
         segment.tintColor = UIColor.white
         segment.selectedSegmentIndex = 0
@@ -102,53 +132,6 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     func reloadTableView(_ message: String) {
         print(message)
         self.tableView.reloadData()
-    }
-    
-    func setSendButton() {
-        let statusHeight = UIApplication.shared.statusBarFrame.height
-        var y: CGFloat?
-        if statusHeight == 20{
-            y = UIScreen.main.bounds.height - 4.5*(tabBarController?.tabBar.frame.size.height)!
-        } else {
-            y = UIScreen.main.bounds.height - 3.5*(tabBarController?.tabBar.frame.size.height)!
-        }
-        let x = UIScreen.main.bounds.width/4
-        sendButton = UIButton(frame: CGRect(x: x*3, y: y!, width: 50, height: 50))
-        sendButton.backgroundColor = .black
-        sendButton.setTitle("ETH", for: .normal)
-        sendButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        sendButton.addTarget(self, action: #selector(sendAction), for: .touchDown)
-        self.view.addSubview(sendButton)
-        sendButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        sendButton.layer.masksToBounds = false
-        sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(2)
-    }
-    
-    func setBtcSendButton() {
-        let statusHeight = UIApplication.shared.statusBarFrame.height
-        var y: CGFloat?
-        if statusHeight == 20{
-            y = UIScreen.main.bounds.height - 4.5*(tabBarController?.tabBar.frame.size.height)!
-        } else {
-            y = UIScreen.main.bounds.height - 3.5*(tabBarController?.tabBar.frame.size.height)!
-        }
-        let x = UIScreen.main.bounds.width/4
-        sendBtcButton = UIButton(frame: CGRect(x: x*3 - 75, y: y!, width: 50, height: 50))
-        sendBtcButton.backgroundColor = .black
-        sendBtcButton.setTitle("BTC", for: .normal)
-        sendBtcButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        sendBtcButton.addTarget(self, action: #selector(sendAction), for: .touchDown)
-        self.view.addSubview(sendBtcButton)
-        sendBtcButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        sendBtcButton.layer.masksToBounds = false
-        sendBtcButton.layer.cornerRadius = sendBtcButton.frame.width / CGFloat(2)
-    }
-    
-    @objc func sendAction() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-        let popupVC = TransferNavigationViewController()
-        present(popupVC, animated: true, completion: nil)
     }
     
     func walletDetect() -> Bool {

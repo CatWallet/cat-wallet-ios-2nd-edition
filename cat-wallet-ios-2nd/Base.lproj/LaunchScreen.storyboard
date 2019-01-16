@@ -17,28 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat_icon" translatesAutoresizingMaskIntoConstraints="NO" id="tKi-ar-DIS">
-                                <rect key="frame" x="77.5" y="223.5" width="220" height="220"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAT Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIr-Hy-8ev">
+                                <rect key="frame" x="95.5" y="293.5" width="184" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="E6I-Zn-bel"/>
-                                    <constraint firstAttribute="width" constant="220" id="GPb-Ye-Vv0"/>
+                                    <constraint firstAttribute="height" constant="80" id="xSr-Ze-Bhx"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.4039215686" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="tKi-ar-DIS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7xh-ud-Bgd"/>
-                            <constraint firstItem="tKi-ar-DIS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ei6-cE-9av"/>
+                            <constraint firstItem="rIr-Hy-8ev" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WWh-PA-VsD"/>
+                            <constraint firstItem="rIr-Hy-8ev" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eoo-PR-IPU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="22" y="389"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cat_icon" width="1000" height="1000"/>
-    </resources>
 </document>
