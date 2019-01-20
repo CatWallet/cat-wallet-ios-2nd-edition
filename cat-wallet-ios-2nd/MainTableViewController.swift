@@ -9,55 +9,60 @@
 import UIKit
 import Web3swift
 import HexColors
+import MBProgressHUD
 import EthereumAddress
 import SWSegmentedControl
 
 
 class MainTableViewController: UITableViewController, ReloadTableView {
     
+    @IBOutlet weak var itemButton: UIBarButtonItem!
     var height = CGFloat(300)
     var keyStore = CurrentKeyStoreRealm()
     var web3Rinkeby = Web3.InfuraRinkebyWeb3()
     let ws = WalletService()
     let shownotibar = ShowNotiBar()
     var buttonConstraint: NSLayoutConstraint!
-    var sendButton: UIButton!
-    var sendBtcButton: UIButton!
     var segment: SWSegmentedControl!
     var textView: UITextView!
+    let button = UIButton()
+    var loadingNotification = MBProgressHUD()
     @IBOutlet weak var barItem: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
         keyStore = ws.fetchCurrenKeyStore()
+        tableView.register(UINib(nibName: "SendTableViewCell", bundle: nil), forCellReuseIdentifier: "sendCoinCell")
+        tableView.register(UINib(nibName: "TotalAssetTableViewCell", bundle: nil), forCellReuseIdentifier: "total")
         self.tableView.tableFooterView = UIView()
-        setSegmentedControl()
         navigationController?.navigationBar.barTintColor = UIColor("#0E59B4")
+        self.navigationItem.rightBarButtonItem = itemButton
         tableView.reloadData()
 }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
-        textView = UITextView(frame: CGRect(x: 0, y: height/3, width: width, height: 30))
-        textView.textAlignment = .center
-        textView.text = "Create a wallet!"
-        textView.font = UIFont(name: "Avenir-Light", size: 18)
-        textView.textColor = UIColor("#0E59B4")
         if walletDetect() {
-            textView.text = "Welcome back"
-            self.view.addSubview(textView)
+            UINavigationBar.appearance().tintColor = UIColor.white
+            self.title = "Main"
+            segment.isHidden = true
             tableView.backgroundView = nil
             tableView.backgroundColor = UIColor.white
+            textView.text = "Add coins"
+            //self.navigationItem.rightBarButtonItem = itemButton
             return 1
         } else {
-            let button = UIButton()
-            self.navigationItem.rightBarButtonItem = nil
+            //self.navigationItem.rightBarButtonItem = nil
+            setSegmentedControl()
+            textView = UITextView(frame: CGRect(x: 0, y: height/2, width: width, height: 30))
+            textView.textAlignment = .center
+            textView.text = "Create a wallet"
+            textView.font = UIFont(name: "Avenir-Light", size: 18)
+            textView.textColor = UIColor("#0E59B4")
             button.addTarget(self, action: #selector(add), for: .touchUpInside)
             button.setBackgroundImage(UIImage(named: "add"), for: .normal)
-            button.frame = CGRect(x: width/2 - 20, y: height/3.6, width: 40, height: 40)
+            button.frame = CGRect(x: width/2 - 20, y: height/2.3, width: 40, height: 40)
             self.view.addSubview(button)
             self.view.addSubview(textView)
             return 0
@@ -68,9 +73,10 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         switch segment.selectedSegmentIndex
         {
         case 0:
-            print("00000")
+            createWallet()
         case 1:
-            print("11111")
+            let viewController = ImportViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
         default:
             break
         }
@@ -80,39 +86,72 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         switch segment.selectedSegmentIndex
         {
         case 0:
-            textView.text = "Create a wallet!"
+            textView.text = "Create a wallet"
+            button.setBackgroundImage(UIImage(named: "add"), for: .normal)
         case 1:
             textView.text = "Import a wallet"
+            button.setBackgroundImage(UIImage(named: "wallet_import"), for: .normal)
         default:
             break
         }
     }
     
+    private func createWallet() {
+            self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+            self.loadingNotification.mode = MBProgressHUDMode.indeterminate
+        let ws = WalletService()
+        ws.createHDWallet(withName: "String", password: "Password") { (keyWallet, error, mnemonics, btcAddress) in
+            if error != nil {
+                print(error as! String)
+            } else {
+                let vc = NewWalletResultViewController()
+                vc.getAddress = keyWallet?.address ?? ""
+                vc.getMnemonics = mnemonics ?? ""
+                vc.getBtcAddress = btcAddress ?? ""
+                self.loadingNotification.hide(animated: false)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sendCoinCell", for: indexPath) as! SendTableViewCell
         if indexPath.row == 0 {
-        cell.coinNum.text = "x" + ws.getBalance(keyStore)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "total", for: indexPath) as! TotalAssetTableViewCell
+            return cell
+            
         } else {
-            cell.coinImage.image = UIImage(named: "bitcoin")
-            cell.coinName.text = "BTC"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "sendCoinCell", for: indexPath) as! SendTableViewCell
+            if indexPath.row == 1 {
+            cell.coinNum.text = "x" + ws.getBalance(keyStore)
+            } else if indexPath.row == 2 {
+                cell.coinImage.image = UIImage(named: "Group8")
+                cell.coinName.text = "Bitcoin"
+            }
+            return cell
         }
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        if indexPath.row == 0{
+            return 191
+        } else {
+            return 90
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let popupVC = TransferNavigationViewController()
-        if indexPath.row == 0 {
+        
+        if indexPath.row == 1 {
             cryptoName = "ETH"
-        } else {
+        } else if indexPath.row == 2{
             cryptoName = "BTC"
+        } else if indexPath.row == 0{
+            return
         }
         present(popupVC, animated: true, completion: nil)
     }
@@ -136,6 +175,7 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     
     func walletDetect() -> Bool {
         let ethAdd = keyStore.address
+        print(ethAdd)
         if ethAdd != "" {
             return true
         } else {

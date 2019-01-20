@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HexColors
 import RealmSwift
 
 protocol ReloadTableView {
@@ -21,6 +22,9 @@ class WalletsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.barTintColor = UIColor("#0E59B4")
+        UINavigationBar.appearance().tintColor = .white
+        title = "Wallets"
         wallets = []
         fetchWallet()
         tableView.reloadData()

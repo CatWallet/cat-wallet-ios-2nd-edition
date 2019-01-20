@@ -27,7 +27,7 @@
                         <segment title="ETH"/>
                         <segment title="BTC"/>
                     </segments>
-                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="tintColor" red="0.054901960780000002" green="0.34901960780000002" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <action selector="segmentAction:" destination="-1" eventType="valueChanged" id="BuF-H8-nKL"/>
                     </connections>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HexColors
 
 
 class TransferNavigationViewController: BottomPopupViewController {
@@ -42,12 +43,13 @@ class TransferNavigationViewController: BottomPopupViewController {
         let titles = ["Send", "Receive", "History"]
         let configure = SGPageTitleViewConfigure()
         configure.titleColor = UIColor.lightGray
-        configure.titleSelectedColor = UIColor.black
-        configure.indicatorColor = UIColor.black
+        configure.titleSelectedColor = .white
+        configure.indicatorColor = .white
         configure.indicatorAdditionalWidth = 80
         configure.titleGradientEffect = true
         
         self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: pageTitleViewY, width: view.frame.size.width, height: 38), delegate: self, titleNames: titles, configure: configure)
+        pageTitleView?.backgroundColor = UIColor("#0E59B4")
         view.addSubview(pageTitleView!)
         
         

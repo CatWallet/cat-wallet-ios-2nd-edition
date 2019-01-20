@@ -57,6 +57,12 @@
 		AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */; };
 		AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */; };
 		AD6CBF7221A0C88D002232C3 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CBF7121A0C88D002232C3 /* RealmModel.swift */; };
+		AD74A6AC21F39DBD0064116B /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6AA21F39DBD0064116B /* ImportViewController.swift */; };
+		AD74A6AD21F39DBD0064116B /* ImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74A6AB21F39DBD0064116B /* ImportViewController.xib */; };
+		AD74A6AF21F3AEFF0064116B /* NewWalletResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6AE21F3AEFF0064116B /* NewWalletResultViewController.swift */; };
+		AD74A6B321F3F8020064116B /* TotalAssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6B121F3F8020064116B /* TotalAssetTableViewCell.swift */; };
+		AD74A6B421F3F8020064116B /* TotalAssetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74A6B221F3F8020064116B /* TotalAssetTableViewCell.xib */; };
+		AD74A6B621F410C80064116B /* NewWalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */; };
 		ADAA5FE521C9DCA700C74FD3 /* BackupPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA5FE321C9DCA700C74FD3 /* BackupPhraseViewController.swift */; };
 		ADAA5FE621C9DCA700C74FD3 /* BackupPhraseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAA5FE421C9DCA700C74FD3 /* BackupPhraseViewController.xib */; };
 		ADAA5FE921CEEF4800C74FD3 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */; };
@@ -151,6 +157,12 @@
 		AD54335F21838F1800F58C06 /* CreateWalletResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletResultViewController.swift; sourceTree = "<group>"; };
 		AD54336021838F1800F58C06 /* CreateWalletResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateWalletResultViewController.xib; sourceTree = "<group>"; };
 		AD6CBF7121A0C88D002232C3 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		AD74A6AA21F39DBD0064116B /* ImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportViewController.swift; sourceTree = "<group>"; };
+		AD74A6AB21F39DBD0064116B /* ImportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportViewController.xib; sourceTree = "<group>"; };
+		AD74A6AE21F3AEFF0064116B /* NewWalletResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletResultViewController.swift; sourceTree = "<group>"; };
+		AD74A6B121F3F8020064116B /* TotalAssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAssetTableViewCell.swift; sourceTree = "<group>"; };
+		AD74A6B221F3F8020064116B /* TotalAssetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalAssetTableViewCell.xib; sourceTree = "<group>"; };
+		AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletTableViewController.swift; sourceTree = "<group>"; };
 		ADAA5FE321C9DCA700C74FD3 /* BackupPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupPhraseViewController.swift; sourceTree = "<group>"; };
 		ADAA5FE421C9DCA700C74FD3 /* BackupPhraseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackupPhraseViewController.xib; sourceTree = "<group>"; };
 		ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
@@ -307,6 +319,7 @@
 			children = (
 				AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */,
 				AD543355218253C700F58C06 /* WalletsTableViewController.swift */,
+				AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */,
 				AD5433572182548A00F58C06 /* NewWalletViewController.swift */,
 				AD5433592182554F00F58C06 /* WalletModel.swift */,
 				AD54335B2182580300F58C06 /* WalletService.swift */,
@@ -318,6 +331,9 @@
 				ADE4B48E21BB5C5700833376 /* ImportWalletViewController.swift */,
 				ADAA5FE321C9DCA700C74FD3 /* BackupPhraseViewController.swift */,
 				ADAA5FE421C9DCA700C74FD3 /* BackupPhraseViewController.xib */,
+				AD74A6AA21F39DBD0064116B /* ImportViewController.swift */,
+				AD74A6AB21F39DBD0064116B /* ImportViewController.xib */,
+				AD74A6AE21F3AEFF0064116B /* NewWalletResultViewController.swift */,
 			);
 			path = Wallets;
 			sourceTree = "<group>";
@@ -435,6 +451,8 @@
 				AD1CFF362197B33300843B91 /* HistoryTableViewCell.swift */,
 				AD1CFF372197B33300843B91 /* HistoryTableViewCell.xib */,
 				AD1CFF492197CFFA00843B91 /* SetButton.swift */,
+				AD74A6B121F3F8020064116B /* TotalAssetTableViewCell.swift */,
+				AD74A6B221F3F8020064116B /* TotalAssetTableViewCell.xib */,
 			);
 			path = "cat-wallet-ios-2nd";
 			sourceTree = "<group>";
@@ -526,6 +544,8 @@
 				ADB04B52219525EA00790A3D /* CentralizedWalletViewController.xib in Resources */,
 				AD1CFF0B21965B8A00843B91 /* CoinMarketTableViewCell.xib in Resources */,
 				AD1CFF502197D3AB00843B91 /* ContactsViewController.xib in Resources */,
+				AD74A6AD21F39DBD0064116B /* ImportViewController.xib in Resources */,
+				AD74A6B421F3F8020064116B /* TotalAssetTableViewCell.xib in Resources */,
 				AD1F3D2B21E17A6B00804C44 /* QuickShowAddressViewController.xib in Resources */,
 				AD1CFF352197B0DA00843B91 /* HistoryViewController.xib in Resources */,
 				AD54336221838F1800F58C06 /* CreateWalletResultViewController.xib in Resources */,
@@ -663,6 +683,7 @@
 				ADAA5FE921CEEF4800C74FD3 /* BitcoinService.swift in Sources */,
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
+				AD74A6AF21F3AEFF0064116B /* NewWalletResultViewController.swift in Sources */,
 				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,
 				ADB9093121AB747100480883 /* ContactModel.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
@@ -674,9 +695,11 @@
 				AD1CFF1F21966A9F00843B91 /* BottomPopupPresentAnimator.swift in Sources */,
 				AD543356218253C700F58C06 /* WalletsTableViewController.swift in Sources */,
 				AD1CFF2221966A9F00843B91 /* BottomPopupDismissInteractionController.swift in Sources */,
+				AD74A6B621F410C80064116B /* NewWalletTableViewController.swift in Sources */,
 				ADBD797F21B8621100D8BB6D /* NotificationBar.swift in Sources */,
 				AD1CFF4A2197CFFA00843B91 /* SetButton.swift in Sources */,
 				AD54336121838F1800F58C06 /* CreateWalletResultViewController.swift in Sources */,
+				AD74A6B321F3F8020064116B /* TotalAssetTableViewCell.swift in Sources */,
 				AD5433582182548A00F58C06 /* NewWalletViewController.swift in Sources */,
 				AD6CBF7221A0C88D002232C3 /* RealmModel.swift in Sources */,
 				AD1CFF2021966A9F00843B91 /* BottomPopupNavigationController.swift in Sources */,
@@ -688,6 +711,7 @@
 				AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */,
 				AD1F3D3A21E81D4A00804C44 /* Color.swift in Sources */,
 				ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */,
+				AD74A6AC21F39DBD0064116B /* ImportViewController.swift in Sources */,
 				ADB9092921AB6D3800480883 /* NewContactViewController.swift in Sources */,
 				AD1CFF0F21965B8A00843B91 /* CoinMarketTableViewCell.swift in Sources */,
 				ADC7888821B21B570073B94E /* TransferNavigationViewController.swift in Sources */,

@@ -13,7 +13,7 @@
         <scene sceneID="LFk-Hp-3eN">
             <objects>
                 <tableViewController id="mKL-h9-jaj" customClass="MainTableViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IE5-Iy-nkY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IE5-Iy-nkY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1UM-Q8-juR" id="a2p-ZG-lAP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -34,7 +34,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ZCD-Kw-gdd">
                         <barButtonItem key="rightBarButtonItem" image="money_bag" id="XYM-MJ-OL4">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ANB-Nv-VKA" kind="show" id="pzN-kV-u32"/>
                             </connections>
@@ -42,6 +42,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barItem" destination="XYM-MJ-OL4" id="E8j-76-H1t"/>
+                        <outlet property="itemButton" destination="XYM-MJ-OL4" id="bQG-SV-3TH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKd-J9-v6j" userLabel="First Responder" sceneMemberID="firstResponder"/>

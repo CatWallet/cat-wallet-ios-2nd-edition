@@ -40,7 +40,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fIe-BU-zQk">
                             <connections>
-                                <segue destination="OBE-EJ-rpP" kind="show" id="4Cz-B3-Loi"/>
+                                <segue destination="TsC-gH-k6U" kind="show" id="W6f-lU-JvC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -48,6 +48,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIr-sf-Eq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-334" y="-339"/>
+        </scene>
+        <!--New Wallet Table View Controller-->
+        <scene sceneID="QUX-mH-X06">
+            <objects>
+                <tableViewController id="TsC-gH-k6U" customClass="NewWalletTableViewController" customModule="cat_wallet_ios_2nd" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="z4i-Tm-ULf" customClass="new">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ex3-fy-OQ7">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ex3-fy-OQ7" id="ZsU-BJ-tyS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TsC-gH-k6U" id="O6u-jM-1MW"/>
+                            <outlet property="delegate" destination="TsC-gH-k6U" id="YlY-j7-U26"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQy-WP-9bG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="599" y="-338"/>
         </scene>
         <!--New Wallet View Controller-->
         <scene sceneID="rmV-tY-fxB">
@@ -74,9 +102,6 @@
                                 <state key="normal" title="Import wallet">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="m17-7a-ikc" kind="show" id="dVR-Gq-jSB"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N5-S9-2eR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547.82608695652175" y="-340.17857142857139"/>
+            <point key="canvasLocation" x="599" y="271"/>
         </scene>
         <!--Import Wallet View Controller-->
         <scene sceneID="bFK-0X-kEI">
@@ -100,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your backup phrase" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-EQ-bcB">
-                                <rect key="frame" x="20" y="183" width="374" height="128"/>
+                                <rect key="frame" x="20" y="139" width="374" height="128"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Sqm-Ux-81l"/>

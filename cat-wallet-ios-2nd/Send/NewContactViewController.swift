@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import HexColors
 import PhoneNumberKit
 import SkyFloatingLabelTextField
 
@@ -80,13 +81,14 @@ class NewContactViewController: BottomPopupViewController, UISearchBarDelegate{
     
     func setNavigationBar() {
         let width = UIScreen.main.bounds.size.width
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
+        navBar.barTintColor = UIColor("0E59B4")
         self.view.addSubview(navBar)
         let navItem = UINavigationItem(title: "Add contact")
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: nil, action: #selector(addContact))
-        doneItem.tintColor = UIColor.black
+        doneItem.tintColor = .white
         let dismiss = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: nil, action: #selector(dismissAction))
-        dismiss.tintColor = UIColor.black
+        dismiss.tintColor = .white
         navItem.rightBarButtonItem = doneItem
         navItem.leftBarButtonItem = dismiss
         navBar.setItems([navItem], animated: false)

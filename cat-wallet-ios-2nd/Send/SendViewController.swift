@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HexColors
 import EthereumAddress
 import QRCodeReaderViewController
 import SkyFloatingLabelTextField
@@ -49,7 +50,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     }
     
     func setQRButton() {
-        qrButton.setImage(UIImage(named: "qr_icon"), for: .normal)
+        qrButton.setImage(UIImage(named: "scan"), for: .normal)
         qrButton.setTitle("Tap me", for: .normal)
         qrButton.tintColor = UIColor.black
         qrButton.addTarget(self, action: #selector(QRAction), for: .touchUpInside)
@@ -72,7 +73,7 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
     
     func setFloatButton() {
         sendButton = UIButton(type: .custom)
-        sendButton.backgroundColor = .black
+        sendButton.backgroundColor = UIColor("#0E59B4")
         sendButton.setTitle("Send", for: .normal)
         sendButton.tintColor = .white
         self.view.addSubview(sendButton)
@@ -88,7 +89,6 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         sendButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         sendButton.layer.masksToBounds = false
         sendButton.layer.cornerRadius = sendButton.frame.width / CGFloat(28)
-        sendButton.layer.borderWidth = 3.5
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -211,10 +211,12 @@ class SendViewController: UIViewController, PassContactData, QRCodeReaderDelegat
         addressField.autocapitalizationType = .none
         addressField.autocorrectionType = .no
         addressField.adjustsFontSizeToFitWidth = true
+        addressField.textColor = UIColor("#0E59B4")
         self.view.addSubview(addressField)
         amountField = SkyFloatingLabelTextFieldWithIcon(frame: amountTextFieldFrame)
         amountField.placeholder = "Amount"
         amountField.title = "Amount"
+        addressField.textColor = UIColor("#0E59B4")
         amountField.keyboardType = .numberPad
         self.view.addSubview(amountField)
     }

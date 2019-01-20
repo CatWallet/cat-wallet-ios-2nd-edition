@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HexColors
 
 class BackupPhraseViewController: UIViewController {
 
@@ -24,7 +25,7 @@ class BackupPhraseViewController: UIViewController {
     
     func setCopyButton() {
         copyButton = UIButton(type: .custom)
-        copyButton.backgroundColor = .black
+        copyButton.backgroundColor = UIColor("#0E59B4")
         copyButton.setTitle("Copy", for: .normal)
         copyButton.tintColor = .white
         self.view.addSubview(copyButton)
@@ -39,7 +40,6 @@ class BackupPhraseViewController: UIViewController {
         copyButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         copyButton.layer.masksToBounds = false
         copyButton.layer.cornerRadius = copyButton.frame.width / CGFloat(28)
-        copyButton.layer.borderWidth = 3.5
     }
     
     @objc func copyAction() {

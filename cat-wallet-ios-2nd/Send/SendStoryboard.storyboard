@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="30" id="GWl-N8-UfD"/>
                                     <constraint firstAttribute="width" constant="30" id="dTn-2G-alK"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="contact"/>
+                                <state key="normal" title="Button" image="contact-1"/>
                                 <connections>
                                     <action selector="contactButtonAction:" destination="scv-zT-25X" eventType="touchUpInside" id="39f-gv-AN1"/>
                                 </connections>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="30" id="2ox-xe-V2l"/>
                                     <constraint firstAttribute="width" constant="30" id="BeM-1k-kj1"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="qr_icon"/>
+                                <state key="normal" title="Button" image="scan"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="contact" width="37.5" height="37.5"/>
-        <image name="qr_icon" width="966" height="834"/>
+        <image name="contact-1" width="35" height="35"/>
+        <image name="scan" width="35" height="35"/>
     </resources>
 </document>
