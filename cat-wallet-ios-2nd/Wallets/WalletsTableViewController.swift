@@ -60,10 +60,9 @@ class WalletsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "walletsCell")
-        cell?.textLabel?.adjustsFontSizeToFitWidth = true
-        cell?.textLabel?.text = wallets[indexPath.row].address
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "walletsCell") as! WalletsTableViewCell
+        cell.walletName.text = wallets[indexPath.row].walletName
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

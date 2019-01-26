@@ -18,13 +18,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="walletsCell" id="qt9-tp-WWr">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="walletsCell" rowHeight="60" id="qt9-tp-WWr" customClass="WalletsTableViewCell" customModule="cat_wallet_ios_2nd" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qt9-tp-WWr" id="9Re-Q3-FIA">
-                                    <rect key="frame" x="0.0" y="0.0" width="362" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="59.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet_selection" translatesAutoresizingMaskIntoConstraints="NO" id="fhL-iW-cMg">
+                                            <rect key="frame" x="25" y="15" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="wzl-F3-ALA"/>
+                                                <constraint firstAttribute="width" constant="30" id="yMy-xU-5Bf"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-2A-ipC">
+                                            <rect key="frame" x="63" y="19" width="279" height="21.666666666666671"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4TZ-2A-ipC" secondAttribute="trailing" id="5N1-PW-cLJ"/>
+                                        <constraint firstItem="4TZ-2A-ipC" firstAttribute="leading" secondItem="fhL-iW-cMg" secondAttribute="trailing" constant="8" id="61J-fX-cbY"/>
+                                        <constraint firstItem="fhL-iW-cMg" firstAttribute="centerY" secondItem="9Re-Q3-FIA" secondAttribute="centerY" id="FkY-Qk-gjJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="4TZ-2A-ipC" secondAttribute="bottom" constant="19" id="Hgg-Vt-CMX"/>
+                                        <constraint firstItem="fhL-iW-cMg" firstAttribute="leading" secondItem="9Re-Q3-FIA" secondAttribute="leadingMargin" constant="5" id="NxH-Bc-LvT"/>
+                                        <constraint firstItem="4TZ-2A-ipC" firstAttribute="top" secondItem="9Re-Q3-FIA" secondAttribute="top" constant="19" id="Uya-94-ebL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="walletImage" destination="fhL-iW-cMg" id="DxD-Td-JuU"/>
+                                    <outlet property="walletName" destination="4TZ-2A-ipC" id="qXD-lw-s0Z"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +74,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIr-sf-Eq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="-339"/>
+            <point key="canvasLocation" x="-334.78260869565219" y="-339.50892857142856"/>
         </scene>
         <!--New Wallet Table View Controller-->
         <scene sceneID="QUX-mH-X06">
@@ -185,4 +212,7 @@
             <point key="canvasLocation" x="-1303" y="-338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wallet_selection" width="28" height="28"/>
+    </resources>
 </document>

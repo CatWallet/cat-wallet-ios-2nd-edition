@@ -63,6 +63,7 @@
 		AD74A6B321F3F8020064116B /* TotalAssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6B121F3F8020064116B /* TotalAssetTableViewCell.swift */; };
 		AD74A6B421F3F8020064116B /* TotalAssetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74A6B221F3F8020064116B /* TotalAssetTableViewCell.xib */; };
 		AD74A6B621F410C80064116B /* NewWalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */; };
+		ADA7123621FD0B8E00B33BF9 /* WalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7123521FD0B8E00B33BF9 /* WalletsTableViewCell.swift */; };
 		ADAA5FE521C9DCA700C74FD3 /* BackupPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA5FE321C9DCA700C74FD3 /* BackupPhraseViewController.swift */; };
 		ADAA5FE621C9DCA700C74FD3 /* BackupPhraseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAA5FE421C9DCA700C74FD3 /* BackupPhraseViewController.xib */; };
 		ADAA5FE921CEEF4800C74FD3 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */; };
@@ -163,6 +164,7 @@
 		AD74A6B121F3F8020064116B /* TotalAssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAssetTableViewCell.swift; sourceTree = "<group>"; };
 		AD74A6B221F3F8020064116B /* TotalAssetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalAssetTableViewCell.xib; sourceTree = "<group>"; };
 		AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletTableViewController.swift; sourceTree = "<group>"; };
+		ADA7123521FD0B8E00B33BF9 /* WalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewCell.swift; sourceTree = "<group>"; };
 		ADAA5FE321C9DCA700C74FD3 /* BackupPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupPhraseViewController.swift; sourceTree = "<group>"; };
 		ADAA5FE421C9DCA700C74FD3 /* BackupPhraseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackupPhraseViewController.xib; sourceTree = "<group>"; };
 		ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				AD543353218253AF00F58C06 /* WalletsStoryboard.storyboard */,
 				AD543355218253C700F58C06 /* WalletsTableViewController.swift */,
+				ADA7123521FD0B8E00B33BF9 /* WalletsTableViewCell.swift */,
 				AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */,
 				AD5433572182548A00F58C06 /* NewWalletViewController.swift */,
 				AD5433592182554F00F58C06 /* WalletModel.swift */,
@@ -393,13 +396,6 @@
 			path = NotificationBar;
 			sourceTree = "<group>";
 		};
-		ADC7888321B1F9CF0073B94E /* History */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = History;
-			sourceTree = "<group>";
-		};
 		ADC99BEE217BA247008740BD = {
 			isa = PBXGroup;
 			children = (
@@ -425,7 +421,6 @@
 				ADAA5FE721CEEF2200C74FD3 /* Bitcoin */,
 				ADE4B49021BB678500833376 /* Chat */,
 				ADBD797C21B861CE00D8BB6D /* NotificationBar */,
-				ADC7888321B1F9CF0073B94E /* History */,
 				ADB9093421ABD27C00480883 /* Extension */,
 				ADB9092021A61D6700480883 /* Setting */,
 				AD1CFF59219A711F00843B91 /* DApp */,
@@ -725,6 +720,7 @@
 				AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */,
 				AD1CFF1021965B8A00843B91 /* CoinMarketContant.swift in Sources */,
 				ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */,
+				ADA7123621FD0B8E00B33BF9 /* WalletsTableViewCell.swift in Sources */,
 				ADB9093321ABD27700480883 /* String.swift in Sources */,
 				AD54335E2182616900F58C06 /* WalletError.swift in Sources */,
 				AD1CFF1E21966A9F00843B91 /* BottomPopupPresentationController.swift in Sources */,

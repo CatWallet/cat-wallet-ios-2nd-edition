@@ -66,6 +66,7 @@ struct WalletService {
     func saveWalletModel(address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
         let realm = try! Realm()
         let ksRealm = KeyStoreRealm()
+        ksRealm.walletName = "Wallet"
         ksRealm.address = address
         ksRealm.data = data
         ksRealm.name = name
@@ -83,6 +84,7 @@ struct WalletService {
         try! realm.write{
             realm.delete(ocksRealm)
         }
+        cksRealm.walletName = "Wallet"
         cksRealm.address = address
         cksRealm.data = data
         cksRealm.name = name
