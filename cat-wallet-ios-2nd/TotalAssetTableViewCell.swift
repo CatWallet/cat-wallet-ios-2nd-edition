@@ -10,6 +10,7 @@ import UIKit
 
 class TotalAssetTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var walletName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

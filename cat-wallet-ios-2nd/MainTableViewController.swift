@@ -121,6 +121,8 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "total", for: indexPath) as! TotalAssetTableViewCell
+            print(keyStore.walletName)
+            cell.walletName.text = keyStore.walletName
             return cell
             
         } else {

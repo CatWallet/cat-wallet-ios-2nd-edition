@@ -91,7 +91,7 @@ class ReceiveViewController: UIViewController {
         let pasteboard = UIPasteboard.general
         pasteboard.string = addressLabel.text
         if pasteboard.string != nil {
-            shownotibar.showBar(title: "Public key is copied", subtitle: "", style: .success)
+            shownotibar.showBar(title: "Copied", subtitle: "", style: .success)
         }
     }
     

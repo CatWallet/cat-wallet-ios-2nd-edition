@@ -18,12 +18,16 @@ class WalletsTableViewController: UITableViewController {
     
     var wallets:[KeyStoreRealm] = []
     let ws = WalletService()
+    var keyStore = CurrentKeyStoreRealm()
     var delegate: ReloadTableView?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barTintColor = UIColor("#0E59B4")
         UINavigationBar.appearance().tintColor = .white
+        keyStore = ws.fetchCurrenKeyStore()
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         title = "Wallets"
         wallets = []
         fetchWallet()
@@ -61,6 +65,9 @@ class WalletsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "walletsCell") as! WalletsTableViewCell
+        if keyStore.address == wallets[indexPath.row].address {
+            cell.walletImage.image = UIImage(named: "wallet_selection_2")
+        }
         cell.walletName.text = wallets[indexPath.row].walletName
         return cell
     }
@@ -68,7 +75,7 @@ class WalletsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         let keyStore = wallets[index]
-        ws.saveCurrentKeyStore(address: keyStore.address, data: keyStore.data!, name: keyStore.name, mnemonics: keyStore.mnemonics, btcaddress: keyStore.btcaddress)
+        ws.saveCurrentKeyStore(WalletName: keyStore.walletName, address: keyStore.address, data: keyStore.data!, name: keyStore.name, mnemonics: keyStore.mnemonics, btcaddress: keyStore.btcaddress)
         dismiss(animated: true) {
             self.delegate?.reloadTableView("pass a message")
         }
@@ -85,16 +92,11 @@ class WalletsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Show backup phrase", message: "Never show phrase to other perople", preferredStyle: .alert)
-        let confirm = UIAlertAction(title: "Confirm", style: .default) { (_) in
-            let vc = BackupPhraseViewController()
-            let phrase = self.wallets[indexPath.row].mnemonics
-            vc.getText = phrase
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(confirm)
-        alert.addAction(cancel)
-        self.present(alert, animated: false, completion: nil)
+        let vc = WalletInfoViewController()
+        vc.getWalletName = self.wallets[indexPath.row].walletName
+        vc.getAddress = self.wallets[indexPath.row].address
+        vc.getBtcAddress = self.wallets[indexPath.row].btcaddress
+        vc.getMnemonics = self.wallets[indexPath.row].mnemonics
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

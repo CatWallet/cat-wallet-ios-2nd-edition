@@ -34,6 +34,7 @@ class NewWalletResultViewController: FormViewController {
                 }.cellUpdate({ (cell, row) in
                     cell.imageView?.image = UIImage(named: "Group8")
                 }).cellSetup({ (cell, row) in
+                    cell.textLabel?.textAlignment = NSTextAlignment.left
                     cell.textLabel?.adjustsFontSizeToFitWidth = true
                 })
          +++ Section(footer:"Your backup phrase is the only way to restore your wallet, you should keep it safe and never show it to other people.")
@@ -42,6 +43,9 @@ class NewWalletResultViewController: FormViewController {
                 $0.value = getMnemonics
                 }.cellSetup({ (cell, row) in
                     cell.textView.font = .systemFont(ofSize: 20)
+                    cell.textView.isEditable = false
+                }).cellUpdate({ (cell, row) in
+                    cell.textView.isEditable = false
                 })
         
         +++ Section()

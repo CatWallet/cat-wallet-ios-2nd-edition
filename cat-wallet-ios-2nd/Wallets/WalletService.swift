@@ -57,16 +57,16 @@ struct WalletService {
         let btcAddress = btcWallet.getRecieveAddress(btc)
         let finalBtcAddress = btcAddress.replacingOccurrences(of: "bitcoincash:", with: "")
         let walletModel = KeyWalletModel(address: address, data: keyData, name: name ?? "", isHD: true)
-        saveCurrentKeyStore(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics, btcaddress: finalBtcAddress)
+        saveCurrentKeyStore(WalletName: "Wallet", address: address, data: keyData, name: name ?? "", mnemonics: mnemonics, btcaddress: finalBtcAddress)
         saveKeyStore(wallet)
-        saveWalletModel(address: address, data: keyData, name: name ?? "", mnemonics: mnemonics, btcaddress: finalBtcAddress)
+        saveWalletModel(WalletName: "Wallet", address: address, data: keyData, name: name ?? "", mnemonics: mnemonics, btcaddress: finalBtcAddress)
         completion(walletModel, nil, mnemonics, finalBtcAddress)
     }
 
-    func saveWalletModel(address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
+    func saveWalletModel(WalletName: String, address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
         let realm = try! Realm()
         let ksRealm = KeyStoreRealm()
-        ksRealm.walletName = "Wallet"
+        ksRealm.walletName = WalletName
         ksRealm.address = address
         ksRealm.data = data
         ksRealm.name = name
@@ -77,14 +77,14 @@ struct WalletService {
         }
     }
 
-    func saveCurrentKeyStore(address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
+    func saveCurrentKeyStore(WalletName: String, address: String, data: Data, name: String, mnemonics: String, btcaddress: String) {
         let realm = try! Realm()
         let cksRealm = CurrentKeyStoreRealm()
         let ocksRealm = realm.objects(CurrentKeyStoreRealm.self)
         try! realm.write{
             realm.delete(ocksRealm)
         }
-        cksRealm.walletName = "Wallet"
+        cksRealm.walletName = WalletName
         cksRealm.address = address
         cksRealm.data = data
         cksRealm.name = name
