@@ -87,11 +87,9 @@ class WalletInfoViewController: FormViewController {
     @objc func saveTapped() {
         let realm = try! Realm()
         let walletRealm = realm.objects(KeyStoreRealm.self).filter("address == '\(getAddress)'").first
-        let ocksRealm = realm.objects(CurrentKeyStoreRealm.self).first
         if let nameRow: TextRow = form.rowBy(tag: "walletName"){
             try! realm.write{
                 walletRealm?.walletName = nameRow.value ?? "Wallet"
-                ocksRealm!.walletName = nameRow.value ?? "Wallet"
             }
             navigationController?.popViewController(animated: true)
         }

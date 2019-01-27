@@ -20,6 +20,7 @@ class WalletsTableViewController: UITableViewController {
     let ws = WalletService()
     var keyStore = CurrentKeyStoreRealm()
     var delegate: ReloadTableView?
+    let shownotibar = ShowNotiBar()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -83,10 +84,15 @@ class WalletsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            if self.keyStore.address == self.wallets[indexPath.row].address{
+                self.shownotibar.showBar(title: "Can't delete current wallet", subtitle: "", style: .warning)
+                return
+            }
+            
             self.deleteWallet(self.wallets[indexPath.row].address)
             self.wallets.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        
+                
         }
         return [delete]
     }
