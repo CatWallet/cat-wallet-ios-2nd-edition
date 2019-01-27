@@ -121,7 +121,6 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "total", for: indexPath) as! TotalAssetTableViewCell
-            print(keyStore.walletName)
             cell.walletName.text = keyStore.walletName
             return cell
             
@@ -171,13 +170,11 @@ class MainTableViewController: UITableViewController, ReloadTableView {
     }
     
     func reloadTableView(_ message: String) {
-        print(message)
         self.tableView.reloadData()
     }
     
     func walletDetect() -> Bool {
         let ethAdd = keyStore.address
-        print(ethAdd)
         if ethAdd != "" {
             return true
         } else {
