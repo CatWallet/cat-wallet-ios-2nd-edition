@@ -85,7 +85,7 @@ class WalletsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             if self.keyStore.address == self.wallets[indexPath.row].address{
-                self.shownotibar.showBar(title: "Can't delete current wallet", subtitle: "", style: .warning)
+                self.shownotibar.showBar(title: "This wallet is currently in use", subtitle: "", style: .warning)
                 return
             }
             
