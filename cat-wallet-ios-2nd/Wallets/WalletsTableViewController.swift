@@ -33,7 +33,7 @@ class WalletsTableViewController: UITableViewController {
         wallets = []
         fetchWallet()
         tableView.reloadData()
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = nil
     }
     
     func fetchWallet() {
@@ -55,6 +55,7 @@ class WalletsTableViewController: UITableViewController {
     @IBAction func popViewController(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -66,12 +67,28 @@ class WalletsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "walletsCell") as! WalletsTableViewCell
+        cell.walletButton.tag = indexPath.row
+        cell.walletButton.addTarget(self, action: #selector(walletDetailButton), for: .touchUpInside)
         if keyStore.address == wallets[indexPath.row].address {
-            cell.walletImage.image = UIImage(named: "wallet_selection_2")
+            cell.walletButton.setImage(UIImage(named: "wallet_selection_2"), for: .normal)
         }
         cell.walletName.text = wallets[indexPath.row].walletName
         return cell
     }
+    
+    @objc func walletDetailButton(sender: UIButton) {
+        let vc = WalletInfoViewController()
+        vc.getWalletName = self.wallets[sender.tag].walletName
+        vc.getAddress = self.wallets[sender.tag].address
+        vc.getBtcAddress = self.wallets[sender.tag].btcaddress
+        vc.getMnemonics = self.wallets[sender.tag].mnemonics
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
@@ -95,14 +112,5 @@ class WalletsTableViewController: UITableViewController {
                 
         }
         return [delete]
-    }
-    
-    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let vc = WalletInfoViewController()
-        vc.getWalletName = self.wallets[indexPath.row].walletName
-        vc.getAddress = self.wallets[indexPath.row].address
-        vc.getBtcAddress = self.wallets[indexPath.row].btcaddress
-        vc.getMnemonics = self.wallets[indexPath.row].mnemonics
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

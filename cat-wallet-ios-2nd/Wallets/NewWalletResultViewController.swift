@@ -33,6 +33,7 @@ class NewWalletResultViewController: FormViewController {
                 $0.value = getBtcAddress
                 }.cellUpdate({ (cell, row) in
                     cell.imageView?.image = UIImage(named: "Group8")
+                    cell.textLabel?.textAlignment = NSTextAlignment.left
                 }).cellSetup({ (cell, row) in
                     cell.textLabel?.textAlignment = NSTextAlignment.left
                     cell.textLabel?.adjustsFontSizeToFitWidth = true
