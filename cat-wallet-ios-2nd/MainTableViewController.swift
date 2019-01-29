@@ -73,7 +73,9 @@ class MainTableViewController: UITableViewController, ReloadTableView {
         switch segment.selectedSegmentIndex
         {
         case 0:
-            createWallet()
+            //createWallet()
+            let viewController = TokensViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
         case 1:
             let viewController = ImportViewController()
             self.navigationController?.pushViewController(viewController, animated: true)

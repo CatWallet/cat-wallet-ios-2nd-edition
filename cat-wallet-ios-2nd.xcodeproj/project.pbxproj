@@ -60,6 +60,9 @@
 		AD74A6B621F410C80064116B /* NewWalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */; };
 		ADA7123621FD0B8E00B33BF9 /* WalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7123521FD0B8E00B33BF9 /* WalletsTableViewCell.swift */; };
 		ADA7123821FD0F4F00B33BF9 /* WalletInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7123721FD0F4F00B33BF9 /* WalletInfoViewController.swift */; };
+		ADA7124E21FFE0DC00B33BF9 /* TokensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7124C21FFE0DC00B33BF9 /* TokensViewController.swift */; };
+		ADA7124F21FFE0DC00B33BF9 /* TokensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA7124D21FFE0DC00B33BF9 /* TokensViewController.xib */; };
+		ADA7125121FFEC8E00B33BF9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7125021FFEC8E00B33BF9 /* SearchBar.swift */; };
 		ADAA5FE921CEEF4800C74FD3 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */; };
 		ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B442195234000790A3D /* SGPageContentScrollView.swift */; };
 		ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */; };
@@ -155,6 +158,9 @@
 		AD74A6B521F410C80064116B /* NewWalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletTableViewController.swift; sourceTree = "<group>"; };
 		ADA7123521FD0B8E00B33BF9 /* WalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewCell.swift; sourceTree = "<group>"; };
 		ADA7123721FD0F4F00B33BF9 /* WalletInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInfoViewController.swift; sourceTree = "<group>"; };
+		ADA7124C21FFE0DC00B33BF9 /* TokensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewController.swift; sourceTree = "<group>"; };
+		ADA7124D21FFE0DC00B33BF9 /* TokensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokensViewController.xib; sourceTree = "<group>"; };
+		ADA7125021FFEC8E00B33BF9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
 		ADB04B442195234000790A3D /* SGPageContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentScrollView.swift; sourceTree = "<group>"; };
 		ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageViewPopGestureVC.swift; sourceTree = "<group>"; };
@@ -323,6 +329,15 @@
 			path = Wallets;
 			sourceTree = "<group>";
 		};
+		ADA7124721FFE0AB00B33BF9 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				ADA7124C21FFE0DC00B33BF9 /* TokensViewController.swift */,
+				ADA7124D21FFE0DC00B33BF9 /* TokensViewController.xib */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
 		ADAA5FE721CEEF2200C74FD3 /* Bitcoin */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +381,7 @@
 				ADB9093221ABD27700480883 /* String.swift */,
 				ADD868F321C32D57007B0670 /* TableView.swift */,
 				AD1F3D3921E81D4A00804C44 /* Color.swift */,
+				ADA7125021FFEC8E00B33BF9 /* SearchBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -399,6 +415,7 @@
 		ADC99BF9217BA247008740BD /* cat-wallet-ios-2nd */ = {
 			isa = PBXGroup;
 			children = (
+				ADA7124721FFE0AB00B33BF9 /* Tokens */,
 				AD1F3D2121E1607500804C44 /* QuickAction */,
 				ADAA5FE721CEEF2200C74FD3 /* Bitcoin */,
 				ADE4B49021BB678500833376 /* Chat */,
@@ -526,6 +543,7 @@
 				ADC7888021AE01630073B94E /* ReceiveViewController.xib in Resources */,
 				ADD868F021C1F6EE007B0670 /* ChatTableViewCell.xib in Resources */,
 				ADC7888921B21B570073B94E /* TransferNavigationViewController.xib in Resources */,
+				ADA7124F21FFE0DC00B33BF9 /* TokensViewController.xib in Resources */,
 				AD1CFF482197C6D200843B91 /* SendStoryboard.storyboard in Resources */,
 				ADB9091821A0FAF100480883 /* SendResultViewController.xib in Resources */,
 				ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */,
@@ -659,7 +677,9 @@
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
 				AD74A6AF21F3AEFF0064116B /* NewWalletResultViewController.swift in Sources */,
 				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,
+				ADA7124E21FFE0DC00B33BF9 /* TokensViewController.swift in Sources */,
 				ADB9093121AB747100480883 /* ContactModel.swift in Sources */,
+				ADA7125121FFEC8E00B33BF9 /* SearchBar.swift in Sources */,
 				ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */,
 				ADC7888221AE41330073B94E /* QRSacnerViewController.swift in Sources */,
 				ADB9092221A61E4D00480883 /* SettingTableViewController.swift in Sources */,
