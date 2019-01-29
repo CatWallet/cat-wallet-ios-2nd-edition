@@ -9,13 +9,21 @@
 import UIKit
 import HexColors
 
-class TokensViewController: UIViewController {
+class TokensViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var searchBarButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tokensTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        getInfo()
+        tokensTableView.register(UINib(nibName: "TokensTableViewCell", bundle: nil), forCellReuseIdentifier: "tokensCell")
+        tokensTableView.delegate = self
+        tokensTableView.dataSource = self
         setSearchBar()
+        tokensTableView.tableFooterView = nil
     }
     
     func setSearchBar() {
@@ -30,5 +38,29 @@ class TokensViewController: UIViewController {
         searchBar.setTextColor(color: UIColor.white)
         navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    func getInfo() {
+        TokensServiceHandler.sharedInstance.getTokens { (res) in
+            if let tokenServiceResult = res as? [CoinData] {
+                //self.coinData = webServiceResult
+                DispatchQueue.main.async {
+                    self.tokensTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tokensCell")
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
     }
 }

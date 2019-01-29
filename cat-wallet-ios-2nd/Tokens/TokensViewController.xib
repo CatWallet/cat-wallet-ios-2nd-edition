@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="searchBar" destination="Toj-Tn-uvm" id="sxW-DF-JJr"/>
                 <outlet property="searchBarButton" destination="Rx7-3Q-F2F" id="G0S-9n-1Cw"/>
+                <outlet property="tokensTableView" destination="Xvx-8X-Mt5" id="4fT-dr-6on"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

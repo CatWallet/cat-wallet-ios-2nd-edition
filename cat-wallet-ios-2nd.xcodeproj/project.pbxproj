@@ -63,6 +63,11 @@
 		ADA7124E21FFE0DC00B33BF9 /* TokensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7124C21FFE0DC00B33BF9 /* TokensViewController.swift */; };
 		ADA7124F21FFE0DC00B33BF9 /* TokensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA7124D21FFE0DC00B33BF9 /* TokensViewController.xib */; };
 		ADA7125121FFEC8E00B33BF9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7125021FFEC8E00B33BF9 /* SearchBar.swift */; };
+		ADA7125421FFED6E00B33BF9 /* TokensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7125221FFED6E00B33BF9 /* TokensTableViewCell.swift */; };
+		ADA7125521FFED6E00B33BF9 /* TokensTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA7125321FFED6E00B33BF9 /* TokensTableViewCell.xib */; };
+		ADA7125721FFF10100B33BF9 /* TokensContant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7125621FFF10100B33BF9 /* TokensContant.swift */; };
+		ADA7125921FFF19C00B33BF9 /* TokensServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7125821FFF19C00B33BF9 /* TokensServiceHandler.swift */; };
+		ADA7125B21FFF21E00B33BF9 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7125A21FFF21E00B33BF9 /* Tokens.swift */; };
 		ADAA5FE921CEEF4800C74FD3 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */; };
 		ADB04B492195234100790A3D /* SGPageContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B442195234000790A3D /* SGPageContentScrollView.swift */; };
 		ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */; };
@@ -161,6 +166,11 @@
 		ADA7124C21FFE0DC00B33BF9 /* TokensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewController.swift; sourceTree = "<group>"; };
 		ADA7124D21FFE0DC00B33BF9 /* TokensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokensViewController.xib; sourceTree = "<group>"; };
 		ADA7125021FFEC8E00B33BF9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		ADA7125221FFED6E00B33BF9 /* TokensTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensTableViewCell.swift; sourceTree = "<group>"; };
+		ADA7125321FFED6E00B33BF9 /* TokensTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokensTableViewCell.xib; sourceTree = "<group>"; };
+		ADA7125621FFF10100B33BF9 /* TokensContant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensContant.swift; sourceTree = "<group>"; };
+		ADA7125821FFF19C00B33BF9 /* TokensServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensServiceHandler.swift; sourceTree = "<group>"; };
+		ADA7125A21FFF21E00B33BF9 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		ADAA5FE821CEEF4800C74FD3 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
 		ADB04B442195234000790A3D /* SGPageContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentScrollView.swift; sourceTree = "<group>"; };
 		ADB04B452195234000790A3D /* SGPageViewPopGestureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageViewPopGestureVC.swift; sourceTree = "<group>"; };
@@ -334,6 +344,11 @@
 			children = (
 				ADA7124C21FFE0DC00B33BF9 /* TokensViewController.swift */,
 				ADA7124D21FFE0DC00B33BF9 /* TokensViewController.xib */,
+				ADA7125221FFED6E00B33BF9 /* TokensTableViewCell.swift */,
+				ADA7125321FFED6E00B33BF9 /* TokensTableViewCell.xib */,
+				ADA7125621FFF10100B33BF9 /* TokensContant.swift */,
+				ADA7125821FFF19C00B33BF9 /* TokensServiceHandler.swift */,
+				ADA7125A21FFF21E00B33BF9 /* Tokens.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -549,6 +564,7 @@
 				ADB9092A21AB6D3800480883 /* NewContactViewController.xib in Resources */,
 				ADB9091C21A102EB00480883 /* SendFinalResultViewController.xib in Resources */,
 				AD1CFF392197B33300843B91 /* HistoryTableViewCell.xib in Resources */,
+				ADA7125521FFED6E00B33BF9 /* TokensTableViewCell.xib in Resources */,
 				ADC99C00217BA247008740BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +692,7 @@
 				AD1CFF2321966A9F00843B91 /* BottomPopupViewController.swift in Sources */,
 				ADB04B4C2195234100790A3D /* SGPageTitleViewConfigure.swift in Sources */,
 				AD74A6AF21F3AEFF0064116B /* NewWalletResultViewController.swift in Sources */,
+				ADA7125421FFED6E00B33BF9 /* TokensTableViewCell.swift in Sources */,
 				AD1CFF4F2197D3AB00843B91 /* ContactsViewController.swift in Sources */,
 				ADA7124E21FFE0DC00B33BF9 /* TokensViewController.swift in Sources */,
 				ADB9093121AB747100480883 /* ContactModel.swift in Sources */,
@@ -700,9 +717,11 @@
 				ADB9092421AB67EC00480883 /* ContactsService.swift in Sources */,
 				ADD868F421C32D57007B0670 /* TableView.swift in Sources */,
 				ADBD797B21B2356A00D8BB6D /* MainTableViewController.swift in Sources */,
+				ADA7125721FFF10100B33BF9 /* TokensContant.swift in Sources */,
 				AD1CFF462197C05800843B91 /* SendViewController.swift in Sources */,
 				AD1F3D3A21E81D4A00804C44 /* Color.swift in Sources */,
 				ADB04B4A2195234100790A3D /* SGPageViewPopGestureVC.swift in Sources */,
+				ADA7125921FFF19C00B33BF9 /* TokensServiceHandler.swift in Sources */,
 				AD74A6AC21F39DBD0064116B /* ImportViewController.swift in Sources */,
 				ADB9092921AB6D3800480883 /* NewContactViewController.swift in Sources */,
 				AD1CFF0F21965B8A00843B91 /* CoinMarketTableViewCell.swift in Sources */,
@@ -714,6 +733,7 @@
 				AD1CFF0D21965B8A00843B91 /* CoinMarketTableViewController.swift in Sources */,
 				AD1CFF442197C03A00843B91 /* SendNavigationViewController.swift in Sources */,
 				AD1CFF0921965B8A00843B91 /* CoinMarket.swift in Sources */,
+				ADA7125B21FFF21E00B33BF9 /* Tokens.swift in Sources */,
 				AD1CFF1021965B8A00843B91 /* CoinMarketContant.swift in Sources */,
 				ADE4B48F21BB5C5700833376 /* ImportWalletViewController.swift in Sources */,
 				ADA7123621FD0B8E00B33BF9 /* WalletsTableViewCell.swift in Sources */,

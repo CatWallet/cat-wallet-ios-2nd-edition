@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cat-wallet-ios-2nd/Wallets/WalletInfoViewController.swift"
-            timestampString = "570420455.810491"
+            timestampString = "570423094.493174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "saveTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cat-wallet-ios-2nd/Tokens/TokensServiceHandler.swift"
+            timestampString = "570423094.493313"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getTokens(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

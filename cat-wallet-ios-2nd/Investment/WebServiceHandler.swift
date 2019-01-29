@@ -20,7 +20,6 @@ final class WebServiceHandler: NSObject {
                 guard let data = data else { return }
                 do {
                     let decoder = JSONDecoder()
-                    //decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let getData = try decoder.decode(CoinMarket.self, from: data)
                     getCoinData = getData.data
                     completion(getCoinData)
